@@ -1,0 +1,2734 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>UBONWIT RUN 2026</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     LOGO ด้านบน
+================================================== -->
+
+<div class="top-logo">
+
+    <img src="images/logo1.png"
+         alt="โลโก้โรงเรียนอุบลวิทยาคม">
+
+</div>
+
+
+
+<!-- ==================================================
+     01. NAVBAR
+================================================== -->
+
+<header class="navbar">
+
+    <div class="container navbar-inner">
+
+        <div class="logo">
+
+            <img src="images/logo1.png"
+                 alt="โลโก้โรงเรียนอุบลวิทยาคม"
+                 class="logo-img">
+
+            UBONWIT RUN 2026
+
+        </div>
+
+
+        <div class="menu-toggle"
+             onclick="toggleMenu()">
+
+            ☰
+
+        </div>
+
+
+        <nav class="nav-menu"
+             id="navMenu">
+
+            <a href="#home">
+                หน้าหลัก
+            </a>
+
+            <a href="#distance">
+                ระยะวิ่ง
+            </a>
+
+            <a href="#price">
+                ค่าสมัคร
+            </a>
+
+            <a href="#shirt">
+                เสื้อ
+            </a>
+
+            <a href="#awards">
+                🏆 รางวัล
+            </a>
+
+            <a href="#register">
+                สมัคร
+            </a>
+
+            <a href="#check-status"
+               style="color: var(--gold); font-weight: bold;">
+
+                🔍 ค้นหารหัส
+
+            </a>
+
+            <a href="#contact" style="color: var(--gold); font-weight: bold;">
+
+                 📞 ติดต่อสอบถาม
+
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==================================================
+     02. HERO
+================================================== -->
+
+<section class="hero"
+         id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+
+            <div class="hero-badge">
+
+                🏃 RUN FOR HEALTH • RUN FOR FUN
+
+            </div>
+
+
+            <h1 class="hero-title">
+
+                UBONWIT<br>
+
+                <span>RUN 2026</span>
+
+            </h1>
+
+
+            <p class="hero-subtitle">
+
+                วิ่งเพื่อสุขภาพ ก้าวไปด้วยกัน
+
+            </p>
+
+
+            <p class="hero-description">
+
+                ร่วมเป็นส่วนหนึ่งของกิจกรรม UBONWIT RUN 2026
+                สนุก สุขภาพดี และสร้างความทรงจำไปด้วยกัน
+
+            </p>
+
+
+            <div class="hero-info">
+
+
+                <div class="info-card">
+
+                    📅
+                    <strong>วันแข่งขัน</strong>
+                    27 ธันวาคม 2569
+
+                </div>
+
+                <div class="info-card">
+
+                    ⛔
+                    <strong>ปิดรับสมัคร</strong>
+                    16 พฤศจิกายน 2569
+
+                </div>
+
+                <div class="info-card">
+
+                    📍
+                    <strong>START - FINISH</strong>
+                    โรงเรียนอุบลวิทยาคม
+
+                </div>
+
+
+                <div class="info-card">
+
+                    🏃
+                    <strong>ระยะทาง</strong>
+                    2.5 / 5 / 10 KM
+
+                </div>
+
+
+            </div>
+
+
+            <div class="buttons">
+
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeHzjCSlxnIWXgIciVNkxaQxHpOqXxdXn1Vmi4gfgINv1df9A/viewform?usp=dialog"
+                   class="btn btn-vip">
+
+                    🔵 สมัครวิ่งบุคคลทั่วไป-VIP
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     04. DISTANCE
+================================================== -->
+
+<section class="section section-light"
+         id="distance">
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+
+            🏃 เลือกระยะทาง
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            เลือกระยะที่เหมาะกับคุณ
+            (คลิกเพื่อดูเส้นทางวิ่ง)
+
+        </p>
+
+
+        <div class="cards">
+
+
+            <!-- 2.5 KM -->
+
+            <div class="card"
+                 onclick="showMap('images/map-2.5km.jpg')"
+                 style="cursor:pointer;">
+
+                <div class="card-icon">
+                    🟢
+                </div>
+
+                <h3>
+                    2.5 KM
+                </h3>
+
+                <p>
+                    FUN RUN<br><br>
+                    เหมาะสำหรับเด็ก ครอบครัว
+                    และผู้เริ่มต้น
+                </p>
+
+            </div>
+
+
+            <!-- 5 KM -->
+
+            <div class="card"
+                 onclick="showMap('images/map-5km.jpg')"
+                 style="cursor:pointer;">
+
+                <div class="card-icon">
+                    🔵
+                </div>
+
+                <h3>
+                    5 KM
+                </h3>
+
+                <p>
+                    MINI RUN<br><br>
+                    สำหรับผู้ที่ต้องการ
+                    เพิ่มความท้าทาย
+                </p>
+
+            </div>
+
+
+            <!-- 10 KM -->
+
+            <div class="card"
+                 onclick="showMap('images/map-10km.jpg')"
+                 style="cursor:pointer;">
+
+                <div class="card-icon">
+                    🔥
+                </div>
+
+                <h3>
+                    10 KM
+                </h3>
+
+                <p>
+                    CHALLENGE RUN<br><br>
+                    ท้าทายขีดจำกัด
+                    ของตัวเอง
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ROUTE MODAL -->
+
+    <div id="routeModal"
+         class="modal"
+         onclick="closeMap()">
+
+        <span class="close-btn">
+            &times;
+        </span>
+
+        <img class="modal-content"
+             id="routeImage">
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     05. PRICE
+================================================== -->
+
+<section class="section section-white"
+         id="price">
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+
+            💰 ค่าสมัคร
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            บุคคลทั่วไป • ใช้เกณฑ์เดียวกันทุกระยะ
+
+        </p>
+
+
+        <div class="price-table">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            กลุ่มอายุ
+                        </th>
+
+                        <th>
+                            ค่าสมัคร
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            1–12 ปี
+                        </td>
+
+                        <td class="price">
+                            300 บาท
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            13–29 ปี
+                        </td>
+
+                        <td class="price">
+                            500 บาท
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            30–59 ปี
+                        </td>
+
+                        <td class="price">
+                            500 บาท
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            60 ปีขึ้นไป
+                        </td>
+
+                        <td class="price">
+                            500 บาท
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            💎VIP 1-12 ปี  
+                        </td>
+
+                        <td class="price">
+                            1000 บาท
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            💎VIP 13-29 ปี  
+                        </td>
+
+                        <td class="price">
+                            1000 บาท
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            💎VIP 30-59 ปี  
+                        </td>
+
+                        <td class="price">
+                            1000 บาท
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            💎VIP 60 ปีขึ้นไป  
+                        </td>
+
+                        <td class="price">
+                            1000 บาท
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     06. CHECK STATUS
+================================================== -->
+
+<section class="section section-light"
+         id="check-status"
+         style="padding:60px 0;">
+
+    <div class="container">
+
+
+        <div class="vip-box"
+             style="
+                background:white;
+                border:1px solid #e4ebe7;
+                box-shadow:0 10px 30px rgba(10,50,30,.06);
+                padding:40px 20px;
+             ">
+
+
+            <h2 style="
+                color:var(--green);
+                font-size:28px;
+                margin-bottom:5px;
+            ">
+
+                🔍 ค้นหารหัสผู้สมัคร
+
+            </h2>
+
+
+            <p style="
+                color:var(--muted);
+                margin-bottom:20px;
+                font-size:15px;
+            ">
+
+                กรอกเลขประจำตัวประชาชน 13 หลัก
+                เพื่อตรวจสอบรหัส (BIB)
+
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <div style="
+                display:flex;
+                justify-content:center;
+                gap:10px;
+                flex-wrap:wrap;
+            ">
+
+
+                <input
+                    type="text"
+                    id="searchId"
+                    placeholder="เลขบัตรประชาชน 13 หลัก"
+                    maxlength="13"
+
+                    style="
+                        padding:10px 20px;
+                        font-size:15px;
+                        border-radius:50px;
+                        border:2px solid #e4ebe7;
+                        width:100%;
+                        max-width:260px;
+                        font-family:'Kanit',sans-serif;
+                        outline:none;
+                    "
+                >
+
+
+                <button
+                    onclick="checkStatus()"
+                    id="searchBtn"
+                    class="btn btn-normal"
+
+                    style="
+                        cursor:pointer;
+                        border:none;
+                        background:var(--green);
+                        color:white;
+                        padding:10px 25px;
+                        font-size:15px;
+                    "
+                >
+
+                    ค้นหา
+
+                </button>
+
+
+            </div>
+
+
+            <div id="searchResult"
+                 style="
+                    margin-top:15px;
+                    min-height:20px;
+                 ">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     07. SHIRT
+================================================== -->
+
+<section class="section section-white"
+         id="shirt">
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+
+            👕 เสื้อ UBONWIT RUN
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            ตัวอย่างเสื้อสำหรับผู้เข้าร่วมงาน
+
+        </p>
+
+
+        <div class="image-grid">
+
+
+            <!-- POLO -->
+
+            <div class="image-card"
+                 onclick="openShirtGallery('polo',0)"
+                 style="cursor:pointer;">
+
+                <img
+                    src="images/shirt/คอปกด้านหน้า.png"
+                    alt="เสื้อคอปก"
+                >
+
+                <div class="image-caption">
+
+                    <h3>
+                        👔 เสื้อคอปก
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- ROUND -->
+
+            <div class="image-card"
+                 onclick="openShirtGallery('round',0)"
+                 style="cursor:pointer;">
+
+                <img
+                    src="images/shirt/คอกลมด้านหน้า.jpg"
+                    alt="เสื้อคอกลม"
+                >
+
+                <div class="image-caption">
+
+                    <h3>
+                        👕 เสื้อคอกลม
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <br>
+
+
+        <!-- SIZE TABLE -->
+
+        <div class="price-table">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ไซซ์-ผู้ใหญ่
+                        </th>
+
+                        <th>
+                            รอบอก
+                        </th>
+
+                        <th>
+                            ไซซ์-เด็ก
+                        </th>
+
+                        <th>
+                            รอบอก
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <tr>
+
+                        <td>SS</td>
+                        <td>36"</td>
+
+                        <td>S เด็ก</td>
+                        <td>26"</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>S</td>
+                        <td>38"</td>
+
+                        <td>M เด็ก</td>
+                        <td>28"</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>M</td>
+                        <td>40"</td>
+
+                        <td>L เด็ก</td>
+                        <td>30"</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>L</td>
+                        <td>42"</td>
+
+                        <td>XL เด็ก</td>
+                        <td>32"</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>XL</td>
+                        <td>44"</td>
+
+                        <td>—</td>
+                        <td>—</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>2XL</td>
+                        <td>46"</td>
+
+                        <td>—</td>
+                        <td>—</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>3XL</td>
+                        <td>48"</td>
+
+                        <td>—</td>
+                        <td>—</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>4XL</td>
+                        <td>50"</td>
+
+                        <td>—</td>
+                        <td>—</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>5XL</td>
+                        <td>52"</td>
+
+                        <td>—</td>
+                        <td>—</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>6XL</td>
+                        <td>54"</td>
+
+                        <td>—</td>
+                        <td>—</td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     08. AWARDS
+================================================== -->
+
+<section class="section awards-section"
+         id="awards">
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+
+            🏆 รางวัลการแข่งขัน
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            รางวัลสำหรับผู้เข้าเส้นชัยอันดับ 1–3
+
+        </p>
+
+
+
+        <!-- ALL RUNNER -->
+
+        <div class="all-runner-box">
+
+
+            <div class="shirt-info">
+
+                <img
+                    src="images/awards/เหรียญรางวัล.jpg"
+                    alt="เหรียญรางวัล UBONWIT RUN 2026"
+                >
+
+                <p>
+                    เหรียญรางวัล
+                </p>
+
+            </div>
+
+
+            <p>
+
+                ผู้สมัครเข้าร่วมการแข่งขันทุกคน
+                <br>
+
+            </p>
+
+        </div>
+
+
+
+        <!-- MALE -->
+
+        <div class="award-category">
+
+
+            <h3 class="award-category-title">
+
+                👨 ประเภทชาย
+
+            </h3>
+
+
+            <div class="award-grid">
+
+
+                <div class="award-card"
+                     onclick="openAwardGallery('male',0)">
+
+                    <div class="award-rank">
+                        🥇
+                    </div>
+
+                    <img
+                        src="images/awards/รางวัลที่1.png"
+                        alt="รางวัลอันดับ 1 ชาย"
+                    >
+
+                    <h4>
+                        อันดับ 1
+                    </h4>
+
+                    <p>
+                        🏆 ถ้วยรางวัล
+                    </p>
+
+                </div>
+
+
+                <div class="award-card"
+                     onclick="openAwardGallery('male',1)">
+
+                    <div class="award-rank">
+                        🥈
+                    </div>
+
+                    <img
+                        src="images/awards/รางวัลที่2.png"
+                        alt="รางวัลอันดับ 2 ชาย"
+                    >
+
+                    <h4>
+                        อันดับ 2
+                    </h4>
+
+                    <p>
+                        🏆 ถ้วยรางวัล
+                    </p>
+
+                </div>
+
+
+                <div class="award-card"
+                     onclick="openAwardGallery('male',2)">
+
+                    <div class="award-rank">
+                        🥉
+                    </div>
+
+                    <img
+                        src="images/awards/รางวัลที่3.png"
+                        alt="รางวัลอันดับ 3 ชาย"
+                    >
+
+                    <h4>
+                        อันดับ 3
+                    </h4>
+
+                    <p>
+                        🏆 ถ้วยรางวัล
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FEMALE -->
+
+        <div class="award-category">
+
+
+            <h3 class="award-category-title">
+
+                👩 ประเภทหญิง
+
+            </h3>
+
+
+            <div class="award-grid">
+
+
+                <div class="award-card"
+                     onclick="openAwardGallery('female',0)">
+
+                    <div class="award-rank">
+                        🥇
+                    </div>
+
+                    <img
+                        src="images/awards/รางวัลที่1.png"
+                        alt="รางวัลอันดับ 1 หญิง"
+                    >
+
+                    <h4>
+                        อันดับ 1
+                    </h4>
+
+                    <p>
+                        🏆 ถ้วยรางวัล
+                    </p>
+
+                </div>
+
+
+                <div class="award-card"
+                     onclick="openAwardGallery('female',1)">
+
+                    <div class="award-rank">
+                        🥈
+                    </div>
+
+                    <img
+                        src="images/awards/รางวัลที่2.png"
+                        alt="รางวัลอันดับ 2 หญิง"
+                    >
+
+                    <h4>
+                        อันดับ 2
+                    </h4>
+
+                    <p>
+                        🏆 ถ้วยรางวัล
+                    </p>
+
+                </div>
+
+
+                <div class="award-card"
+                     onclick="openAwardGallery('female',2)">
+
+                    <div class="award-rank">
+                        🥉
+                    </div>
+
+                    <img
+                        src="images/awards/รางวัลที่3.png"
+                        alt="รางวัลอันดับ 3 หญิง"
+                    >
+
+                    <h4>
+                        อันดับ 3
+                    </h4>
+
+                    <p>
+                        🏆 ถ้วยรางวัล
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NOTE -->
+
+        <div class="award-note">
+
+            🏆 <strong>รางวัลการแข่งขัน</strong>
+            มอบให้เฉพาะผู้เข้าเส้นชัยอันดับ 1–3
+            ของประเภทชายและหญิงเท่านั้น
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     09. REGISTER PROCESS
+================================================== -->
+
+<section class="section section-white"
+         id="register">
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+
+            📋 ขั้นตอนการสมัคร
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            สมัครง่าย เพียง 4 ขั้นตอน
+
+        </p>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    เลือกประเภท
+                </h3>
+
+                <p>
+                    เลือกสมัคร
+                    บุคคลทั่วไป หรือ VIP
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    กรอกข้อมูล
+                </h3>
+
+                <p>
+                    กรอกข้อมูลการสมัคร
+                    ให้ครบถ้วน
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    ชำระเงิน
+                </h3>
+
+                <p>
+                    โอนเงินตามรายละเอียด
+                    ที่กำหนด
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>
+                    แนบสลิป
+                </h3>
+
+                <p>
+                    อัปโหลดหลักฐาน
+                    การชำระเงิน
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     10. RULES
+================================================== -->
+
+<section class="section section-light">
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+
+            📌 ข้อควรรู้ก่อนสมัคร
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            กรุณาตรวจสอบข้อมูลก่อนยืนยันการสมัคร
+
+        </p>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    📝
+                </div>
+
+                <h3>
+                    ข้อมูล
+                </h3>
+
+                <p>
+                    กรุณากรอกชื่อ
+                    เบอร์โทรศัพท์
+                    และข้อมูลส่วนตัว
+                    ให้ถูกต้อง
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    💳
+                </div>
+
+                <h3>
+                    การชำระเงิน
+                </h3>
+
+                <p>
+                    ตรวจสอบจำนวนเงิน
+                    ก่อนแนบสลิป
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    📱
+                </div>
+
+                <h3>
+                    สลิป
+                </h3>
+
+                <p>
+                    กรุณาแนบสลิป
+                    ที่สามารถตรวจสอบได้
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     11. FAQ
+================================================== -->
+
+<section class="section section-white">
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+
+            ❓ คำถามที่พบบ่อย
+
+        </h2>
+
+
+        <div class="faq">
+
+
+            <details>
+
+                <summary>
+                    สามารถเลือกวิ่งระยะใดได้บ้าง?
+                </summary>
+
+                <p>
+                    สามารถเลือกได้ 3 ระยะ ได้แก่
+                    2.5 KM, 5 KM และ 10 KM
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    สมัครบุคคลทั่วไปกับ VIP ต่างกันอย่างไร?
+                </summary>
+
+                <p>
+                    กรุณาตรวจสอบรายละเอียด
+                    และสิทธิประโยชน์ของแต่ละประเภท
+                    ก่อนสมัคร
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    ชำระเงินอย่างไร?
+                </summary>
+
+                <p>
+                    โอนเงินตามรายละเอียด
+                    ที่ผู้จัดกำหนด
+                    แล้วแนบหลักฐานในแบบฟอร์ม
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    สมัครแล้วต้องทำอย่างไรต่อ?
+                </summary>
+
+                <p>
+                    เจ้าหน้าที่จะตรวจสอบข้อมูล
+                    และหลักฐานการชำระเงิน
+                </p>
+
+            </details>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================================== 12. CONTACT ================================================== -->
+
+<section id="contact" class="section final-section">
+
+<div class="container">
+
+    <div class="contact-box">
+
+        <h2>
+            ติดต่อสอบถาม
+        </h2>
+
+        <p class="contact-subtitle">
+            สอบถามข้อมูลเพิ่มเติมเกี่ยวกับ
+            <br>
+            UBONWIT RUN 2026
+        </p>
+
+
+        <div class="contact-info">
+
+
+            <!-- ผู้ติดต่อ 1 -->
+
+            <details class="contact-item">
+
+                <summary class="contact-label">
+
+                    <span>
+                        👤 นายสุชาติ ธารารย์
+                    </span>
+
+                    <span class="contact-arrow">
+                        
+                    </span>
+
+                </summary>
+
+
+                <div class="contact-details">
+
+                    <p>
+                        🏫 ผู้อำนวยการโรงเรียนอุบลวิทยาคม
+                    </p>
+
+                    <p>
+                        📱 โทรศัพท์ :
+                        <a href="tel:0811862901">
+                            081-186-2901
+                        </a>
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- ผู้ติดต่อ 2 -->
+
+            <details class="contact-item">
+
+                <summary class="contact-label">
+
+                    <span>
+                        👤 นายฤทธิสรรค์ เทพพิทักษ์
+                    </span>
+
+                    <span class="contact-arrow">
+                        
+                    </span>
+
+                </summary>
+
+
+                <div class="contact-details">
+
+                    <p>
+                        🏫 นายกสมาคมศิษย์เก่าโรงเรียนอุบลวิทยาคม
+                    </p>
+
+                    <p>
+                        📱 โทรศัพท์ :
+                        <a href="tel:0811862901">
+                            089-202-2200
+                        </a>
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- ผู้ติดต่อ 3 -->
+
+            <details class="contact-item">
+
+                <summary class="contact-label">
+
+                    <span>
+                        👤 ธุรการโรงเรียนอุบลวิทยาคม
+                    </span>
+
+                    <span class="contact-arrow">
+                        
+                    </span>
+
+                </summary>
+
+
+                <div class="contact-details">
+
+                    <p>
+                        📱 โทรศัพท์ :
+                        <a href="tel:892022200">
+                            045254784
+                        </a>
+                    </p>
+
+                </div>
+
+            </details>
+
+
+        </div>
+
+
+        <p class="contact-footer">
+            ยินดีให้ข้อมูลและตอบทุกข้อสงสัย
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ==================================================
+     13. FOOTER
+================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+
+        <h2>
+            🏃 UBONWIT RUN 2026
+        </h2>
+
+
+        <p>
+            วิ่งเพื่อสุขภาพ ก้าวไปด้วยกัน
+        </p>
+
+
+        <p>
+            📍 โรงเรียนอุบลวิทยาคม
+        </p>
+
+
+        <p>
+            © 2026 UBONWIT RUN & Nanthawat Kalachak
+        </p>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- ==================================================
+     POPUP รหัสผู้สมัคร
+================================================== -->
+
+<div id="registrationPopup"
+     class="registration-popup">
+
+
+    <div class="registration-popup-box">
+
+
+        <div class="popup-icon">
+            🎉
+        </div>
+
+
+        <div class="popup-title">
+            สมัครสำเร็จ!
+        </div>
+
+
+        <div class="popup-subtitle">
+            รหัสผู้สมัครของคุณคือ
+        </div>
+
+
+        <div id="popupRegId"
+             class="popup-reg-id">
+        </div>
+
+
+        <div id="popupDistance"
+             class="popup-distance">
+        </div>
+
+
+        <button
+            onclick="closeRegistrationPopup()"
+            class="popup-close-btn">
+
+            ปิด
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     POPUP แกลเลอรีเสื้อ
+================================================== -->
+
+<div id="shirtGallery"
+     class="shirt-gallery">
+
+
+    <button
+        class="shirt-close"
+        onclick="closeShirtGallery()">
+
+        ×
+
+    </button>
+
+
+    <button
+        class="shirt-prev"
+        onclick="changeShirt(-1)">
+
+        ❮
+
+    </button>
+
+
+    <div class="shirt-gallery-content">
+
+
+        <img
+            id="shirtGalleryImage"
+            src=""
+            alt="เสื้อ UBONWIT RUN"
+        >
+
+
+        <div
+            id="shirtGalleryTitle"
+            class="shirt-gallery-title">
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        class="shirt-next"
+        onclick="changeShirt(1)">
+
+        ❯
+
+    </button>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     POPUP แกลเลอรีรางวัล
+================================================== -->
+
+<div id="awardGallery"
+     class="award-gallery">
+
+
+    <button
+        class="award-close"
+        onclick="closeAwardGallery()">
+
+        ×
+
+    </button>
+
+
+    <button
+        class="award-prev"
+        onclick="changeAward(-1)">
+
+        ❮
+
+    </button>
+
+
+    <div class="award-gallery-content">
+
+
+        <img
+            id="awardGalleryImage"
+            src=""
+            alt="ถ้วยรางวัล"
+        >
+
+
+        <div
+            id="awardGalleryTitle"
+            class="award-gallery-title">
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        class="award-next"
+        onclick="changeAward(1)">
+
+        ❯
+
+    </button>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+
+/* =====================================================
+   AWARD GALLERY
+===================================================== */
+
+var awardGalleries = {
+
+
+    male: [
+
+        {
+            image: "images/awards/รางวัลที่1.png",
+            title: "🥇 อันดับ 1 - ประเภทชาย"
+        },
+
+        {
+            image: "images/awards/รางวัลที่2.png",
+            title: "🥈 อันดับ 2 - ประเภทชาย"
+        },
+
+        {
+            image: "images/awards/รางวัลที่3.png",
+            title: "🥉 อันดับ 3 - ประเภทชาย"
+        }
+
+    ],
+
+
+    female: [
+
+        {
+            image: "images/awards/รางวัลที่1.png",
+            title: "🥇 อันดับ 1 - ประเภทหญิง"
+        },
+
+        {
+            image: "images/awards/รางวัลที่2.png",
+            title: "🥈 อันดับ 2 - ประเภทหญิง"
+        },
+
+        {
+            image: "images/awards/รางวัลที่3.png",
+            title: "🥉 อันดับ 3 - ประเภทหญิง"
+        }
+
+    ]
+
+};
+
+
+var currentAwardGroup = "male";
+
+var currentAward = 0;
+
+
+
+function openAwardGallery(group, index) {
+
+    currentAwardGroup = group;
+
+    currentAward = index;
+
+    showAward();
+
+    document.getElementById("awardGallery")
+        .style.display = "flex";
+
+}
+
+
+
+function showAward() {
+
+    var gallery =
+        awardGalleries[currentAwardGroup];
+
+
+    document.getElementById("awardGalleryImage")
+        .src =
+        gallery[currentAward].image;
+
+
+    document.getElementById("awardGalleryTitle")
+        .innerText =
+        gallery[currentAward].title;
+
+}
+
+
+
+function changeAward(direction) {
+
+    var gallery =
+        awardGalleries[currentAwardGroup];
+
+
+    currentAward += direction;
+
+
+    if (currentAward < 0) {
+
+        currentAward =
+            gallery.length - 1;
+
+    }
+
+
+    if (currentAward >= gallery.length) {
+
+        currentAward = 0;
+
+    }
+
+
+    showAward();
+
+}
+
+
+
+function closeAwardGallery() {
+
+    document.getElementById("awardGallery")
+        .style.display = "none";
+
+}
+
+
+
+/* =====================================================
+   ROUTE MAP
+===================================================== */
+
+function showMap(imageSrc) {
+
+    var modal =
+        document.getElementById("routeModal");
+
+
+    var modalImg =
+        document.getElementById("routeImage");
+
+
+    modal.style.display = "flex";
+
+    modalImg.src = imageSrc;
+
+}
+
+
+
+function closeMap() {
+
+    document.getElementById("routeModal")
+        .style.display = "none";
+
+}
+
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMenu() {
+
+    var menu =
+        document.getElementById("navMenu");
+
+
+    menu.classList.toggle("active");
+
+}
+
+
+
+var navLinks =
+    document.querySelectorAll(".nav-menu a");
+
+
+navLinks.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        var menu =
+            document.getElementById("navMenu");
+
+
+        if (menu.classList.contains("active")) {
+
+            menu.classList.remove("active");
+
+        }
+
+    });
+
+});
+
+
+
+/* =====================================================
+   SEARCH STATUS
+===================================================== */
+
+function checkStatus() {
+
+    var searchId =
+        document.getElementById("searchId")
+        .value
+        .trim();
+
+
+    var resultDiv =
+        document.getElementById("searchResult");
+
+
+    var btn =
+        document.getElementById("searchBtn");
+
+
+    /* ==========================================
+       ไม่ได้กรอกเลขบัตร
+    ========================================== */
+
+    if (searchId === "") {
+
+        Swal.fire({
+
+            icon: "warning",
+
+            title: "กรุณากรอกข้อมูล",
+
+            text: "กรุณากรอกเลขประจำตัวประชาชนก่อนค้นหา",
+
+            confirmButtonText: "ตกลง",
+
+            confirmButtonColor: "#198754",
+
+            backdrop: "rgba(0,0,0,0.45)",
+
+            customClass: {
+                popup: "swal2-rounded"
+            }
+
+        });
+
+
+        resultDiv.innerHTML =
+            "<p style='color:red;'>⚠️ กรุณากรอกเลขประจำตัวประชาชนครับ</p>";
+
+        return;
+
+    }
+
+
+    /* ==========================================
+       เลขบัตรไม่ครบ 13 หลัก
+    ========================================== */
+
+    if (!/^\d{13}$/.test(searchId)) {
+
+        Swal.fire({
+
+            icon: "error",
+
+            title: "เลขประจำตัวไม่ถูกต้อง",
+
+            html:
+                "กรุณากรอกเลขประจำตัวประชาชน<br>" +
+                "<strong>ให้ครบ 13 หลัก</strong>",
+
+            confirmButtonText: "ตกลง",
+
+            confirmButtonColor: "#dc3545",
+
+            backdrop: "rgba(0,0,0,0.45)",
+
+            customClass: {
+                popup: "swal2-rounded"
+            }
+
+        });
+
+
+        resultDiv.innerHTML =
+            "<p style='color:red;'>⚠️ กรุณากรอกเลขประจำตัวประชาชนให้ครบ 13 หลัก</p>";
+
+        return;
+
+    }
+
+
+    /* ==========================================
+       กำลังค้นหา
+    ========================================== */
+
+    btn.innerHTML =
+        "กำลังค้นหา...";
+
+    btn.disabled =
+        true;
+
+
+    resultDiv.innerHTML =
+        "";
+
+
+    var webAppUrl =
+        "https://script.google.com/macros/s/AKfycbxsjJpnPtU4ECGJs8KYk3ItHsDTHf62TtzLuLUW5T24SmSjA29frsXeGy2fSynvy0yv/exec";
+
+
+    fetch(
+    webAppUrl +
+    "?id=" +
+    encodeURIComponent(searchId) +
+    "&t=" +
+    Date.now()
+)
+
+
+    .then(function(response) {
+
+        if (!response.ok) {
+
+            throw new Error(
+                "HTTP Error " +
+                response.status
+            );
+
+        }
+
+        return response.json();
+
+    })
+
+
+    .then(function(data) {
+
+        btn.innerHTML =
+            "ค้นหา";
+
+        btn.disabled =
+            false;
+
+
+        /* ==========================================
+           FOUND
+        ========================================== */
+
+        if (data.status === "success") {
+
+
+            /* ==========================================
+               🎉 ดอกไม้ไฟ
+            ========================================== */
+
+            var duration = 3500;
+
+            var animationEnd =
+                Date.now() + duration;
+
+
+            var interval =
+                setInterval(function() {
+
+                    var timeLeft =
+                        animationEnd - Date.now();
+
+
+                    if (timeLeft <= 0) {
+
+                        clearInterval(interval);
+
+                        return;
+
+                    }
+
+
+                    confetti({
+
+                        particleCount: 10,
+
+                        startVelocity: 30,
+
+                        spread: 360,
+
+                        ticks: 60,
+
+                        origin: {
+
+                            x: Math.random(),
+
+                            y: Math.random() * 0.5
+
+                        }
+
+                    });
+
+                }, 180);
+
+
+            /* ==========================================
+               🎉 แจ้งเตือนพบข้อมูล
+            ========================================== */
+
+            Swal.fire({
+
+                icon: "success",
+
+                title: "🎉 พบข้อมูลการสมัครแล้ว!",
+
+                html: `
+
+                    <div style="
+                        text-align:left;
+                        background:#f3faf6;
+                        padding:18px;
+                        border-radius:16px;
+                        margin-top:10px;
+                    ">
+
+                        <div style="
+                            text-align:center;
+                            font-size:14px;
+                            color:#777;
+                            margin-bottom:5px;
+                        ">
+
+                            🎟️ รหัสผู้สมัคร
+
+                        </div>
+
+
+                        <div style="
+                            text-align:center;
+                            font-size:30px;
+                            font-weight:bold;
+                            color:#198754;
+                            margin-bottom:18px;
+                        ">
+
+                            ${data.regId || "-"}
+
+                        </div>
+
+
+                        <div style="margin-bottom:8px;">
+
+                            👤 <strong>ชื่อ-นามสกุล</strong><br>
+
+                            <span style="color:#555;">
+
+                                ${data.name || "-"}
+
+                            </span>
+
+                        </div>
+
+
+                        <div style="margin-bottom:8px;">
+
+                            📞 <strong>เบอร์โทรศัพท์</strong><br>
+
+                            <span style="color:#555;">
+
+                                ${data.phone || "-"}
+
+                            </span>
+
+                        </div>
+
+
+                        <div style="margin-bottom:8px;">
+
+                            ⚧️ <strong>เพศ</strong><br>
+
+                            <span style="color:#555;">
+
+                                ${data.gender || "-"}
+
+                            </span>
+
+                        </div>
+
+
+                        <div style="margin-bottom:8px;">
+
+                            👕 <strong>ไซซ์เสื้อ</strong><br>
+
+                            <span style="color:#555;">
+
+                                ${data.shirtSize || "-"}
+
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            🏃 <strong>ระยะวิ่ง</strong><br>
+
+                            <span style="color:#555;">
+
+                                ${data.distance || "-"}
+
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                `,
+
+                confirmButtonText: "เรียบร้อย 🎉",
+
+                confirmButtonColor: "#198754",
+
+                width: "500px",
+
+                backdrop: "rgba(0,0,0,0.5)",
+
+                customClass: {
+
+                    popup: "swal2-rounded"
+
+                }
+
+            });
+
+
+            /* ==========================================
+               แสดงข้อมูลใต้ช่องค้นหา
+            ========================================== */
+
+            resultDiv.innerHTML = `
+
+                <div style="
+                    background:#f3faf6;
+                    padding:20px;
+                    border-radius:20px;
+                    border:1px solid #d8eadf;
+                    width:100%;
+                    max-width:500px;
+                    margin:0 auto;
+                    box-shadow:0 8px 25px rgba(0,0,0,0.05);
+                    text-align:left;
+                ">
+
+
+                    <div style="
+                        text-align:center;
+                        color:#777;
+                        font-size:14px;
+                        margin-bottom:5px;
+                    ">
+
+                        🎟️ รหัสผู้สมัคร
+
+                    </div>
+
+
+                    <div style="
+                        text-align:center;
+                        color:var(--green);
+                        font-size:30px;
+                        font-weight:bold;
+                        margin-bottom:20px;
+                    ">
+
+                        ${data.regId || "-"}
+
+                    </div>
+
+
+                    <div style="
+                        display:grid;
+                        gap:10px;
+                    ">
+
+
+                        <!-- ชื่อ -->
+
+                        <div style="
+                            background:white;
+                            padding:12px 15px;
+                            border-radius:12px;
+                        ">
+
+                            👤 <strong>ชื่อ-นามสกุล</strong>
+
+                            <div style="
+                                margin-top:3px;
+                                color:#555;
+                            ">
+
+                                ${data.name || "-"}
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- เบอร์โทร -->
+
+                        <div style="
+                            background:white;
+                            padding:12px 15px;
+                            border-radius:12px;
+                        ">
+
+                            📞 <strong>เบอร์โทรศัพท์</strong>
+
+                            <div style="
+                                margin-top:3px;
+                                color:#555;
+                            ">
+
+                                ${data.phone || "-"}
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- เพศ -->
+
+                        <div style="
+                            background:white;
+                            padding:12px 15px;
+                            border-radius:12px;
+                        ">
+
+                            ⚧️ <strong>เพศ</strong>
+
+                            <div style="
+                                margin-top:3px;
+                                color:#555;
+                            ">
+
+                                ${data.gender || "-"}
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ไซซ์เสื้อ -->
+
+                        <div style="
+                            background:white;
+                            padding:12px 15px;
+                            border-radius:12px;
+                        ">
+
+                            👕 <strong>ไซซ์เสื้อ</strong>
+
+                            <div style="
+                                margin-top:3px;
+                                color:#555;
+                            ">
+
+                                ${data.shirtSize || "-"}
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ระยะวิ่ง -->
+
+                        <div style="
+                            background:white;
+                            padding:12px 15px;
+                            border-radius:12px;
+                        ">
+
+                            🏃 <strong>ระยะวิ่ง</strong>
+
+                            <div style="
+                                margin-top:3px;
+                                color:#555;
+                            ">
+
+                                ${data.distance || "-"}
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div style="
+                        margin-top:15px;
+                        text-align:center;
+                        color:#777;
+                        font-size:13px;
+                    ">
+
+                        ✓ พบข้อมูลการสมัครของคุณแล้ว
+
+                    </div>
+
+
+                </div>
+
+            `;
+
+
+            /* ==========================================
+               POPUP เดิม
+            ========================================== */
+
+            document.getElementById("popupRegId")
+                .innerText =
+                data.regId || "-";
+
+
+            document.getElementById("popupDistance")
+                .innerText =
+                "ระยะวิ่งที่สมัคร: " +
+                (data.distance || "-");
+
+
+            document.getElementById("registrationPopup")
+                .style.display =
+                "flex";
+
+
+        }
+
+
+        /* ==========================================
+           NOT FOUND
+        ========================================== */
+
+        else if (data.status === "not_found") {
+
+            resultDiv.innerHTML =
+                "<p style='color:red;'>❌ ไม่พบข้อมูลการสมัครจากเลขบัตรประชาชนนี้</p>";
+
+
+            Swal.fire({
+
+                icon: "info",
+
+                title: "🔎 ไม่พบข้อมูล",
+
+                html: `
+                    ไม่พบข้อมูลการสมัครจากเลขประจำตัวประชาชนนี้<br>
+
+                    <span style="color:#777;">
+                        กรุณาตรวจสอบเลขประจำตัวประชาชนอีกครั้ง
+                    </span>
+                `,
+
+                confirmButtonText: "ลองใหม่",
+
+                confirmButtonColor: "#198754",
+
+                backdrop: "rgba(0,0,0,0.45)",
+
+                customClass: {
+                    popup: "swal2-rounded"
+                }
+
+            });
+
+        }
+
+
+        /* ==========================================
+           ERROR
+        ========================================== */
+
+        else {
+
+            resultDiv.innerHTML =
+                "<p style='color:red;'>⚠️ เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง</p>";
+
+
+            Swal.fire({
+
+                icon: "error",
+
+                title: "⚠️ เกิดข้อผิดพลาด",
+
+                text: "กรุณาลองใหม่อีกครั้ง",
+
+                confirmButtonText: "ตกลง",
+
+                confirmButtonColor: "#dc3545",
+
+                backdrop: "rgba(0,0,0,0.45)",
+
+                customClass: {
+                    popup: "swal2-rounded"
+                }
+
+            });
+
+        }
+
+    })
+
+
+    /* ==========================================
+       CONNECTION ERROR
+    ========================================== */
+
+    .catch(function(error) {
+
+
+        console.error(
+            "Search Error:",
+            error
+        );
+
+
+        btn.innerHTML =
+            "ค้นหา";
+
+
+        btn.disabled =
+            false;
+
+
+        resultDiv.innerHTML =
+            "<p style='color:red;'>⚠️ ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้</p>";
+
+
+        Swal.fire({
+
+            icon: "error",
+
+            title: "🌐 เชื่อมต่อไม่ได้",
+
+            html: `
+                ไม่สามารถเชื่อมต่อกับระบบได้<br>
+
+                <span style="color:#777;">
+                    กรุณาตรวจสอบอินเทอร์เน็ต<br>
+                    แล้วลองใหม่อีกครั้ง
+                </span>
+            `,
+
+            confirmButtonText: "ลองใหม่",
+
+            confirmButtonColor: "#dc3545",
+
+            backdrop: "rgba(0,0,0,0.45)",
+
+            customClass: {
+                popup: "swal2-rounded"
+            }
+
+        });
+
+    });
+
+}
+
+
+
+/* =====================================================
+   CLOSE REGISTRATION POPUP
+===================================================== */
+
+function closeRegistrationPopup() {
+
+    document.getElementById("registrationPopup")
+        .style.display =
+        "none";
+
+}
+
+
+
+/* =====================================================
+   SHIRT GALLERY
+===================================================== */
+
+var shirtGalleries = {
+
+
+    polo: [
+
+        {
+            image: "images/shirt/คอปกด้านหน้า.png",
+            title: "👔 เสื้อคอปก - ด้านหน้า"
+        },
+
+        {
+            image: "images/shirt/คอปกด้านหลัง.png",
+            title: "👔 เสื้อคอปก - ด้านหลัง"
+        }
+
+    ],
+
+
+    round: [
+
+        {
+            image: "images/shirt/คอกลมด้านหน้า.jpg",
+            title: "👕 เสื้อคอกลม - ด้านหน้า"
+        },
+
+        {
+            image: "images/shirt/คอกลมด้านหลัง.jpg",
+            title: "👕 เสื้อคอกลม - ด้านหลัง"
+        }
+
+    ]
+
+};
+
+
+var currentShirtGroup =
+    "polo";
+
+
+var currentShirt =
+    0;
+
+
+
+function openShirtGallery(group, index) {
+
+    currentShirtGroup =
+        group;
+
+
+    currentShirt =
+        index;
+
+
+    showShirt();
+
+
+    document.getElementById("shirtGallery")
+        .style.display =
+        "flex";
+
+}
+
+
+
+function showShirt() {
+
+    var gallery =
+        shirtGalleries[currentShirtGroup];
+
+
+    document.getElementById("shirtGalleryImage")
+        .src =
+        gallery[currentShirt].image;
+
+
+    document.getElementById("shirtGalleryTitle")
+        .innerText =
+        gallery[currentShirt].title;
+
+}
+
+
+
+function changeShirt(direction) {
+
+    var gallery =
+        shirtGalleries[currentShirtGroup];
+
+
+    currentShirt += direction;
+
+
+    if (currentShirt < 0) {
+
+        currentShirt =
+            gallery.length - 1;
+
+    }
+
+
+    if (currentShirt >= gallery.length) {
+
+        currentShirt = 0;
+
+    }
+
+
+    showShirt();
+
+}
+
+
+
+function closeShirtGallery() {
+
+    document.getElementById("shirtGallery")
+        .style.display =
+        "none";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

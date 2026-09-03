@@ -1,0 +1,2643 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --green-dark: #032d20;
+    --green: #08734d;
+    --green-light: #0da66b;
+    --gold: #ffd84d;
+
+    --white: #ffffff;
+    --bg: #f4f7f5;
+
+    --text: #17221d;
+    --muted: #718078;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: 'Kanit', sans-serif;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: min(1150px, 90%);
+    margin: auto;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+
+    width: 100%; 
+
+    z-index: 1001; 
+
+    padding: 15px 0;
+
+    background: rgba(3, 45, 32, 0.85);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 40px;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.logo-img {
+    width: auto;
+    height: 40px;
+
+    object-fit: contain;
+}
+
+
+/* MENU */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: white;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    opacity: .85;
+
+    transition: .3s;
+}
+
+.nav-menu a:hover {
+    color: var(--gold);
+    opacity: 1;
+}
+
+
+/* HAMBURGER */
+
+.menu-toggle {
+    display: none;
+
+    color: white;
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,216,77,.25),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(0,255,170,.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #032d20,
+            #08734d,
+            #0da66b
+        );
+}
+
+
+/* HERO DECORATION */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    top: -250px;
+    right: -150px;
+
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    bottom: -220px;
+    left: -120px;
+
+    pointer-events: none;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    padding: 230px 0 80px;
+
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.12);
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    margin-bottom: 25px;
+
+    font-size: 14px;
+}
+
+.hero-title {
+    font-size: clamp(55px, 9vw, 110px);
+
+    line-height: .95;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 12px 35px rgba(0,0,0,.3);
+
+    margin-bottom: 20px;
+}
+
+.hero-title span {
+    color: var(--gold);
+}
+
+.hero-subtitle {
+    font-size: clamp(20px, 3vw, 28px);
+
+    margin-bottom: 15px;
+}
+
+.hero-description {
+    max-width: 700px;
+
+    margin: auto;
+
+    opacity: .85;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   TOP LOGO
+========================================================= */
+
+.top-logo {
+    position: absolute;
+
+    top: 85px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 1000;
+
+    width: 130px;
+    height: 130px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    border:
+        5px solid rgba(255,255,255,0.8);
+}
+
+.top-logo img {
+    width: 95px;
+    height: 95px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   HERO INFO
+========================================================= */
+
+.hero-info {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin: 35px 0;
+}
+
+.info-card {
+    min-width: 180px;
+
+    padding: 16px 22px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.1);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.15);
+}
+
+.info-card strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 30px;
+
+    min-height: 52px;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.2);
+}
+
+.btn:hover {
+    transform:
+        translateY(-5px)
+        scale(1.03);
+}
+
+.btn-normal {
+    background: white;
+
+    color: var(--green);
+}
+
+.btn-vip {
+    background:
+        linear-gradient(
+            135deg,
+            #ffe66d,
+            #ffc928
+        );
+
+    color: #3c3000;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-light {
+    background: var(--bg);
+}
+
+.section-white {
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+
+    font-size: 42px;
+
+    color: var(--green);
+
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+
+    color: var(--muted);
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px, 1fr)
+        );
+
+    gap: 25px;
+}
+
+.card {
+    position: relative;
+
+    background: white;
+
+    padding: 40px 30px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    border:
+        1px solid #e4ebe7;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 45px rgba(10,50,30,.08);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.card:hover {
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 25px 65px rgba(10,50,30,.15);
+}
+
+.card-icon {
+    font-size: 48px;
+
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 32px;
+
+    color: var(--green);
+
+    margin-bottom: 5px;
+}
+
+.card p {
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PRICE TABLE
+========================================================= */
+
+.price-table {
+    max-width: 850px;
+
+    margin: auto;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.08);
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+}
+
+th {
+    background: var(--green);
+
+    color: white;
+
+    padding: 20px;
+
+    font-size: 18px;
+
+    white-space: nowrap;
+}
+
+td {
+    padding: 18px;
+
+    text-align: center;
+
+    border-bottom:
+        1px solid #edf1ef;
+}
+
+tr:hover td {
+    background: #f3faf6;
+}
+
+.price {
+    color: var(--green);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SHIRT IMAGE
+========================================================= */
+
+.image-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap: 25px;
+}
+
+.image-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.10);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.image-card:hover {
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.15);
+}
+
+.image-card img {
+    width: 100%;
+
+    height: 350px;
+
+    object-fit: contain;
+
+    padding: 20px;
+
+    background: white;
+
+    transition:
+        transform .5s ease;
+}
+
+.image-card:hover img {
+    transform:
+        scale(1.05);
+}
+
+.image-caption {
+    text-align: center;
+
+    padding:
+        18px 15px 22px;
+
+    border-top:
+        1px solid #edf1ef;
+}
+
+.image-caption h3 {
+    color: var(--green);
+
+    font-size: 23px;
+
+    margin-bottom: 3px;
+}
+
+.image-caption p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   VIP
+========================================================= */
+
+.vip-section {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255,215,0,.25),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff9db,
+            #ffeaa0
+        );
+}
+
+.vip-box {
+    max-width: 750px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 60px 35px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border:
+        1px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        0 25px 70px rgba(130,100,0,.15);
+}
+
+.vip-icon {
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+.vip-box h2 {
+    font-size: 45px;
+
+    color: #8b6900;
+
+    margin-bottom: 15px;
+}
+
+.vip-box p {
+    color: #665a2d;
+
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(210px,1fr)
+        );
+
+    gap: 25px;
+}
+
+.step {
+    background: white;
+
+    padding: 30px 20px;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.07);
+}
+
+.step-number {
+    width: 55px;
+    height: 55px;
+
+    margin:
+        0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 20px rgba(0,90,60,.25);
+}
+
+.step h3 {
+    color: var(--green);
+
+    margin-bottom: 8px;
+}
+
+.step p {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+details {
+    background: white;
+
+    padding: 20px 25px;
+
+    margin-bottom: 15px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.06);
+}
+
+summary {
+    cursor: pointer;
+
+    font-weight: 600;
+
+    color: var(--green);
+}
+
+details p {
+    margin-top: 15px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-section {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #064d36,
+            #079261
+        );
+
+    color: white;
+}
+
+.final-section h2 {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+.final-section p {
+    opacity: .85;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: var(--green-dark);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+.footer p {
+    opacity: .65;
+
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   ROUTE MAP MODAL
+========================================================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,.85);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    display: block;
+
+    max-width: 92vw;
+    max-height: 82vh;
+
+    width: auto;
+    height: auto;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.5);
+
+    animation:
+        zoomIn .3s ease;
+}
+
+.close-btn {
+    position: absolute;
+
+    top: 15px;
+    right: 25px;
+
+    color: white;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes zoomIn {
+
+    from {
+        transform: scale(.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   REGISTRATION POPUP
+========================================================= */
+
+.registration-popup {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(0,0,0,.65);
+
+    z-index: 9999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.registration-popup-box {
+    background: white;
+
+    width: 100%;
+
+    max-width: 550px;
+
+    border-radius: 25px;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.3);
+
+    animation:
+        popupShow .3s ease;
+}
+
+.popup-icon {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+.popup-title {
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #333;
+
+    margin-bottom: 15px;
+}
+
+.popup-subtitle {
+    font-size: 18px;
+
+    color: #666;
+
+    margin-bottom: 8px;
+}
+
+.popup-reg-id {
+    font-size: 52px;
+
+    font-weight: 900;
+
+    color: #16834b;
+
+    letter-spacing: 2px;
+
+    margin: 15px 0;
+
+    overflow-wrap: anywhere;
+}
+
+.popup-distance {
+    font-size: 20px;
+
+    color: #555;
+
+    margin-bottom: 25px;
+}
+
+.popup-close-btn {
+    width: 100%;
+
+    max-width: 300px;
+
+    padding: 15px 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #16834b;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.popup-close-btn:hover {
+    transform:
+        translateY(-2px);
+
+    opacity: .9;
+}
+
+@keyframes popupShow {
+
+    from {
+        opacity: 0;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   SHIRT GALLERY
+========================================================= */
+
+.shirt-gallery {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(0,0,0,.88);
+
+    z-index: 99999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    overflow: hidden;
+}
+
+.shirt-gallery-content {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 800px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.shirt-gallery-content img {
+    display: block;
+
+    width: auto;
+
+    max-width: 90vw;
+
+    height: auto;
+
+    max-height: 75vh;
+
+    object-fit: contain;
+
+    margin: auto;
+
+    border-radius: 15px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.4);
+}
+
+.shirt-gallery-title {
+    width: 100%;
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+
+    text-align: center;
+}
+
+.shirt-close {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #333;
+
+    font-size: 35px;
+
+    cursor: pointer;
+
+    z-index: 100001;
+}
+
+.shirt-prev,
+.shirt-next {
+    position: absolute;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #16834b;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    z-index: 100001;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.3);
+}
+
+.shirt-prev {
+    left: 30px;
+}
+
+.shirt-next {
+    right: 30px;
+}
+
+
+/* =========================================================
+   AWARDS
+========================================================= */
+
+.awards-section {
+    background: #f7f9fb;
+}
+
+.all-runner-box {
+    max-width: 700px;
+
+    margin:
+        0 auto 50px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+}
+
+.all-runner-icon {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+.all-runner-box h3 {
+    font-size: 26px;
+
+    margin-bottom: 10px;
+}
+
+.all-runner-box p {
+    margin: 0;
+
+    line-height: 1.8;
+}
+
+
+/* AWARD CATEGORY */
+
+.award-category {
+    margin-top: 50px;
+}
+
+.award-category-title {
+    text-align: center;
+
+    font-size: 30px;
+
+    margin-bottom: 30px;
+}
+
+
+/* AWARD GRID */
+
+.award-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+.award-card {
+    position: relative;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.08);
+}
+
+.award-card:hover {
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.15);
+}
+
+.award-card img {
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    margin-bottom: 15px;
+}
+
+.award-rank {
+    font-size: 45px;
+
+    margin-bottom: 5px;
+}
+
+.award-card h4 {
+    font-size: 24px;
+
+    margin: 5px 0;
+}
+
+.award-card p {
+    margin: 0;
+
+    font-size: 16px;
+}
+
+
+/* AWARD NOTE */
+
+.award-note {
+    max-width: 850px;
+
+    margin:
+        50px auto 0;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 15px;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   AWARD GALLERY
+========================================================= */
+
+.award-gallery {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(0,0,0,.90);
+
+    z-index: 99999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    overflow: hidden;
+}
+
+.award-gallery-content {
+    width: 100%;
+
+    max-width: 800px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.award-gallery-content img {
+    display: block;
+
+    max-width: 90vw;
+    max-height: 75vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.5);
+}
+
+.award-gallery-title {
+    color: white;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin-top: 18px;
+
+    text-align: center;
+}
+
+
+/* AWARD BUTTONS */
+
+.award-close {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #333;
+
+    font-size: 35px;
+
+    cursor: pointer;
+
+    z-index: 100001;
+}
+
+.award-prev,
+.award-next {
+    position: absolute;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #16834b;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    z-index: 100001;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.3);
+}
+
+.award-prev {
+    left: 30px;
+}
+
+.award-next {
+    right: 30px;
+}
+
+
+/* =========================================================
+   MOBILE
+   หน้าจอ 700px ลงมา
+========================================================= */
+
+@media (max-width: 700px) {
+
+
+    /* -----------------------------------------
+       CONTAINER
+    ----------------------------------------- */
+
+    .container {
+        width: min(92%, 1150px);
+    }
+
+
+    /* -----------------------------------------
+       NAVBAR
+    ----------------------------------------- */
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-inner {
+        min-height: 42px;
+    }
+
+    .logo {
+        font-size: 16px;
+
+        gap: 7px;
+    }
+
+    .logo-img {
+        height: 34px;
+    }
+
+    .menu-toggle {
+        display: block;
+
+        padding: 5px 8px;
+    }
+
+    .nav-menu {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 8px 0 15px;
+
+        background:
+            rgba(3,45,32,.98);
+
+        backdrop-filter:
+            blur(18px);
+
+        -webkit-backdrop-filter:
+            blur(18px);
+
+        border-bottom:
+            1px solid rgba(255,255,255,.1);
+
+        box-shadow:
+            0 10px 25px rgba(0,0,0,.2);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+
+        padding: 11px 20px;
+
+        font-size: 17px !important;
+
+        text-align: center;
+
+        opacity: 1;
+    }
+
+    .nav-menu a:hover {
+        background:
+            rgba(255,255,255,.08);
+    }
+
+
+    /* -----------------------------------------
+       TOP LOGO
+    ----------------------------------------- */
+
+    .top-logo {
+        top: 70px;
+
+        width: 95px;
+        height: 95px;
+
+        border-width: 4px;
+    }
+
+    .top-logo img {
+        width: 68px;
+        height: 68px;
+    }
+
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .hero {
+        min-height: auto;
+
+        padding-bottom: 0;
+    }
+
+    .hero-content {
+        padding:
+            175px 0 60px;
+    }
+
+    .hero-badge {
+        padding:
+            7px 14px;
+
+        margin-bottom: 18px;
+
+        font-size: 12px;
+
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size:
+            clamp(42px, 14vw, 62px);
+
+        letter-spacing:
+            1px;
+
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+
+        margin-bottom: 10px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+
+        line-height: 1.8;
+
+        max-width: 360px;
+
+        padding: 0 5px;
+    }
+
+
+    /* -----------------------------------------
+       HERO INFO
+    ----------------------------------------- */
+
+    .hero-info {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+
+        margin:
+            25px 0;
+    }
+
+    .info-card {
+        width: 100%;
+
+        max-width: 330px;
+
+        min-width: 0;
+
+        padding:
+            13px 15px;
+
+        border-radius: 15px;
+
+        font-size: 14px;
+    }
+
+    .info-card strong {
+        font-size: 16px;
+    }
+
+
+    /* -----------------------------------------
+       BUTTON
+    ----------------------------------------- */
+
+    .buttons {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+
+        max-width: 340px;
+
+        min-height: 50px;
+
+        padding:
+            13px 20px;
+
+        font-size: 16px;
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+
+
+    /* -----------------------------------------
+       SECTION
+    ----------------------------------------- */
+
+    .section {
+        padding:
+            65px 0;
+    }
+
+    .section-title {
+        font-size: 30px;
+
+        line-height: 1.3;
+
+        margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* -----------------------------------------
+       CARDS
+    ----------------------------------------- */
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .card {
+        padding:
+            28px 20px;
+
+        border-radius: 20px;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+
+    .card-icon {
+        font-size: 42px;
+
+        margin-bottom: 8px;
+    }
+
+    .card h3 {
+        font-size: 27px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------
+       PRICE TABLE
+    ----------------------------------------- */
+
+    .price-table {
+        width: 100%;
+
+        border-radius: 15px;
+
+        overflow-x: auto;
+    }
+
+    .price-table table {
+        min-width: 480px;
+    }
+
+    th {
+        padding:
+            14px 12px;
+
+        font-size: 15px;
+    }
+
+    td {
+        padding:
+            13px 12px;
+
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------
+       SHIRT
+    ----------------------------------------- */
+
+    .image-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .image-card {
+        border-radius: 20px;
+    }
+
+    .image-card:hover {
+        transform: none;
+    }
+
+    .image-card img {
+        height: 280px;
+
+        padding: 15px;
+    }
+
+    .image-card:hover img {
+        transform: none;
+    }
+
+    .image-caption {
+        padding:
+            14px 10px 18px;
+    }
+
+    .image-caption h3 {
+        font-size: 20px;
+    }
+
+
+    /* -----------------------------------------
+       VIP / SEARCH BOX
+    ----------------------------------------- */
+
+    .vip-box {
+        padding:
+            35px 18px;
+
+        border-radius: 22px;
+    }
+
+    .vip-box h2 {
+        font-size: 30px;
+
+        line-height: 1.3;
+    }
+
+    .vip-box p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------
+       STEPS
+    ----------------------------------------- */
+
+    .steps {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .step {
+        padding:
+            25px 18px;
+
+        border-radius: 18px;
+    }
+
+
+    /* -----------------------------------------
+       FAQ
+    ----------------------------------------- */
+
+    details {
+        padding:
+            16px 18px;
+
+        border-radius: 14px;
+    }
+
+    summary {
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+    details p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------
+       FINAL CTA
+    ----------------------------------------- */
+
+    .final-section h2 {
+        font-size: 34px;
+    }
+
+    .final-section p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    .footer {
+        padding:
+            35px 15px;
+    }
+
+    .footer h2 {
+        font-size: 22px;
+    }
+
+
+    /* -----------------------------------------
+       MAP MODAL
+    ----------------------------------------- */
+
+    .modal {
+        padding: 12px;
+    }
+
+    .modal-content {
+        max-width: 94vw;
+
+        max-height: 78vh;
+
+        border-radius: 8px;
+    }
+
+    .close-btn {
+        top: 8px;
+        right: 15px;
+
+        font-size: 38px;
+    }
+
+
+    /* -----------------------------------------
+       REGISTRATION POPUP
+    ----------------------------------------- */
+
+    .registration-popup {
+        padding: 15px;
+    }
+
+    .registration-popup-box {
+        padding:
+            30px 18px;
+
+        border-radius: 20px;
+    }
+
+    .popup-icon {
+        font-size: 45px;
+    }
+
+    .popup-title {
+        font-size: 24px;
+    }
+
+    .popup-subtitle {
+        font-size: 15px;
+    }
+
+    .popup-reg-id {
+        font-size:
+            clamp(32px, 10vw, 48px);
+
+        letter-spacing: 1px;
+
+        line-height: 1.2;
+    }
+
+    .popup-distance {
+        font-size: 16px;
+    }
+
+    .popup-close-btn {
+        font-size: 16px;
+
+        padding:
+            13px 20px;
+    }
+
+
+    /* -----------------------------------------
+       SHIRT GALLERY
+    ----------------------------------------- */
+
+    .shirt-gallery {
+        padding: 12px;
+    }
+
+    .shirt-gallery-content img {
+        max-width: 84vw;
+
+        max-height: 68vh;
+
+        border-radius: 12px;
+    }
+
+    .shirt-gallery-title {
+        font-size: 18px;
+
+        margin-top: 12px;
+    }
+
+    .shirt-close {
+        top: 10px;
+        right: 10px;
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 30px;
+    }
+
+    .shirt-prev,
+    .shirt-next {
+        width: 44px;
+        height: 44px;
+
+        font-size: 20px;
+    }
+
+    .shirt-prev {
+        left: 8px;
+    }
+
+    .shirt-next {
+        right: 8px;
+    }
+
+
+    /* -----------------------------------------
+       AWARDS
+    ----------------------------------------- */
+
+    .all-runner-box {
+        margin-bottom: 35px;
+
+        padding:
+            25px 18px;
+
+        border-radius: 18px;
+    }
+
+    .all-runner-icon {
+        font-size: 48px;
+    }
+
+    .all-runner-box h3 {
+        font-size: 22px;
+    }
+
+    .all-runner-box p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .award-category {
+        margin-top: 35px;
+    }
+
+    .award-category-title {
+        font-size: 25px;
+
+        margin-bottom: 20px;
+    }
+
+    .award-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 400px;
+
+        gap: 15px;
+    }
+
+    .award-card {
+        padding: 15px;
+
+        border-radius: 18px;
+    }
+
+    .award-card:hover {
+        transform: none;
+    }
+
+    .award-card img {
+        height: 230px;
+
+        margin-bottom: 10px;
+    }
+
+    .award-rank {
+        font-size: 38px;
+    }
+
+    .award-card h4 {
+        font-size: 21px;
+    }
+
+    .award-card p {
+        font-size: 14px;
+    }
+
+    .award-note {
+        margin-top: 35px;
+
+        padding:
+            16px 14px;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    /* -----------------------------------------
+       AWARD GALLERY
+    ----------------------------------------- */
+
+    .award-gallery {
+        padding: 12px;
+    }
+
+    .award-gallery-content img {
+        max-width: 84vw;
+
+        max-height: 68vh;
+
+        border-radius: 12px;
+    }
+
+    .award-gallery-title {
+        font-size: 18px;
+
+        margin-top: 12px;
+    }
+
+    .award-close {
+        top: 10px;
+        right: 10px;
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 30px;
+    }
+
+    .award-prev,
+    .award-next {
+        width: 44px;
+        height: 44px;
+
+        font-size: 20px;
+    }
+
+    .award-prev {
+        left: 8px;
+    }
+
+    .award-next {
+        right: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   หน้าจอ 480px ลงมา
+========================================================= */
+
+@media (max-width: 480px) {
+
+
+    .container {
+        width: 92%;
+    }
+
+
+    /* NAVBAR */
+
+    .logo {
+        font-size: 14px;
+    }
+
+    .logo-img {
+        height: 30px;
+    }
+
+
+    /* TOP LOGO */
+
+    .top-logo {
+        top: 67px;
+
+        width: 88px;
+        height: 88px;
+
+        border-width: 4px;
+    }
+
+    .top-logo img {
+        width: 62px;
+        height: 62px;
+    }
+
+
+    /* HERO */
+
+    .hero-content {
+        padding:
+            160px 0 50px;
+    }
+
+    .hero-badge {
+        font-size: 11px;
+
+        padding:
+            6px 11px;
+    }
+
+    .hero-title {
+        font-size:
+            clamp(38px, 13vw, 54px);
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+
+    /* SECTION */
+
+    .section {
+        padding:
+            55px 0;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .section-subtitle {
+        font-size: 13px;
+    }
+
+
+    /* BUTTON */
+
+    .btn {
+        max-width: 100%;
+
+        font-size: 15px;
+
+        min-height: 48px;
+    }
+
+
+    /* INFO */
+
+    .info-card {
+        max-width: 100%;
+    }
+
+
+    /* SHIRT */
+
+    .image-card img {
+        height: 250px;
+    }
+
+
+    /* AWARDS */
+
+    .award-card img {
+        height: 210px;
+    }
+
+
+    /* POPUPS */
+
+    .shirt-gallery-content img,
+    .award-gallery-content img {
+        max-width: 80vw;
+
+        max-height: 64vh;
+    }
+
+}
+
+.shirt-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.shirt-info img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+    transition: .3s ease;
+}
+
+.shirt-info img:hover {
+    transform: scale(1.05);
+}
+
+.shirt-info p {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* ==================================================
+CONTACT SECTION
+================================================== */
+
+.final-section {
+padding: 80px 20px;
+background: #dcefe8;
+}
+
+.contact-box {
+max-width: 750px;
+margin: 0 auto;
+padding: 55px 40px;
+
+text-align: center;
+
+background: #f7fcf9;
+border: 1px solid #c9e3d7;
+border-radius: 25px;
+
+box-shadow: 0 10px 35px rgba(31, 78, 64, 0.12);
+
+color: #23483d;
+
+}
+
+.contact-icon {
+font-size: 60px;
+margin-bottom: 15px;
+}
+
+.contact-box h2 {
+font-size: 38px;
+margin-bottom: 15px;
+color: #1f5f4d;
+}
+
+.contact-subtitle {
+font-size: 19px;
+line-height: 1.8;
+margin-bottom: 35px;
+color: #527267;
+}
+
+.contact-info {
+display: flex;
+flex-direction: column;
+gap: 18px;
+
+text-align: left;
+
+}
+
+.contact-item {
+padding: 22px 25px;
+
+border-radius: 15px;
+
+background: #e8f5ee;
+border: 1px solid #cce6da;
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+gap: 20px;
+
+transition: 0.3s ease;
+
+}
+
+.contact-item {
+background: #dcefe5;
+transform: translateY(-3px);
+
+box-shadow: 0 8px 20px rgba(47, 128, 104, 0.10);
+
+}
+
+.contact-label {
+font-size: 17px;
+font-weight: bold;
+color: #356b5b;
+}
+
+.contact-value {
+font-size: 18px;
+font-weight: 600;
+color: #1f5f4d;
+}
+
+.contact-phone {
+text-decoration: none;
+color: #23805f;
+transition: 0.3s ease;
+}
+
+.contact-phone {
+color: #14513e;
+text-decoration: underline;
+}
+
+.contact-footer {
+margin-top: 35px;
+font-size: 17px;
+color: #527267;
+}
+
+/* ==================================================
+MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+.final-section {
+    padding: 60px 15px;
+}
+
+.contact-box {
+    padding: 40px 20px;
+}
+
+.contact-box h2 {
+    font-size: 30px;
+}
+
+.contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.contact-value {
+    font-size: 16px;
+    word-break: break-word;
+}
+
+}
+
+/* เลื่อนหน้าเว็บแบบนุ่มนวล */
+html {
+scroll-behavior: smooth;
+}
+
+/* ป้องกันหัวเมนูบังหัวข้อ */
+#contact {
+scroll-margin-top: 90px;
+}
+
+/* พื้นหลังสีขาวให้โลโก้โรงเรียน */
+.logo-img {
+background: #ffffff;
+padding: 6px;
+
+border-radius: 50%;
+
+object-fit: contain;
+
+box-sizing: border-box;
+
+}
+
+.logo-img {
+width: 48px;
+height: 48px;
+
+padding: 5px;
+
+background: #ffffff;
+border-radius: 50%;
+
+object-fit: contain;
+
+box-sizing: border-box;
+
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+
+}

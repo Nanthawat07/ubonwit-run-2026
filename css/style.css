@@ -2725,7 +2725,7 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 /* 2. สำหรับหน้าจอมือถือและแท็บเล็ต */
 @media (max-width: 768px) {
     .top-logo {
-        top: 75px !important; /* ขยับลงมาให้พ้นเมนูบาร์ของมือถือ */
+        top: 90px !important; /* ขยับลงมาให้พ้นเมนูบาร์ของมือถือ */
         width: 100px !important; /* บังคับให้กรอบเป็นสี่เหลี่ยมจัตุรัส จะได้กลมเป๊ะ */
         height: 100px !important; 
     }

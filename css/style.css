@@ -71,14 +71,14 @@ input {
    NAVBAR
 ========================================================= */
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
+.navbar { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
 
-    width: 100%;
+    width: 100%; 
 
-    z-index: 1001;
+    z-index: 1001; 
 
     padding: 15px 0;
 
@@ -99,9 +99,7 @@ input {
 }
 
 
-/* =========================================================
-   NAVBAR LOGO
-========================================================= */
+/* LOGO */
 
 .logo {
     display: flex;
@@ -118,27 +116,14 @@ input {
 }
 
 .logo-img {
-    width: 48px;
-    height: 48px;
+    width: auto;
+    height: 40px;
 
-    padding: 2px;
-
-    background: #ffffff;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-
-    box-sizing: border-box;
-
-    box-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.12);
+    object-fit: contain;
 }
 
 
-/* =========================================================
-   MENU
-========================================================= */
+/* MENU */
 
 .nav-menu {
     display: flex;
@@ -164,9 +149,7 @@ input {
 }
 
 
-/* =========================================================
-   HAMBURGER
-========================================================= */
+/* HAMBURGER */
 
 .menu-toggle {
     display: none;
@@ -179,52 +162,6 @@ input {
     cursor: pointer;
 
     user-select: none;
-}
-
-
-/* =========================================================
-   TOP LOGO
-   โลโก้ตรงกลางด้านบน
-========================================================= */
-
-.top-logo {
-    position: absolute;
-
-    top: 110px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 1000;
-
-    width: 140px;
-    height: 140px;
-
-    background: #ffffff;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.25);
-
-    border:
-        5px solid rgba(255,255,255,0.9);
-
-    overflow: hidden;
-}
-
-.top-logo img {
-    width: 125px;
-    height: 125px;
-
-    object-fit: contain;
-
-    display: block;
 }
 
 
@@ -266,9 +203,7 @@ input {
 }
 
 
-/* =========================================================
-   HERO DECORATION
-========================================================= */
+/* HERO DECORATION */
 
 .hero::before {
     content: "";
@@ -307,9 +242,7 @@ input {
 }
 
 
-/* =========================================================
-   HERO CONTENT
-========================================================= */
+/* HERO CONTENT */
 
 .hero-content {
     position: relative;
@@ -318,52 +251,29 @@ input {
 
     width: 100%;
 
-    /*
-       โลโก้อยู่ประมาณ 110px - 250px
-       จึงให้ข้อความเริ่มต่ำกว่าจุดนี้
-    */
-    padding:
-        265px 0 80px;
+    padding: 230px 0 80px;
 
     text-align: center;
 }
 
-
-/* =========================================================
-   HERO BADGE
-   🏃 RUN FOR HEALTH • RUN FOR FUN
-========================================================= */
-
 .hero-badge {
     display: inline-block;
 
-    padding:
-        8px 20px;
+    padding: 8px 20px;
 
     border-radius: 50px;
 
-    background:
-        rgba(255,255,255,.12);
+    background: rgba(255,255,255,.12);
 
-    border:
-        1px solid rgba(255,255,255,.2);
+    border: 1px solid rgba(255,255,255,.2);
 
     margin-bottom: 25px;
 
     font-size: 14px;
-
-    position: relative;
-    z-index: 3;
 }
 
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
-
 .hero-title {
-    font-size:
-        clamp(55px, 9vw, 110px);
+    font-size: clamp(55px, 9vw, 110px);
 
     line-height: .95;
 
@@ -382,8 +292,7 @@ input {
 }
 
 .hero-subtitle {
-    font-size:
-        clamp(20px, 3vw, 28px);
+    font-size: clamp(20px, 3vw, 28px);
 
     margin-bottom: 15px;
 }
@@ -396,6 +305,46 @@ input {
     opacity: .85;
 
     font-size: 17px;
+}
+
+
+/* =========================================================
+   TOP LOGO
+========================================================= */
+
+.top-logo {
+    position: absolute;
+
+    top: 85px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 1000;
+
+    width: 130px;
+    height: 130px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    border:
+        5px solid rgba(255,255,255,0.8);
+}
+
+.top-logo img {
+    width: 95px;
+    height: 95px;
+
+    object-fit: contain;
 }
 
 
@@ -418,19 +367,16 @@ input {
 .info-card {
     min-width: 180px;
 
-    padding:
-        16px 22px;
+    padding: 16px 22px;
 
     border-radius: 18px;
 
-    background:
-        rgba(255,255,255,.1);
+    background: rgba(255,255,255,.1);
 
     border:
         1px solid rgba(255,255,255,.15);
 
     backdrop-filter: blur(12px);
-
     -webkit-backdrop-filter: blur(12px);
 
     box-shadow:
@@ -466,8 +412,7 @@ input {
     align-items: center;
     justify-content: center;
 
-    padding:
-        15px 30px;
+    padding: 15px 30px;
 
     min-height: 52px;
 
@@ -565,8 +510,7 @@ input {
 
     background: white;
 
-    padding:
-        40px 30px;
+    padding: 40px 30px;
 
     border-radius: 25px;
 
@@ -786,8 +730,7 @@ tr:hover td {
 
     text-align: center;
 
-    padding:
-        60px 35px;
+    padding: 60px 35px;
 
     border-radius: 30px;
 
@@ -795,7 +738,6 @@ tr:hover td {
         rgba(255,255,255,.65);
 
     backdrop-filter: blur(15px);
-
     -webkit-backdrop-filter: blur(15px);
 
     border:
@@ -847,8 +789,7 @@ tr:hover td {
 .step {
     background: white;
 
-    padding:
-        30px 20px;
+    padding: 30px 20px;
 
     border-radius: 22px;
 
@@ -908,8 +849,7 @@ tr:hover td {
 details {
     background: white;
 
-    padding:
-        20px 25px;
+    padding: 20px 25px;
 
     margin-bottom: 15px;
 
@@ -975,8 +915,7 @@ details p {
 
     text-align: center;
 
-    padding:
-        45px 20px;
+    padding: 45px 20px;
 }
 
 .footer p {
@@ -1106,8 +1045,7 @@ details p {
 
     border-radius: 25px;
 
-    padding:
-        40px 25px;
+    padding: 40px 25px;
 
     text-align: center;
 
@@ -1169,8 +1107,7 @@ details p {
 
     max-width: 300px;
 
-    padding:
-        15px 25px;
+    padding: 15px 25px;
 
     border: none;
 
@@ -1400,9 +1337,7 @@ details p {
 }
 
 
-/* =========================================================
-   AWARD CATEGORY
-========================================================= */
+/* AWARD CATEGORY */
 
 .award-category {
     margin-top: 50px;
@@ -1417,9 +1352,7 @@ details p {
 }
 
 
-/* =========================================================
-   AWARD GRID
-========================================================= */
+/* AWARD GRID */
 
 .award-grid {
     display: grid;
@@ -1494,9 +1427,7 @@ details p {
 }
 
 
-/* =========================================================
-   AWARD NOTE
-========================================================= */
+/* AWARD NOTE */
 
 .award-note {
     max-width: 850px;
@@ -1590,9 +1521,7 @@ details p {
 }
 
 
-/* =========================================================
-   AWARD BUTTONS
-========================================================= */
+/* AWARD BUTTONS */
 
 .award-close {
     position: absolute;
@@ -1658,205 +1587,19 @@ details p {
 
 
 /* =========================================================
-   SHIRT INFO
-========================================================= */
-
-.shirt-info {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 12px;
-}
-
-.shirt-info img {
-    width: 130px;
-    height: 130px;
-
-    object-fit: contain;
-
-    border-radius: 16px;
-
-    background: #fff;
-
-    padding: 8px;
-
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, .08);
-
-    transition: .3s ease;
-}
-
-.shirt-info img:hover {
-    transform:
-        scale(1.05);
-}
-
-.shirt-info p {
-    margin: 0;
-
-    color: var(--muted);
-}
-
-
-/* =========================================================
-   CONTACT SECTION
-========================================================= */
-
-.final-section {
-    padding:
-        80px 20px;
-
-    background: #dcefe8;
-}
-
-.contact-box {
-    max-width: 750px;
-
-    margin: 0 auto;
-
-    padding:
-        55px 40px;
-
-    text-align: center;
-
-    background: #f7fcf9;
-
-    border:
-        1px solid #c9e3d7;
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 10px 35px rgba(31, 78, 64, 0.12);
-
-    color: #23483d;
-}
-
-.contact-icon {
-    font-size: 60px;
-
-    margin-bottom: 15px;
-}
-
-.contact-box h2 {
-    font-size: 38px;
-
-    margin-bottom: 15px;
-
-    color: #1f5f4d;
-}
-
-.contact-subtitle {
-    font-size: 19px;
-
-    line-height: 1.8;
-
-    margin-bottom: 35px;
-
-    color: #527267;
-}
-
-.contact-info {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 18px;
-
-    text-align: left;
-}
-
-.contact-item {
-    padding:
-        22px 25px;
-
-    border-radius: 15px;
-
-    background: #dcefe5;
-
-    border:
-        1px solid #cce6da;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 20px;
-
-    transition: .3s ease;
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 8px 20px rgba(47, 128, 104, 0.10);
-}
-
-.contact-label {
-    font-size: 17px;
-
-    font-weight: bold;
-
-    color: #356b5b;
-}
-
-.contact-value {
-    font-size: 18px;
-
-    font-weight: 600;
-
-    color: #1f5f4d;
-}
-
-.contact-phone {
-    color: #14513e;
-
-    text-decoration: underline;
-}
-
-.contact-footer {
-    margin-top: 35px;
-
-    font-size: 17px;
-
-    color: #527267;
-}
-
-
-/* =========================================================
-   SMOOTH SCROLL
-========================================================= */
-
-html {
-    scroll-behavior: smooth;
-}
-
-
-/* =========================================================
-   ป้องกันหัวเมนูบังหัวข้อ
-========================================================= */
-
-#contact {
-    scroll-margin-top: 90px;
-}
-
-
-/* =========================================================
    MOBILE
-   700px ลงมา
+   หน้าจอ 700px ลงมา
 ========================================================= */
 
 @media (max-width: 700px) {
 
+
+    /* -----------------------------------------
+       CONTAINER
+    ----------------------------------------- */
+
     .container {
-        width: 92%;
+        width: min(92%, 1150px);
     }
 
 
@@ -1865,8 +1608,7 @@ html {
     ----------------------------------------- */
 
     .navbar {
-        padding:
-            10px 0;
+        padding: 10px 0;
     }
 
     .navbar-inner {
@@ -1880,15 +1622,13 @@ html {
     }
 
     .logo-img {
-        width: 34px;
         height: 34px;
     }
 
     .menu-toggle {
         display: block;
 
-        padding:
-            5px 8px;
+        padding: 5px 8px;
     }
 
     .nav-menu {
@@ -1905,8 +1645,7 @@ html {
 
         gap: 0;
 
-        padding:
-            8px 0 15px;
+        padding: 8px 0 15px;
 
         background:
             rgba(3,45,32,.98);
@@ -1931,11 +1670,9 @@ html {
     .nav-menu a {
         width: 100%;
 
-        padding:
-            11px 20px;
+        padding: 11px 20px;
 
-        font-size:
-            17px !important;
+        font-size: 17px !important;
 
         text-align: center;
 
@@ -1950,31 +1687,25 @@ html {
 
     /* -----------------------------------------
        TOP LOGO
-       100px
     ----------------------------------------- */
 
     .top-logo {
-        top: 105px !important;
+        top: 70px;
 
-        width: 100px !important;
-        height: 100px !important;
+        width: 95px;
+        height: 95px;
 
-        border-width: 4px !important;
-
-        z-index: 1000;
+        border-width: 4px;
     }
 
     .top-logo img {
-        width: 88px !important;
-        height: 88px !important;
-
-        object-fit: contain !important;
+        width: 68px;
+        height: 68px;
     }
 
 
     /* -----------------------------------------
        HERO
-       แยกโลโก้ออกจาก Badge อย่างชัดเจน
     ----------------------------------------- */
 
     .hero {
@@ -1985,35 +1716,18 @@ html {
 
     .hero-content {
         padding:
-            225px 0 60px !important;
+            175px 0 60px;
     }
 
-
-    /* -----------------------------------------
-       HERO BADGE
-    ----------------------------------------- */
-
     .hero-badge {
-        display: inline-block;
-
         padding:
             7px 14px;
 
-        margin-top:
-            8px;
-
-        margin-bottom:
-            18px;
+        margin-bottom: 18px;
 
         font-size: 12px;
 
-        max-width: 95%;
-
-        line-height: 1.5;
-
-        position: relative;
-
-        z-index: 3;
+        max-width: 100%;
     }
 
     .hero-title {
@@ -2023,15 +1737,13 @@ html {
         letter-spacing:
             1px;
 
-        margin-bottom:
-            15px;
+        margin-bottom: 15px;
     }
 
     .hero-subtitle {
         font-size: 20px;
 
-        margin-bottom:
-            10px;
+        margin-bottom: 10px;
     }
 
     .hero-description {
@@ -2041,8 +1753,7 @@ html {
 
         max-width: 360px;
 
-        padding:
-            0 5px;
+        padding: 0 5px;
     }
 
 
@@ -2245,7 +1956,7 @@ html {
 
 
     /* -----------------------------------------
-       VIP
+       VIP / SEARCH BOX
     ----------------------------------------- */
 
     .vip-box {
@@ -2465,8 +2176,7 @@ html {
     ----------------------------------------- */
 
     .all-runner-box {
-        margin-bottom:
-            35px;
+        margin-bottom: 35px;
 
         padding:
             25px 18px;
@@ -2594,100 +2304,55 @@ html {
         right: 8px;
     }
 
-
-    /* -----------------------------------------
-       CONTACT
-    ----------------------------------------- */
-
-    .final-section {
-        padding:
-            60px 15px;
-    }
-
-    .contact-box {
-        padding:
-            40px 20px;
-    }
-
-    .contact-box h2 {
-        font-size: 30px;
-    }
-
-    .contact-item {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 8px;
-    }
-
-    .contact-value {
-        font-size: 16px;
-
-        word-break: break-word;
-    }
-
 }
 
 
 /* =========================================================
    SMALL MOBILE
-   480px ลงมา
+   หน้าจอ 480px ลงมา
 ========================================================= */
 
 @media (max-width: 480px) {
+
 
     .container {
         width: 92%;
     }
 
 
-    /* -----------------------------------------
-       NAVBAR
-    ----------------------------------------- */
+    /* NAVBAR */
 
     .logo {
         font-size: 14px;
     }
 
     .logo-img {
-        width: 30px;
         height: 30px;
     }
 
 
-    /* -----------------------------------------
-       TOP LOGO
-       88px
-    ----------------------------------------- */
+    /* TOP LOGO */
 
     .top-logo {
-        top: 100px !important;
+        top: 67px;
 
-        width: 88px !important;
-        height: 88px !important;
+        width: 88px;
+        height: 88px;
 
-        border-width: 4px !important;
-
-        z-index: 1000;
+        border-width: 4px;
     }
 
     .top-logo img {
-        width: 76px !important;
-        height: 76px !important;
-
-        object-fit: contain !important;
+        width: 62px;
+        height: 62px;
     }
 
 
-    /* -----------------------------------------
-       HERO
-       เว้นพื้นที่จากโลโก้เพิ่มอีก
-    ----------------------------------------- */
+    /* HERO */
 
     .hero-content {
         padding:
-            215px 12px 50px !important;
+            160px 0 50px;
     }
 
     .hero-badge {
@@ -2695,14 +2360,6 @@ html {
 
         padding:
             6px 11px;
-
-        margin-top:
-            8px;
-
-        margin-bottom:
-            18px;
-
-        line-height: 1.5;
     }
 
     .hero-title {
@@ -2719,9 +2376,7 @@ html {
     }
 
 
-    /* -----------------------------------------
-       SECTION
-    ----------------------------------------- */
+    /* SECTION */
 
     .section {
         padding:
@@ -2737,9 +2392,7 @@ html {
     }
 
 
-    /* -----------------------------------------
-       BUTTON
-    ----------------------------------------- */
+    /* BUTTON */
 
     .btn {
         max-width: 100%;
@@ -2750,36 +2403,28 @@ html {
     }
 
 
-    /* -----------------------------------------
-       INFO
-    ----------------------------------------- */
+    /* INFO */
 
     .info-card {
         max-width: 100%;
     }
 
 
-    /* -----------------------------------------
-       SHIRT
-    ----------------------------------------- */
+    /* SHIRT */
 
     .image-card img {
         height: 250px;
     }
 
 
-    /* -----------------------------------------
-       AWARDS
-    ----------------------------------------- */
+    /* AWARDS */
 
     .award-card img {
         height: 210px;
     }
 
 
-    /* -----------------------------------------
-       POPUPS
-    ----------------------------------------- */
+    /* POPUPS */
 
     .shirt-gallery-content img,
     .award-gallery-content img {
@@ -2790,7 +2435,209 @@ html {
 
 }
 
+.shirt-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
 
-/* =========================================================
-   จบ CSS
-========================================================= */
+.shirt-info img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+    transition: .3s ease;
+}
+
+.shirt-info img:hover {
+    transform: scale(1.05);
+}
+
+.shirt-info p {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* ==================================================
+CONTACT SECTION
+================================================== */
+
+.final-section {
+padding: 80px 20px;
+background: #dcefe8;
+}
+
+.contact-box {
+max-width: 750px;
+margin: 0 auto;
+padding: 55px 40px;
+
+text-align: center;
+
+background: #f7fcf9;
+border: 1px solid #c9e3d7;
+border-radius: 25px;
+
+box-shadow: 0 10px 35px rgba(31, 78, 64, 0.12);
+
+color: #23483d;
+
+}
+
+.contact-icon {
+font-size: 60px;
+margin-bottom: 15px;
+}
+
+.contact-box h2 {
+font-size: 38px;
+margin-bottom: 15px;
+color: #1f5f4d;
+}
+
+.contact-subtitle {
+font-size: 19px;
+line-height: 1.8;
+margin-bottom: 35px;
+color: #527267;
+}
+
+.contact-info {
+display: flex;
+flex-direction: column;
+gap: 18px;
+
+text-align: left;
+
+}
+
+.contact-item {
+padding: 22px 25px;
+
+border-radius: 15px;
+
+background: #e8f5ee;
+border: 1px solid #cce6da;
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+gap: 20px;
+
+transition: 0.3s ease;
+
+}
+
+.contact-item {
+background: #dcefe5;
+transform: translateY(-3px);
+
+box-shadow: 0 8px 20px rgba(47, 128, 104, 0.10);
+
+}
+
+.contact-label {
+font-size: 17px;
+font-weight: bold;
+color: #356b5b;
+}
+
+.contact-value {
+font-size: 18px;
+font-weight: 600;
+color: #1f5f4d;
+}
+
+.contact-phone {
+text-decoration: none;
+color: #23805f;
+transition: 0.3s ease;
+}
+
+.contact-phone {
+color: #14513e;
+text-decoration: underline;
+}
+
+.contact-footer {
+margin-top: 35px;
+font-size: 17px;
+color: #527267;
+}
+
+/* ==================================================
+MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+.final-section {
+    padding: 60px 15px;
+}
+
+.contact-box {
+    padding: 40px 20px;
+}
+
+.contact-box h2 {
+    font-size: 30px;
+}
+
+.contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.contact-value {
+    font-size: 16px;
+    word-break: break-word;
+}
+
+}
+
+/* เลื่อนหน้าเว็บแบบนุ่มนวล */
+html {
+scroll-behavior: smooth;
+}
+
+/* ป้องกันหัวเมนูบังหัวข้อ */
+#contact {
+scroll-margin-top: 90px;
+}
+
+/* พื้นหลังสีขาวให้โลโก้โรงเรียน */
+.logo-img {
+background: #ffffff;
+padding: 6px;
+
+border-radius: 50%;
+
+object-fit: contain;
+
+box-sizing: border-box;
+
+}
+
+.logo-img {
+width: 48px;
+height: 48px;
+
+padding: 5px;
+
+background: #ffffff;
+border-radius: 50%;
+
+object-fit: contain;
+
+box-sizing: border-box;
+
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+
+}

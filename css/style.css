@@ -2717,7 +2717,7 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 }
 
 .top-logo img {
-    width: 125px !important; /* บังคับขนาดรูปด้านในให้เล็กกว่ากรอบขาว */
+    width: 135px !important; /* บังคับขนาดรูปด้านในให้เล็กกว่ากรอบขาว */
     height: 125px !important;
     object-fit: contain !important; /* จัดให้รูปอยู่กึ่งกลางโดยไม่เสียสัดส่วน */
 }

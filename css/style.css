@@ -2669,3 +2669,29 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
     }
 
 }
+.top-logo {
+    padding-top: 50px;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-logo img {
+    width: 105px;
+    height: 105px;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .top-logo {
+        padding-top: 35px;
+        padding-bottom: 5px;
+    }
+
+    .top-logo img {
+        width: 85px;
+        height: 85px;
+    }
+}

@@ -2700,3 +2700,38 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
     height: 100%; 
     object-fit: cover; /* บังคับให้โลโก้เต็มกรอบวงกลม */
 }
+/* ================================================== 
+   จัดระเบียบโลโก้ตรงกลางให้ขยับลงมา และพื้นหลังกลมสวยเป๊ะ
+================================================== */
+
+/* 1. สำหรับหน้าจอคอมพิวเตอร์ */
+.top-logo {
+    top: 110px !important; /* ขยับโลโก้ลงมาจากเมนูบาร์ (เพิ่ม/ลดตัวเลขตรงนี้ได้) */
+    width: 140px !important; 
+    height: 140px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #ffffff !important;
+}
+
+.top-logo img {
+    width: 110px !important; /* บังคับขนาดรูปด้านในให้เล็กกว่ากรอบขาว */
+    height: 110px !important;
+    object-fit: contain !important; /* จัดให้รูปอยู่กึ่งกลางโดยไม่เสียสัดส่วน */
+}
+
+/* 2. สำหรับหน้าจอมือถือและแท็บเล็ต */
+@media (max-width: 768px) {
+    .top-logo {
+        top: 75px !important; /* ขยับลงมาให้พ้นเมนูบาร์ของมือถือ */
+        width: 100px !important; /* บังคับให้กรอบเป็นสี่เหลี่ยมจัตุรัส จะได้กลมเป๊ะ */
+        height: 100px !important; 
+    }
+    
+    .top-logo img {
+        width: 75px !important; /* ให้รูปด้านในพอดีกับกรอบ */
+        height: 75px !important;
+    }
+}

@@ -1,8 +1,15 @@
+/* =========================================================
+   GOOGLE FONT
+   ใช้ฟอนต์ Kanit สำหรับข้อความภาษาไทย
+========================================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap');
 
 
 /* =========================================================
    ROOT
+   กำหนดตัวแปรสีหลักของเว็บไซต์
+   สามารถเปลี่ยนสีทั้งเว็บไซต์ได้จากส่วนนี้
 ========================================================= */
 
 :root {
@@ -21,13 +28,13 @@
 
 /* =========================================================
    RESET
+   รีเซ็ตค่าเริ่มต้นของ Browser
 ========================================================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 html {
@@ -59,6 +66,7 @@ input {
 
 /* =========================================================
    CONTAINER
+   กำหนดความกว้างของเนื้อหาหลัก
 ========================================================= */
 
 .container {
@@ -69,16 +77,17 @@ input {
 
 /* =========================================================
    NAVBAR
+   เมนูด้านบนของเว็บไซต์
+   ติดอยู่ด้านบนเมื่อเลื่อนหน้าเว็บ
 ========================================================= */
 
-.navbar { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
 
-    width: 100%; 
-
-    z-index: 1001; 
+    width: 100%;
+    z-index: 1001;
 
     padding: 15px 0;
 
@@ -87,7 +96,7 @@ input {
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar-inner {
@@ -99,7 +108,10 @@ input {
 }
 
 
-/* LOGO */
+/* =========================================================
+   LOGO
+   โลโก้และชื่อเว็บไซต์ใน Navbar
+========================================================= */
 
 .logo {
     display: flex;
@@ -116,14 +128,27 @@ input {
 }
 
 .logo-img {
-    width: auto;
-    height: 40px;
+    width: 48px;
+    height: 48px;
+
+    padding: 5px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
 
     object-fit: contain;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 }
 
 
-/* MENU */
+/* =========================================================
+   NAV MENU
+   เมนูนำทางด้านบน
+========================================================= */
 
 .nav-menu {
     display: flex;
@@ -138,9 +163,9 @@ input {
     font-size: 18px;
     font-weight: 500;
 
-    opacity: .85;
+    opacity: 0.85;
 
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .nav-menu a:hover {
@@ -149,7 +174,10 @@ input {
 }
 
 
-/* HAMBURGER */
+/* =========================================================
+   HAMBURGER MENU
+   ปุ่มเมนูสำหรับมือถือ
+========================================================= */
 
 .menu-toggle {
     display: none;
@@ -167,6 +195,7 @@ input {
 
 /* =========================================================
    HERO
+   ส่วนหัวใหญ่ของเว็บไซต์
 ========================================================= */
 
 .hero {
@@ -184,13 +213,13 @@ input {
     background:
         radial-gradient(
             circle at 15% 20%,
-            rgba(255,216,77,.25),
+            rgba(255, 216, 77, 0.25),
             transparent 28%
         ),
 
         radial-gradient(
             circle at 85% 75%,
-            rgba(0,255,170,.18),
+            rgba(0, 255, 170, 0.18),
             transparent 30%
         ),
 
@@ -203,7 +232,10 @@ input {
 }
 
 
-/* HERO DECORATION */
+/* =========================================================
+   HERO DECORATION
+   วงกลมตกแต่งพื้นหลัง Hero
+========================================================= */
 
 .hero::before {
     content: "";
@@ -215,7 +247,7 @@ input {
 
     border-radius: 50%;
 
-    border: 1px solid rgba(255,255,255,.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
     top: -250px;
     right: -150px;
@@ -233,7 +265,7 @@ input {
 
     border-radius: 50%;
 
-    border: 1px solid rgba(255,255,255,.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
     bottom: -220px;
     left: -120px;
@@ -242,7 +274,10 @@ input {
 }
 
 
-/* HERO CONTENT */
+/* =========================================================
+   HERO CONTENT
+   ข้อความและเนื้อหาหลักของ Hero
+========================================================= */
 
 .hero-content {
     position: relative;
@@ -263,9 +298,9 @@ input {
 
     border-radius: 50px;
 
-    background: rgba(255,255,255,.12);
+    background: rgba(255, 255, 255, 0.12);
 
-    border: 1px solid rgba(255,255,255,.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 
     margin-bottom: 25px;
 
@@ -275,14 +310,14 @@ input {
 .hero-title {
     font-size: clamp(55px, 9vw, 110px);
 
-    line-height: .95;
+    line-height: 0.95;
 
     font-weight: 800;
 
     letter-spacing: 2px;
 
     text-shadow:
-        0 12px 35px rgba(0,0,0,.3);
+        0 12px 35px rgba(0, 0, 0, 0.3);
 
     margin-bottom: 20px;
 }
@@ -302,7 +337,7 @@ input {
 
     margin: auto;
 
-    opacity: .85;
+    opacity: 0.85;
 
     font-size: 17px;
 }
@@ -310,6 +345,7 @@ input {
 
 /* =========================================================
    TOP LOGO
+   โลโก้กลมที่อยู่เหนือเนื้อหา Hero
 ========================================================= */
 
 .top-logo {
@@ -334,10 +370,10 @@ input {
     justify-content: center;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,0.25);
+        0 10px 30px rgba(0, 0, 0, 0.25);
 
     border:
-        5px solid rgba(255,255,255,0.8);
+        5px solid rgba(255, 255, 255, 0.8);
 }
 
 .top-logo img {
@@ -350,6 +386,7 @@ input {
 
 /* =========================================================
    HERO INFO
+   กล่องข้อมูลกิจกรรม เช่น วันที่ สถานที่ ระยะทาง
 ========================================================= */
 
 .hero-info {
@@ -371,16 +408,15 @@ input {
 
     border-radius: 18px;
 
-    background: rgba(255,255,255,.1);
+    background: rgba(255, 255, 255, 0.1);
 
-    border:
-        1px solid rgba(255,255,255,.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,.15);
+        0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .info-card strong {
@@ -394,6 +430,7 @@ input {
 
 /* =========================================================
    BUTTON
+   ปุ่มต่าง ๆ ของเว็บไซต์
 ========================================================= */
 
 .buttons {
@@ -423,11 +460,11 @@ input {
     font-weight: 600;
 
     transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 
     box-shadow:
-        0 12px 30px rgba(0,0,0,.2);
+        0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
@@ -456,6 +493,7 @@ input {
 
 /* =========================================================
    SECTION
+   รูปแบบพื้นฐานของแต่ละ Section
 ========================================================= */
 
 .section {
@@ -491,6 +529,7 @@ input {
 
 /* =========================================================
    CARDS
+   การ์ดแสดงข้อมูล
 ========================================================= */
 
 .cards {
@@ -516,25 +555,23 @@ input {
 
     text-align: center;
 
-    border:
-        1px solid #e4ebe7;
+    border: 1px solid #e4ebe7;
 
     overflow: hidden;
 
     box-shadow:
-        0 15px 45px rgba(10,50,30,.08);
+        0 15px 45px rgba(10, 50, 30, 0.08);
 
     transition:
-        transform .4s ease,
-        box-shadow .4s ease;
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 .card:hover {
-    transform:
-        translateY(-10px);
+    transform: translateY(-10px);
 
     box-shadow:
-        0 25px 65px rgba(10,50,30,.15);
+        0 25px 65px rgba(10, 50, 30, 0.15);
 }
 
 .card-icon {
@@ -560,6 +597,7 @@ input {
 
 /* =========================================================
    PRICE TABLE
+   ตารางราคา / รายละเอียดการสมัคร
 ========================================================= */
 
 .price-table {
@@ -575,7 +613,7 @@ input {
     border-radius: 22px;
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,.08);
+        0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
 table {
@@ -620,6 +658,7 @@ tr:hover td {
 
 /* =========================================================
    SHIRT IMAGE
+   แกลเลอรีรูปเสื้อ
 ========================================================= */
 
 .image-grid {
@@ -628,7 +667,7 @@ tr:hover td {
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(250px,1fr)
+            minmax(250px, 1fr)
         );
 
     gap: 25px;
@@ -644,19 +683,18 @@ tr:hover td {
     background: white;
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,.10);
+        0 15px 40px rgba(0, 0, 0, 0.10);
 
     transition:
-        transform .4s ease,
-        box-shadow .4s ease;
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 .image-card:hover {
-    transform:
-        translateY(-8px);
+    transform: translateY(-8px);
 
     box-shadow:
-        0 25px 60px rgba(0,0,0,.15);
+        0 25px 60px rgba(0, 0, 0, 0.15);
 }
 
 .image-card img {
@@ -671,12 +709,11 @@ tr:hover td {
     background: white;
 
     transition:
-        transform .5s ease;
+        transform 0.5s ease;
 }
 
 .image-card:hover img {
-    transform:
-        scale(1.05);
+    transform: scale(1.05);
 }
 
 .image-caption {
@@ -705,14 +742,15 @@ tr:hover td {
 
 
 /* =========================================================
-   VIP
+   VIP SECTION
+   ส่วนประชาสัมพันธ์ VIP
 ========================================================= */
 
 .vip-section {
     background:
         radial-gradient(
             circle at top right,
-            rgba(255,215,0,.25),
+            rgba(255, 215, 0, 0.25),
             transparent 35%
         ),
 
@@ -735,16 +773,16 @@ tr:hover td {
     border-radius: 30px;
 
     background:
-        rgba(255,255,255,.65);
+        rgba(255, 255, 255, 0.65);
 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 
     border:
-        1px solid rgba(255,255,255,.7);
+        1px solid rgba(255, 255, 255, 0.7);
 
     box-shadow:
-        0 25px 70px rgba(130,100,0,.15);
+        0 25px 70px rgba(130, 100, 0, 0.15);
 }
 
 .vip-icon {
@@ -772,6 +810,7 @@ tr:hover td {
 
 /* =========================================================
    STEPS
+   ขั้นตอนการสมัคร
 ========================================================= */
 
 .steps {
@@ -780,7 +819,7 @@ tr:hover td {
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(210px,1fr)
+            minmax(210px, 1fr)
         );
 
     gap: 25px;
@@ -796,7 +835,7 @@ tr:hover td {
     text-align: center;
 
     box-shadow:
-        0 12px 35px rgba(0,0,0,.07);
+        0 12px 35px rgba(0, 0, 0, 0.07);
 }
 
 .step-number {
@@ -822,7 +861,7 @@ tr:hover td {
     font-weight: bold;
 
     box-shadow:
-        0 8px 20px rgba(0,90,60,.25);
+        0 8px 20px rgba(0, 90, 60, 0.25);
 }
 
 .step h3 {
@@ -838,6 +877,7 @@ tr:hover td {
 
 /* =========================================================
    FAQ
+   คำถามที่พบบ่อย
 ========================================================= */
 
 .faq {
@@ -856,7 +896,7 @@ details {
     border-radius: 16px;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.06);
+        0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
 summary {
@@ -875,20 +915,18 @@ details p {
 
 
 /* =========================================================
-   FINAL CTA
+   FINAL / CONTACT SECTION
+   ส่วนติดต่อผู้จัดงาน
 ========================================================= */
 
 .final-section {
+    padding: 80px 20px;
+
     text-align: center;
 
-    background:
-        linear-gradient(
-            135deg,
-            #064d36,
-            #079261
-        );
+    background: #dcefe8;
 
-    color: white;
+    color: #23483d;
 }
 
 .final-section h2 {
@@ -898,14 +936,133 @@ details p {
 }
 
 .final-section p {
-    opacity: .85;
+    opacity: 0.85;
 
     margin-bottom: 30px;
+}
+
+.contact-box {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    padding: 55px 40px;
+
+    text-align: center;
+
+    background: #f7fcf9;
+
+    border: 1px solid #c9e3d7;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 35px rgba(31, 78, 64, 0.12);
+
+    color: #23483d;
+}
+
+.contact-icon {
+    font-size: 60px;
+
+    margin-bottom: 15px;
+}
+
+.contact-box h2 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+
+    color: #1f5f4d;
+}
+
+.contact-subtitle {
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+
+    color: #527267;
+}
+
+
+/* =========================================================
+   CONTACT INFO
+   รายละเอียดช่องทางติดต่อ
+========================================================= */
+
+.contact-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    text-align: left;
+}
+
+.contact-item {
+    padding: 22px 25px;
+
+    border-radius: 15px;
+
+    background: #dcefe5;
+
+    border: 1px solid #cce6da;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    transition: 0.3s ease;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(47, 128, 104, 0.10);
+}
+
+.contact-label {
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #356b5b;
+}
+
+.contact-value {
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #1f5f4d;
+}
+
+.contact-phone {
+    color: #14513e;
+
+    text-decoration: underline;
+
+    transition: 0.3s ease;
+}
+
+.contact-footer {
+    margin-top: 35px;
+
+    font-size: 17px;
+
+    color: #527267;
 }
 
 
 /* =========================================================
    FOOTER
+   ส่วนท้ายเว็บไซต์
 ========================================================= */
 
 .footer {
@@ -919,7 +1076,7 @@ details p {
 }
 
 .footer p {
-    opacity: .65;
+    opacity: 0.65;
 
     font-size: 14px;
 
@@ -929,6 +1086,7 @@ details p {
 
 /* =========================================================
    ROUTE MAP MODAL
+   Popup แสดงแผนที่เส้นทาง
 ========================================================= */
 
 .modal {
@@ -946,7 +1104,7 @@ details p {
     padding: 20px;
 
     background:
-        rgba(0,0,0,.85);
+        rgba(0, 0, 0, 0.85);
 
     justify-content: center;
     align-items: center;
@@ -964,10 +1122,10 @@ details p {
     border-radius: 12px;
 
     box-shadow:
-        0 5px 25px rgba(0,0,0,.5);
+        0 5px 25px rgba(0, 0, 0, 0.5);
 
     animation:
-        zoomIn .3s ease;
+        zoomIn 0.3s ease;
 }
 
 .close-btn {
@@ -993,26 +1151,8 @@ details p {
 
 
 /* =========================================================
-   ANIMATION
-========================================================= */
-
-@keyframes zoomIn {
-
-    from {
-        transform: scale(.8);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-}
-
-
-/* =========================================================
    REGISTRATION POPUP
+   Popup แสดงข้อมูลหลังสมัคร
 ========================================================= */
 
 .registration-popup {
@@ -1026,7 +1166,7 @@ details p {
     height: 100%;
 
     background:
-        rgba(0,0,0,.65);
+        rgba(0, 0, 0, 0.65);
 
     z-index: 9999;
 
@@ -1050,10 +1190,10 @@ details p {
     text-align: center;
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,.3);
+        0 20px 60px rgba(0, 0, 0, 0.3);
 
     animation:
-        popupShow .3s ease;
+        popupShow 0.3s ease;
 }
 
 .popup-icon {
@@ -1123,33 +1263,20 @@ details p {
 
     cursor: pointer;
 
-    transition: .2s;
+    transition: 0.2s;
 }
 
 .popup-close-btn:hover {
     transform:
         translateY(-2px);
 
-    opacity: .9;
-}
-
-@keyframes popupShow {
-
-    from {
-        opacity: 0;
-        transform: scale(.8);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-
+    opacity: 0.9;
 }
 
 
 /* =========================================================
    SHIRT GALLERY
+   Popup สำหรับดูรูปเสื้อแบบเต็มหน้าจอ
 ========================================================= */
 
 .shirt-gallery {
@@ -1163,7 +1290,7 @@ details p {
     height: 100%;
 
     background:
-        rgba(0,0,0,.88);
+        rgba(0, 0, 0, 0.88);
 
     z-index: 99999;
 
@@ -1212,7 +1339,7 @@ details p {
     background: white;
 
     box-shadow:
-        0 15px 50px rgba(0,0,0,.4);
+        0 15px 50px rgba(0, 0, 0, 0.4);
 }
 
 .shirt-gallery-title {
@@ -1280,7 +1407,7 @@ details p {
     z-index: 100001;
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,.3);
+        0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .shirt-prev {
@@ -1293,7 +1420,53 @@ details p {
 
 
 /* =========================================================
+   SHIRT INFO
+   ข้อมูลเพิ่มเติมเกี่ยวกับเสื้อ
+========================================================= */
+
+.shirt-info {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.shirt-info img {
+    width: 130px;
+    height: 130px;
+
+    object-fit: contain;
+
+    border-radius: 16px;
+
+    background: #fff;
+
+    padding: 8px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s ease;
+}
+
+.shirt-info img:hover {
+    transform: scale(1.05);
+}
+
+.shirt-info p {
+    margin: 0;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
    AWARDS
+   ส่วนแสดงรางวัล
 ========================================================= */
 
 .awards-section {
@@ -1315,7 +1488,7 @@ details p {
     border-radius: 20px;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.08);
+        0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .all-runner-icon {
@@ -1337,7 +1510,10 @@ details p {
 }
 
 
-/* AWARD CATEGORY */
+/* =========================================================
+   AWARD CATEGORY
+   หัวข้อแต่ละประเภทของรางวัล
+========================================================= */
 
 .award-category {
     margin-top: 50px;
@@ -1352,7 +1528,10 @@ details p {
 }
 
 
-/* AWARD GRID */
+/* =========================================================
+   AWARD GRID
+   ตารางแสดงการ์ดรางวัล
+========================================================= */
 
 .award-grid {
     display: grid;
@@ -1381,11 +1560,11 @@ details p {
     cursor: pointer;
 
     transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.08);
+        0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .award-card:hover {
@@ -1393,7 +1572,7 @@ details p {
         translateY(-8px);
 
     box-shadow:
-        0 15px 35px rgba(0,0,0,.15);
+        0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .award-card img {
@@ -1427,7 +1606,10 @@ details p {
 }
 
 
-/* AWARD NOTE */
+/* =========================================================
+   AWARD NOTE
+   หมายเหตุใต้ส่วนรางวัล
+========================================================= */
 
 .award-note {
     max-width: 850px;
@@ -1449,6 +1631,7 @@ details p {
 
 /* =========================================================
    AWARD GALLERY
+   Popup สำหรับดูรูปถ้วย/รางวัล
 ========================================================= */
 
 .award-gallery {
@@ -1462,7 +1645,7 @@ details p {
     height: 100%;
 
     background:
-        rgba(0,0,0,.90);
+        rgba(0, 0, 0, 0.90);
 
     z-index: 99999;
 
@@ -1505,7 +1688,7 @@ details p {
     border-radius: 15px;
 
     box-shadow:
-        0 15px 50px rgba(0,0,0,.5);
+        0 15px 50px rgba(0, 0, 0, 0.5);
 }
 
 .award-gallery-title {
@@ -1521,7 +1704,10 @@ details p {
 }
 
 
-/* AWARD BUTTONS */
+/* =========================================================
+   AWARD BUTTONS
+   ปุ่มปิด / ก่อนหน้า / ถัดไป ของ Gallery รางวัล
+========================================================= */
 
 .award-close {
     position: absolute;
@@ -1574,7 +1760,7 @@ details p {
     z-index: 100001;
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,.3);
+        0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .award-prev {
@@ -1587,12 +1773,55 @@ details p {
 
 
 /* =========================================================
+   ANIMATION
+   Animation สำหรับ Modal และ Popup
+========================================================= */
+
+@keyframes zoomIn {
+
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+@keyframes popupShow {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   CONTACT SCROLL OFFSET
+   ป้องกัน Navbar บังหัวข้อ Contact
+========================================================= */
+
+#contact {
+    scroll-margin-top: 90px;
+}
+
+
+/* =========================================================
    MOBILE
    หน้าจอ 700px ลงมา
 ========================================================= */
 
 @media (max-width: 700px) {
-
 
     /* -----------------------------------------
        CONTAINER
@@ -1622,6 +1851,7 @@ details p {
     }
 
     .logo-img {
+        width: 34px;
         height: 34px;
     }
 
@@ -1648,7 +1878,7 @@ details p {
         padding: 8px 0 15px;
 
         background:
-            rgba(3,45,32,.98);
+            rgba(3, 45, 32, 0.98);
 
         backdrop-filter:
             blur(18px);
@@ -1657,10 +1887,10 @@ details p {
             blur(18px);
 
         border-bottom:
-            1px solid rgba(255,255,255,.1);
+            1px solid rgba(255, 255, 255, 0.1);
 
         box-shadow:
-            0 10px 25px rgba(0,0,0,.2);
+            0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
     .nav-menu.active {
@@ -1681,7 +1911,7 @@ details p {
 
     .nav-menu a:hover {
         background:
-            rgba(255,255,255,.08);
+            rgba(255, 255, 255, 0.08);
     }
 
 
@@ -1956,7 +2186,7 @@ details p {
 
 
     /* -----------------------------------------
-       VIP / SEARCH BOX
+       VIP
     ----------------------------------------- */
 
     .vip-box {
@@ -2022,8 +2252,12 @@ details p {
 
 
     /* -----------------------------------------
-       FINAL CTA
+       FINAL / CONTACT
     ----------------------------------------- */
+
+    .final-section {
+        padding: 60px 15px;
+    }
 
     .final-section h2 {
         font-size: 34px;
@@ -2033,6 +2267,28 @@ details p {
         font-size: 14px;
 
         line-height: 1.8;
+    }
+
+    .contact-box {
+        padding: 40px 20px;
+    }
+
+    .contact-box h2 {
+        font-size: 30px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+    .contact-value {
+        font-size: 16px;
+
+        word-break: break-word;
     }
 
 
@@ -2068,6 +2324,7 @@ details p {
 
     .close-btn {
         top: 8px;
+
         right: 15px;
 
         font-size: 38px;
@@ -2146,6 +2403,7 @@ details p {
 
     .shirt-close {
         top: 10px;
+
         right: 10px;
 
         width: 44px;
@@ -2280,6 +2538,7 @@ details p {
 
     .award-close {
         top: 10px;
+
         right: 10px;
 
         width: 44px;
@@ -2314,45 +2573,55 @@ details p {
 
 @media (max-width: 480px) {
 
+    /* -----------------------------------------
+       CONTAINER
+    ----------------------------------------- */
 
     .container {
         width: 92%;
     }
 
 
-    /* NAVBAR */
+    /* -----------------------------------------
+       NAVBAR
+    ----------------------------------------- */
 
     .logo {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .logo-img {
-        height: 30px;
+        width: 50px;
+        height: 50px;
     }
 
 
-    /* TOP LOGO */
+    /* -----------------------------------------
+       TOP LOGO
+    ----------------------------------------- */
 
     .top-logo {
-        top: 67px;
+        top: 89px;
 
-        width: 88px;
-        height: 88px;
+        width: 99px;
+        height: 99px;
 
         border-width: 4px;
     }
 
     .top-logo img {
-        width: 62px;
-        height: 62px;
+        width: 89px;
+        height: 89px;
     }
 
 
-    /* HERO */
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
 
     .hero-content {
         padding:
-            160px 0 50px;
+            205px 0 50px;
     }
 
     .hero-badge {
@@ -2376,7 +2645,9 @@ details p {
     }
 
 
-    /* SECTION */
+    /* -----------------------------------------
+       SECTION
+    ----------------------------------------- */
 
     .section {
         padding:
@@ -2392,7 +2663,9 @@ details p {
     }
 
 
-    /* BUTTON */
+    /* -----------------------------------------
+       BUTTON
+    ----------------------------------------- */
 
     .btn {
         max-width: 100%;
@@ -2403,28 +2676,36 @@ details p {
     }
 
 
-    /* INFO */
+    /* -----------------------------------------
+       INFO
+    ----------------------------------------- */
 
     .info-card {
         max-width: 100%;
     }
 
 
-    /* SHIRT */
+    /* -----------------------------------------
+       SHIRT
+    ----------------------------------------- */
 
     .image-card img {
         height: 250px;
     }
 
 
-    /* AWARDS */
+    /* -----------------------------------------
+       AWARDS
+    ----------------------------------------- */
 
     .award-card img {
         height: 210px;
     }
 
 
-    /* POPUPS */
+    /* -----------------------------------------
+       POPUPS / GALLERY
+    ----------------------------------------- */
 
     .shirt-gallery-content img,
     .award-gallery-content img {
@@ -2432,212 +2713,5 @@ details p {
 
         max-height: 64vh;
     }
-
-}
-
-.shirt-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-.shirt-info img {
-    width: 130px;
-    height: 130px;
-    object-fit: contain;
-    border-radius: 16px;
-    background: #fff;
-    padding: 8px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
-    transition: .3s ease;
-}
-
-.shirt-info img:hover {
-    transform: scale(1.05);
-}
-
-.shirt-info p {
-    margin: 0;
-    color: var(--muted);
-}
-
-/* ==================================================
-CONTACT SECTION
-================================================== */
-
-.final-section {
-padding: 80px 20px;
-background: #dcefe8;
-}
-
-.contact-box {
-max-width: 750px;
-margin: 0 auto;
-padding: 55px 40px;
-
-text-align: center;
-
-background: #f7fcf9;
-border: 1px solid #c9e3d7;
-border-radius: 25px;
-
-box-shadow: 0 10px 35px rgba(31, 78, 64, 0.12);
-
-color: #23483d;
-
-}
-
-.contact-icon {
-font-size: 60px;
-margin-bottom: 15px;
-}
-
-.contact-box h2 {
-font-size: 38px;
-margin-bottom: 15px;
-color: #1f5f4d;
-}
-
-.contact-subtitle {
-font-size: 19px;
-line-height: 1.8;
-margin-bottom: 35px;
-color: #527267;
-}
-
-.contact-info {
-display: flex;
-flex-direction: column;
-gap: 18px;
-
-text-align: left;
-
-}
-
-.contact-item {
-padding: 22px 25px;
-
-border-radius: 15px;
-
-background: #e8f5ee;
-border: 1px solid #cce6da;
-
-display: flex;
-justify-content: space-between;
-align-items: center;
-
-gap: 20px;
-
-transition: 0.3s ease;
-
-}
-
-.contact-item {
-background: #dcefe5;
-transform: translateY(-3px);
-
-box-shadow: 0 8px 20px rgba(47, 128, 104, 0.10);
-
-}
-
-.contact-label {
-font-size: 17px;
-font-weight: bold;
-color: #356b5b;
-}
-
-.contact-value {
-font-size: 18px;
-font-weight: 600;
-color: #1f5f4d;
-}
-
-.contact-phone {
-text-decoration: none;
-color: #23805f;
-transition: 0.3s ease;
-}
-
-.contact-phone {
-color: #14513e;
-text-decoration: underline;
-}
-
-.contact-footer {
-margin-top: 35px;
-font-size: 17px;
-color: #527267;
-}
-
-/* ==================================================
-MOBILE
-================================================== */
-
-@media (max-width: 600px) {
-
-.final-section {
-    padding: 60px 15px;
-}
-
-.contact-box {
-    padding: 40px 20px;
-}
-
-.contact-box h2 {
-    font-size: 30px;
-}
-
-.contact-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-}
-
-.contact-value {
-    font-size: 16px;
-    word-break: break-word;
-}
-
-}
-
-/* เลื่อนหน้าเว็บแบบนุ่มนวล */
-html {
-scroll-behavior: smooth;
-}
-
-/* ป้องกันหัวเมนูบังหัวข้อ */
-#contact {
-scroll-margin-top: 90px;
-}
-
-/* พื้นหลังสีขาวให้โลโก้โรงเรียน */
-.logo-img {
-background: #ffffff;
-padding: 6px;
-
-border-radius: 50%;
-
-object-fit: contain;
-
-box-sizing: border-box;
-
-}
-
-.logo-img {
-width: 48px;
-height: 48px;
-
-padding: 5px;
-
-background: #ffffff;
-border-radius: 50%;
-
-object-fit: contain;
-
-box-sizing: border-box;
-
-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 
 }

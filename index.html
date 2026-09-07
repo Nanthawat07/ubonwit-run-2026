@@ -85,23 +85,23 @@
             </a>
 
             <a href="#awards">
-                🏆 รางวัล
+                รางวัล 🏆 
             </a>
 
             <a href="#register">
-                สมัคร
+                วิธีสมัครวิ่ง
             </a>
 
             <a href="#check-status"
                style="color: var(--gold); font-weight: bold;">
 
-                🔍 ค้นหารหัส
+                ค้นหารหัส BIB 🔍 
 
             </a>
 
             <a href="#contact" style="color: var(--gold); font-weight: bold;">
 
-                 📞 ติดต่อสอบถาม
+                ติดต่อสอบถาม 📞 
 
             </a>
 
@@ -175,11 +175,13 @@
 
                 </div>
 
+                
+
                 <div class="info-card">
 
-                    📍
-                    <strong>START - FINISH</strong>
-                    โรงเรียนอุบลวิทยาคม
+                    👔
+                    <strong>รับเสื้อได้ในวันที่</strong>
+                    17-21 ธันวาคม 69
 
                 </div>
 
@@ -189,6 +191,14 @@
                     🏃
                     <strong>ระยะทาง</strong>
                     2.5 / 5 / 10 KM
+
+                </div>
+
+                  <div class="info-card info-card-center">
+
+                    📍
+                    <strong>START - FINISH</strong>
+                      โรงเรียนอุบลวิทยาคม
 
                 </div>
 
@@ -207,6 +217,117 @@
                 </a>
 
             </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     06. CHECK STATUS
+================================================== -->
+
+<section class="section section-light"
+         id="check-status"
+         style="padding:60px 0;">
+
+    <div class="container">
+
+
+        <div class="vip-box"
+             style="
+                background:white;
+                border:1px solid #e4ebe7;
+                box-shadow:0 10px 30px rgba(10,50,30,.06);
+                padding:40px 20px;
+             ">
+
+
+            <h2 style="
+                color:var(--green);
+                font-size:28px;
+                margin-bottom:5px;
+            ">
+
+                🔍 ค้นหารหัสผู้สมัคร
+
+            </h2>
+
+
+            <p style="
+                color:var(--muted);
+                margin-bottom:20px;
+                font-size:15px;
+            ">
+
+                กรอกเลขประจำตัวประชาชน 13 หลัก
+                เพื่อตรวจสอบรหัส (BIB)
+
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <div style="
+                display:flex;
+                justify-content:center;
+                gap:10px;
+                flex-wrap:wrap;
+            ">
+
+
+                <input
+                    type="text"
+                    id="searchId"
+                    placeholder="เลขบัตรประชาชน 13 หลัก"
+                    maxlength="13"
+
+                    style="
+                        padding:10px 20px;
+                        font-size:15px;
+                        border-radius:50px;
+                        border:2px solid #e4ebe7;
+                        width:100%;
+                        max-width:260px;
+                        font-family:'Kanit',sans-serif;
+                        outline:none;
+                    "
+                >
+
+
+                <button
+                    onclick="checkStatus()"
+                    id="searchBtn"
+                    class="btn btn-normal"
+
+                    style="
+                        cursor:pointer;
+                        border:none;
+                        background:var(--green);
+                        color:white;
+                        padding:10px 25px;
+                        font-size:15px;
+                    "
+                >
+
+                    ค้นหา
+
+                </button>
+
+
+            </div>
+
+
+            <div id="searchResult"
+                 style="
+                    margin-top:15px;
+                    min-height:20px;
+                 ">
+
+            </div>
+
 
         </div>
 
@@ -495,115 +616,7 @@
 
 
 
-<!-- ==================================================
-     06. CHECK STATUS
-================================================== -->
 
-<section class="section section-light"
-         id="check-status"
-         style="padding:60px 0;">
-
-    <div class="container">
-
-
-        <div class="vip-box"
-             style="
-                background:white;
-                border:1px solid #e4ebe7;
-                box-shadow:0 10px 30px rgba(10,50,30,.06);
-                padding:40px 20px;
-             ">
-
-
-            <h2 style="
-                color:var(--green);
-                font-size:28px;
-                margin-bottom:5px;
-            ">
-
-                🔍 ค้นหารหัสผู้สมัคร
-
-            </h2>
-
-
-            <p style="
-                color:var(--muted);
-                margin-bottom:20px;
-                font-size:15px;
-            ">
-
-                กรอกเลขประจำตัวประชาชน 13 หลัก
-                เพื่อตรวจสอบรหัส (BIB)
-
-            </p>
-
-
-            <!-- SEARCH -->
-
-            <div style="
-                display:flex;
-                justify-content:center;
-                gap:10px;
-                flex-wrap:wrap;
-            ">
-
-
-                <input
-                    type="text"
-                    id="searchId"
-                    placeholder="เลขบัตรประชาชน 13 หลัก"
-                    maxlength="13"
-
-                    style="
-                        padding:10px 20px;
-                        font-size:15px;
-                        border-radius:50px;
-                        border:2px solid #e4ebe7;
-                        width:100%;
-                        max-width:260px;
-                        font-family:'Kanit',sans-serif;
-                        outline:none;
-                    "
-                >
-
-
-                <button
-                    onclick="checkStatus()"
-                    id="searchBtn"
-                    class="btn btn-normal"
-
-                    style="
-                        cursor:pointer;
-                        border:none;
-                        background:var(--green);
-                        color:white;
-                        padding:10px 25px;
-                        font-size:15px;
-                    "
-                >
-
-                    ค้นหา
-
-                </button>
-
-
-            </div>
-
-
-            <div id="searchResult"
-                 style="
-                    margin-top:15px;
-                    min-height:20px;
-                 ">
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
 
 
 
@@ -2025,8 +2038,7 @@ function checkStatus() {
         "";
 
 
-    var webAppUrl =
-        "https://script.google.com/macros/s/AKfycbxsjJpnPtU4ECGJs8KYk3ItHsDTHf62TtzLuLUW5T24SmSjA29frsXeGy2fSynvy0yv/exec";
+    var webAppUrl = "https://script.google.com/macros/s/AKfycbxsjJpnPtU4ECGJs8KYk3ItHsDTHf62TtzLuLUW5T24SmSjA29frsXeGy2fSynvy0yv/exec";
 
 
     fetch(

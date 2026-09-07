@@ -2715,3 +2715,1690 @@ details p {
     }
 
 }
+
+
+/* =========================================================
+   MOBILE UI
+   ปรับหน้าจอมือถือให้ดูเป็นเว็บงานวิ่งสมัยใหม่
+   เน้น:
+   - อ่านง่าย
+   - ปุ่มกดง่าย
+   - Card สวย
+   - ระยะห่างพอดี
+   - ดู Premium / Sport Event
+   - ไม่เปลี่ยน HTML และ JavaScript เดิม
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* =====================================================
+       GLOBAL MOBILE
+       พื้นฐานสำหรับมือถือ
+    ===================================================== */
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .container {
+        width: calc(100% - 30px);
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+
+    /* =====================================================
+       NAVBAR
+       Navbar แบบกระชับ ใช้งานง่าย
+    ===================================================== */
+
+    .navbar {
+        padding: 8px 0;
+        background: rgba(3, 45, 32, 0.94);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .navbar-inner {
+        min-height: 44px;
+    }
+
+    .logo {
+        font-size: 16px;
+        gap: 8px;
+    }
+
+    .logo-img {
+        width: 38px;
+        height: 38px;
+        padding: 4px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 42px;
+
+        padding: 0;
+
+        border-radius: 12px;
+
+        background: rgba(255, 255, 255, 0.08);
+
+        font-size: 25px;
+
+        transition: 0.25s ease;
+    }
+
+    .menu-toggle:active {
+        transform: scale(0.94);
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .nav-menu {
+        display: none;
+
+        position: absolute;
+
+        top: calc(100% + 8px);
+        left: 15px;
+
+        width: calc(100% - 30px);
+
+        flex-direction: column;
+
+        gap: 5px;
+
+        padding: 10px;
+
+        background: rgba(3, 45, 32, 0.98);
+
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        border: 1px solid rgba(255, 255, 255, 0.10);
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+
+        padding: 13px 15px;
+
+        border-radius: 12px;
+
+        font-size: 16px !important;
+
+        text-align: left;
+
+        opacity: 1;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a:active {
+        background: rgba(255, 255, 255, 0.10);
+        color: white;
+    }
+
+
+    /* =====================================================
+       TOP LOGO
+       โลโก้กลาง Hero
+    ===================================================== */
+
+    .top-logo {
+        top: 70px;
+
+        width: 92px;
+        height: 92px;
+
+        border-width: 4px;
+
+        box-shadow:
+            0 8px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .top-logo img {
+        width: 68px;
+        height: 68px;
+    }
+
+
+    /* =====================================================
+       HERO
+       ลดความสูงให้เหมาะกับมือถือ
+    ===================================================== */
+
+    .hero {
+        min-height: auto;
+
+        padding: 0;
+
+        background:
+            radial-gradient(
+                circle at 20% 15%,
+                rgba(255, 216, 77, 0.20),
+                transparent 30%
+            ),
+            radial-gradient(
+                circle at 85% 80%,
+                rgba(0, 255, 170, 0.15),
+                transparent 35%
+            ),
+            linear-gradient(
+                145deg,
+                #032d20,
+                #08734d 55%,
+                #0da66b
+            );
+    }
+
+    .hero-content {
+        padding: 170px 0 55px;
+    }
+
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 7px 14px;
+
+        margin-bottom: 16px;
+
+        border-radius: 50px;
+
+        font-size: 11px;
+
+        background: rgba(255, 255, 255, 0.11);
+
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        box-shadow:
+            0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero-title {
+        font-size: clamp(42px, 14vw, 62px);
+
+        line-height: 0.98;
+
+        letter-spacing: 0.5px;
+
+        margin-bottom: 13px;
+
+        text-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-subtitle {
+        font-size: 19px;
+
+        line-height: 1.4;
+
+        margin-bottom: 9px;
+    }
+
+    .hero-description {
+        max-width: 390px;
+
+        padding: 0 10px;
+
+        font-size: 13.5px;
+
+        line-height: 1.8;
+
+        opacity: 0.88;
+    }
+
+
+    /* =====================================================
+       HERO INFO
+       เปลี่ยนเป็น Card แบบงานวิ่ง
+    ===================================================== */
+
+    .hero-info {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 9px;
+
+        width: 100%;
+
+        margin: 23px auto;
+    }
+
+    .info-card {
+        min-width: 0;
+
+        width: 100%;
+
+        padding: 13px 10px;
+
+        border-radius: 16px;
+
+        background: rgba(255, 255, 255, 0.10);
+
+        border: 1px solid rgba(255, 255, 255, 0.14);
+
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.10);
+
+        font-size: 12px;
+    }
+
+    .info-card strong {
+        margin-top: 2px;
+
+        font-size: 15px;
+
+        line-height: 1.35;
+    }
+
+
+    /* =====================================================
+       BUTTONS
+       ปุ่มสมัครขนาดใหญ่ กดง่าย
+    ===================================================== */
+
+    .buttons {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 9px;
+
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+
+        max-width: 390px;
+
+        min-height: 52px;
+
+        padding: 13px 20px;
+
+        border-radius: 15px;
+
+        font-size: 16px;
+
+        font-weight: 600;
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.18);
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .btn:active {
+        transform: scale(0.97);
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+
+    .btn-normal {
+        background: white;
+
+        color: var(--green);
+
+        border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .btn-vip {
+        background:
+            linear-gradient(
+                135deg,
+                #ffe66d,
+                #ffc928
+            );
+
+        color: #3c3000;
+
+        box-shadow:
+            0 8px 25px rgba(160, 120, 0, 0.22);
+    }
+
+
+    /* =====================================================
+       SECTION
+       ลด Padding ให้เหมาะกับจอมือถือ
+    ===================================================== */
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 29px;
+
+        line-height: 1.3;
+
+        margin-bottom: 7px;
+    }
+
+    .section-subtitle {
+        max-width: 400px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        margin-bottom: 28px;
+
+        font-size: 13.5px;
+
+        line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       CARDS
+       Card แบบ Modern Sport
+    ===================================================== */
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .card {
+        padding: 25px 20px;
+
+        border-radius: 20px;
+
+        border: 1px solid #e4ebe7;
+
+        box-shadow:
+            0 8px 28px rgba(10, 50, 30, 0.07);
+
+        transition: none;
+    }
+
+    .card:hover {
+        transform: none;
+
+        box-shadow:
+            0 8px 28px rgba(10, 50, 30, 0.07);
+    }
+
+    .card-icon {
+        font-size: 40px;
+
+        margin-bottom: 7px;
+    }
+
+    .card h3 {
+        font-size: 26px;
+
+        margin-bottom: 4px;
+    }
+
+    .card p {
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       PRICE TABLE
+       ตารางราคาสมัคร
+    ===================================================== */
+
+    .price-table {
+        width: 100%;
+
+        max-width: 100%;
+
+        border-radius: 16px;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    .price-table table {
+        min-width: 520px;
+    }
+
+    th {
+        padding: 13px 12px;
+
+        font-size: 14px;
+    }
+
+    td {
+        padding: 13px 12px;
+
+        font-size: 13px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       SHIRT
+       แสดงเสื้อ
+    ===================================================== */
+
+    .image-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .image-card {
+        border-radius: 20px;
+
+        box-shadow:
+            0 8px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .image-card:hover {
+        transform: none;
+    }
+
+    .image-card img {
+        height: 270px;
+
+        padding: 15px;
+    }
+
+    .image-card:hover img {
+        transform: none;
+    }
+
+    .image-caption {
+        padding: 13px 12px 17px;
+    }
+
+    .image-caption h3 {
+        font-size: 20px;
+    }
+
+    .image-caption p {
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       SHIRT INFO
+    ===================================================== */
+
+    .shirt-info {
+        gap: 9px;
+    }
+
+    .shirt-info img {
+        width: 115px;
+        height: 115px;
+
+        border-radius: 15px;
+
+        padding: 7px;
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.07);
+    }
+
+    .shirt-info img:hover {
+        transform: none;
+    }
+
+    .shirt-info p {
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       VIP
+       Card VIP แบบ Premium
+    ===================================================== */
+
+    .vip-section {
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(255, 215, 0, 0.25),
+                transparent 40%
+            ),
+            linear-gradient(
+                145deg,
+                #fff9db,
+                #ffeaa0
+            );
+    }
+
+    .vip-box {
+        width: 100%;
+
+        padding: 32px 18px;
+
+        border-radius: 22px;
+
+        box-shadow:
+            0 15px 45px rgba(130, 100, 0, 0.12);
+    }
+
+    .vip-icon {
+        font-size: 55px;
+
+        margin-bottom: 6px;
+    }
+
+    .vip-box h2 {
+        font-size: 30px;
+
+        line-height: 1.3;
+
+        margin-bottom: 10px;
+    }
+
+    .vip-box p {
+        font-size: 14px;
+
+        line-height: 1.8;
+
+        margin-bottom: 22px;
+    }
+
+
+    /* =====================================================
+       STEPS
+       ขั้นตอนสมัคร
+    ===================================================== */
+
+    .steps {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .step {
+        padding: 23px 18px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+
+        margin-bottom: 11px;
+
+        font-size: 20px;
+    }
+
+    .step h3 {
+        font-size: 18px;
+
+        margin-bottom: 5px;
+    }
+
+    .step p {
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+
+    /* =====================================================
+       FAQ
+       คำถามที่พบบ่อย
+    ===================================================== */
+
+    .faq {
+        width: 100%;
+    }
+
+    details {
+        padding: 16px 17px;
+
+        margin-bottom: 10px;
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 6px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    summary {
+        font-size: 15px;
+
+        line-height: 1.55;
+    }
+
+    details p {
+        margin-top: 12px;
+
+        font-size: 13.5px;
+
+        line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       AWARDS
+       ส่วนรางวัล
+    ===================================================== */
+
+    .awards-section {
+        background: #f7f9fb;
+    }
+
+    .all-runner-box {
+        width: 100%;
+
+        margin-bottom: 30px;
+
+        padding: 23px 17px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    .all-runner-icon {
+        font-size: 45px;
+
+        margin-bottom: 6px;
+    }
+
+    .all-runner-box h3 {
+        font-size: 21px;
+
+        margin-bottom: 7px;
+    }
+
+    .all-runner-box p {
+        font-size: 13.5px;
+
+        line-height: 1.8;
+    }
+
+    .award-category {
+        margin-top: 32px;
+    }
+
+    .award-category-title {
+        font-size: 24px;
+
+        margin-bottom: 17px;
+    }
+
+    .award-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 420px;
+
+        gap: 12px;
+    }
+
+    .award-card {
+        padding: 14px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 7px 22px rgba(0, 0, 0, 0.06);
+    }
+
+    .award-card:hover {
+        transform: none;
+
+        box-shadow:
+            0 7px 22px rgba(0, 0, 0, 0.06);
+    }
+
+    .award-card img {
+        height: 220px;
+
+        margin-bottom: 8px;
+
+        border-radius: 13px;
+    }
+
+    .award-rank {
+        font-size: 36px;
+
+        margin-bottom: 2px;
+    }
+
+    .award-card h4 {
+        font-size: 20px;
+
+        margin: 4px 0;
+    }
+
+    .award-card p {
+        font-size: 13.5px;
+    }
+
+    .award-note {
+        margin-top: 30px;
+
+        padding: 15px 14px;
+
+        border-radius: 14px;
+
+        font-size: 13.5px;
+
+        line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       CONTACT
+       ช่องทางติดต่อ
+    ===================================================== */
+
+    .final-section {
+        padding: 55px 15px;
+    }
+
+    .final-section h2 {
+        font-size: 31px;
+
+        line-height: 1.3;
+
+        margin-bottom: 8px;
+    }
+
+    .final-section p {
+        font-size: 13.5px;
+
+        line-height: 1.8;
+
+        margin-bottom: 24px;
+    }
+
+    .contact-box {
+        width: 100%;
+
+        padding: 32px 17px;
+
+        border-radius: 20px;
+
+        box-shadow:
+            0 10px 30px rgba(31, 78, 64, 0.10);
+    }
+
+    .contact-icon {
+        font-size: 52px;
+
+        margin-bottom: 8px;
+    }
+
+    .contact-box h2 {
+        font-size: 27px;
+
+        margin-bottom: 9px;
+    }
+
+    .contact-subtitle {
+        font-size: 14px;
+
+        line-height: 1.75;
+
+        margin-bottom: 25px;
+    }
+
+    .contact-info {
+        gap: 10px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 4px;
+
+        padding: 16px 17px;
+
+        border-radius: 14px;
+
+        transform: none;
+
+        box-shadow:
+            0 5px 16px rgba(47, 128, 104, 0.08);
+    }
+
+    .contact-label {
+        font-size: 14px;
+    }
+
+    .contact-value {
+        font-size: 15px;
+
+        word-break: break-word;
+
+        line-height: 1.5;
+    }
+
+    .contact-phone {
+        font-size: 15px;
+    }
+
+    .contact-footer {
+        margin-top: 24px;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .footer h2 {
+        font-size: 21px;
+    }
+
+    .footer p {
+        font-size: 12px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       MAP MODAL
+    ===================================================== */
+
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-content {
+        max-width: 94vw;
+
+        max-height: 78vh;
+
+        border-radius: 10px;
+    }
+
+    .close-btn {
+        top: 8px;
+
+        right: 12px;
+
+        font-size: 36px;
+    }
+
+
+    /* =====================================================
+       REGISTRATION POPUP
+       Popup หลังสมัคร
+    ===================================================== */
+
+    .registration-popup {
+        padding: 15px;
+    }
+
+    .registration-popup-box {
+        max-width: 430px;
+
+        padding: 30px 18px;
+
+        border-radius: 22px;
+    }
+
+    .popup-icon {
+        font-size: 46px;
+
+        margin-bottom: 6px;
+    }
+
+    .popup-title {
+        font-size: 23px;
+
+        line-height: 1.4;
+
+        margin-bottom: 10px;
+    }
+
+    .popup-subtitle {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .popup-reg-id {
+        font-size: clamp(30px, 10vw, 46px);
+
+        letter-spacing: 1px;
+
+        line-height: 1.2;
+
+        margin: 12px 0;
+    }
+
+    .popup-distance {
+        font-size: 15px;
+
+        margin-bottom: 20px;
+    }
+
+    .popup-close-btn {
+        width: 100%;
+
+        max-width: 100%;
+
+        min-height: 50px;
+
+        padding: 13px 18px;
+
+        border-radius: 12px;
+
+        font-size: 16px;
+    }
+
+
+    /* =====================================================
+       SHIRT GALLERY
+       Popup ดูเสื้อ
+    ===================================================== */
+
+    .shirt-gallery {
+        padding: 10px;
+    }
+
+    .shirt-gallery-content img {
+        max-width: 84vw;
+
+        max-height: 68vh;
+
+        border-radius: 12px;
+    }
+
+    .shirt-gallery-title {
+        font-size: 17px;
+
+        margin-top: 10px;
+    }
+
+    .shirt-close {
+        top: 10px;
+
+        right: 10px;
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 29px;
+    }
+
+    .shirt-prev,
+    .shirt-next {
+        width: 43px;
+        height: 43px;
+
+        font-size: 20px;
+    }
+
+    .shirt-prev {
+        left: 7px;
+    }
+
+    .shirt-next {
+        right: 7px;
+    }
+
+
+    /* =====================================================
+       AWARD GALLERY
+    ===================================================== */
+
+    .award-gallery {
+        padding: 10px;
+    }
+
+    .award-gallery-content img {
+        max-width: 84vw;
+
+        max-height: 68vh;
+
+        border-radius: 12px;
+    }
+
+    .award-gallery-title {
+        font-size: 18px;
+
+        margin-top: 10px;
+    }
+
+    .award-close {
+        top: 10px;
+
+        right: 10px;
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 29px;
+    }
+
+    .award-prev,
+    .award-next {
+        width: 43px;
+        height: 43px;
+
+        font-size: 20px;
+    }
+
+    .award-prev {
+        left: 7px;
+    }
+
+    .award-next {
+        right: 7px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+   สำหรับมือถือจอเล็กมาก เช่น 360px / 375px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+
+    /* -----------------------------------------------------
+       NAVBAR
+    ----------------------------------------------------- */
+
+    .navbar {
+        padding: 7px 0;
+    }
+
+    .navbar-inner {
+        min-height: 43px;
+    }
+
+    .logo {
+        font-size: 14px;
+
+        gap: 7px;
+    }
+
+    .logo-img {
+        width: 36px;
+        height: 36px;
+
+        padding: 4px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 11px;
+
+        font-size: 23px;
+    }
+
+
+    /* -----------------------------------------------------
+       TOP LOGO
+    ----------------------------------------------------- */
+
+    .top-logo {
+        top: 66px;
+
+        width: 86px;
+        height: 86px;
+
+        border-width: 4px;
+    }
+
+    .top-logo img {
+        width: 63px;
+        height: 63px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero-content {
+        padding: 160px 0 48px;
+    }
+
+    .hero-badge {
+        font-size: 10px;
+
+        padding: 6px 10px;
+
+        margin-bottom: 14px;
+    }
+
+    .hero-title {
+        font-size: clamp(37px, 13vw, 52px);
+
+        letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+        font-size: 17px;
+    }
+
+    .hero-description {
+        font-size: 12.5px;
+
+        padding: 0 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO INFO
+    ----------------------------------------------------- */
+
+    .hero-info {
+        gap: 7px;
+
+        margin: 20px 0;
+    }
+
+    .info-card {
+        padding: 11px 7px;
+
+        border-radius: 13px;
+
+        font-size: 11px;
+    }
+
+    .info-card strong {
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       BUTTON
+    ----------------------------------------------------- */
+
+    .btn {
+        min-height: 49px;
+
+        max-width: 100%;
+
+        padding: 12px 15px;
+
+        border-radius: 13px;
+
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTION
+    ----------------------------------------------------- */
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .section-subtitle {
+        font-size: 12.5px;
+
+        margin-bottom: 24px;
+    }
+
+
+    /* -----------------------------------------------------
+       CARDS
+    ----------------------------------------------------- */
+
+    .card {
+        padding: 23px 17px;
+
+        border-radius: 18px;
+    }
+
+    .card-icon {
+        font-size: 37px;
+    }
+
+    .card h3 {
+        font-size: 24px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       PRICE
+    ----------------------------------------------------- */
+
+    .price-table table {
+        min-width: 500px;
+    }
+
+    th {
+        padding: 12px 10px;
+
+        font-size: 13px;
+    }
+
+    td {
+        padding: 12px 10px;
+
+        font-size: 12.5px;
+    }
+
+
+    /* -----------------------------------------------------
+       SHIRT
+    ----------------------------------------------------- */
+
+    .image-card img {
+        height: 235px;
+    }
+
+    .image-caption h3 {
+        font-size: 19px;
+    }
+
+    .image-caption p {
+        font-size: 12px;
+    }
+
+    .shirt-info img {
+        width: 105px;
+        height: 105px;
+    }
+
+
+    /* -----------------------------------------------------
+       VIP
+    ----------------------------------------------------- */
+
+    .vip-box {
+        padding: 28px 15px;
+
+        border-radius: 19px;
+    }
+
+    .vip-icon {
+        font-size: 48px;
+    }
+
+    .vip-box h2 {
+        font-size: 27px;
+    }
+
+    .vip-box p {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       STEPS
+    ----------------------------------------------------- */
+
+    .step {
+        padding: 21px 16px;
+
+        border-radius: 16px;
+    }
+
+    .step-number {
+        width: 47px;
+        height: 47px;
+
+        font-size: 19px;
+    }
+
+    .step h3 {
+        font-size: 17px;
+    }
+
+    .step p {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       FAQ
+    ----------------------------------------------------- */
+
+    details {
+        padding: 14px 15px;
+
+        border-radius: 13px;
+    }
+
+    summary {
+        font-size: 14px;
+    }
+
+    details p {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       AWARDS
+    ----------------------------------------------------- */
+
+    .all-runner-box {
+        padding: 21px 15px;
+
+        border-radius: 16px;
+    }
+
+    .all-runner-icon {
+        font-size: 42px;
+    }
+
+    .all-runner-box h3 {
+        font-size: 20px;
+    }
+
+    .all-runner-box p {
+        font-size: 13px;
+    }
+
+    .award-category-title {
+        font-size: 23px;
+    }
+
+    .award-card {
+        padding: 12px;
+
+        border-radius: 16px;
+    }
+
+    .award-card img {
+        height: 205px;
+    }
+
+    .award-rank {
+        font-size: 34px;
+    }
+
+    .award-card h4 {
+        font-size: 19px;
+    }
+
+    .award-card p {
+        font-size: 13px;
+    }
+
+    .award-note {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
+
+    .final-section {
+        padding: 48px 12px;
+    }
+
+    .final-section h2 {
+        font-size: 28px;
+    }
+
+    .final-section p {
+        font-size: 13px;
+    }
+
+    .contact-box {
+        padding: 28px 15px;
+
+        border-radius: 18px;
+    }
+
+    .contact-icon {
+        font-size: 48px;
+    }
+
+    .contact-box h2 {
+        font-size: 25px;
+    }
+
+    .contact-subtitle {
+        font-size: 13px;
+    }
+
+    .contact-item {
+        padding: 14px 15px;
+
+        border-radius: 13px;
+    }
+
+    .contact-label {
+        font-size: 13px;
+    }
+
+    .contact-value,
+    .contact-phone {
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    .footer {
+        padding: 27px 12px;
+    }
+
+    .footer h2 {
+        font-size: 20px;
+    }
+
+    .footer p {
+        font-size: 11.5px;
+    }
+
+
+    /* -----------------------------------------------------
+       REGISTRATION POPUP
+    ----------------------------------------------------- */
+
+    .registration-popup {
+        padding: 12px;
+    }
+
+    .registration-popup-box {
+        padding: 26px 15px;
+
+        border-radius: 19px;
+    }
+
+    .popup-icon {
+        font-size: 42px;
+    }
+
+    .popup-title {
+        font-size: 21px;
+    }
+
+    .popup-subtitle {
+        font-size: 13px;
+    }
+
+    .popup-reg-id {
+        font-size: clamp(28px, 9vw, 42px);
+
+        margin: 10px 0;
+    }
+
+    .popup-distance {
+        font-size: 14px;
+
+        margin-bottom: 17px;
+    }
+
+    .popup-close-btn {
+        min-height: 48px;
+
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       GALLERY
+    ----------------------------------------------------- */
+
+    .shirt-gallery,
+    .award-gallery {
+        padding: 8px;
+    }
+
+    .shirt-gallery-content img,
+    .award-gallery-content img {
+        max-width: 82vw;
+
+        max-height: 63vh;
+
+        border-radius: 10px;
+    }
+
+    .shirt-gallery-title,
+    .award-gallery-title {
+        font-size: 16px;
+
+        margin-top: 9px;
+    }
+
+    .shirt-close,
+    .award-close {
+        top: 8px;
+        right: 8px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 27px;
+    }
+
+    .shirt-prev,
+    .shirt-next,
+    .award-prev,
+    .award-next {
+        width: 41px;
+        height: 41px;
+
+        font-size: 19px;
+    }
+
+    .shirt-prev,
+    .award-prev {
+        left: 5px;
+    }
+
+    .shirt-next,
+    .award-next {
+        right: 5px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .btn-vip,
+    .btn-normal {
+        width: fit-content !important;
+        max-width: none !important;
+
+        padding: 10px 20px !important;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 999px;
+
+        white-space: nowrap;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .info-card-center {
+        grid-column: 1 / -1;
+
+        width: fit-content;
+        max-width: 90%;
+
+        justify-self: center;
+
+        padding: 12px 22px;
+
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 16px;
+    }
+
+    .info-card-center strong {
+        display: block;
+    }
+
+}

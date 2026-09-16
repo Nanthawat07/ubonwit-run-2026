@@ -92,6 +92,14 @@
                 วิธีสมัครวิ่ง
             </a>
 
+              <!-- ข้อมูลผู้สมัคร -->
+            <a href="applicants.html"
+               style="color: var(--gold); font-weight: bold;">
+
+                ข้อมูลผู้สมัคร 👥
+
+            </a>
+
             <a href="#check-status"
                style="color: var(--gold); font-weight: bold;">
 
@@ -194,13 +202,23 @@
 
                 </div>
 
-                  <div class="info-card info-card-center">
+                 <div class="info-card">
 
                     📍
                     <strong>START - FINISH</strong>
                       โรงเรียนอุบลวิทยาคม
 
                 </div>
+
+                <div class="info-card schedule-card" onclick="openSchedule()">
+
+                📅
+                <strong>กำหนดการ</strong>
+                    ( คลิกเพื่อดู )
+
+                </div>
+
+                
 
 
             </div>
@@ -271,53 +289,74 @@
             <!-- SEARCH -->
 
             <div style="
-                display:flex;
-                justify-content:center;
-                gap:10px;
-                flex-wrap:wrap;
-            ">
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+">
 
+    <input
+        type="text"
+        id="searchId"
+        placeholder="เลขบัตรประชาชน 13 หลัก"
+        maxlength="13"
 
-                <input
-                    type="text"
-                    id="searchId"
-                    placeholder="เลขบัตรประชาชน 13 หลัก"
-                    maxlength="13"
+        style="
+            padding:10px 20px;
+            font-size:15px;
+            border-radius:50px;
+            border:2px solid #e4ebe7;
+            width:100%;
+            max-width:260px;
+            font-family:'Kanit',sans-serif;
+            outline:none;
+        "
+    >
 
-                    style="
-                        padding:10px 20px;
-                        font-size:15px;
-                        border-radius:50px;
-                        border:2px solid #e4ebe7;
-                        width:100%;
-                        max-width:260px;
-                        font-family:'Kanit',sans-serif;
-                        outline:none;
-                    "
-                >
+    <button
+        onclick="checkStatus()"
+        id="searchBtn"
+        class="btn btn-normal"
 
+        style="
+            cursor:pointer;
+            border:none;
+            background:var(--green);
+            color:white;
+            padding:10px 25px;
+            font-size:15px;
+        "
+    >
+        ค้นหา
+    </button>
 
-                <button
-                    onclick="checkStatus()"
-                    id="searchBtn"
-                    class="btn btn-normal"
+    <!-- 🏆 ปุ่มพิมพ์เกียรติบัตร -->
+    <!--
+        ซ่อนปุ่มนี้ไว้ก่อน (ยังไม่เปิดให้พิมพ์เกียรติบัตร)
+        ระบบค้นหา / popup อื่น ๆ ยังทำงานปกติทั้งหมด
+        พร้อมเปิดใช้งานเมื่อไหร่ ให้เอา comment ที่ครอบปุ่มนี้ออก
+    -->
+    <!--
+    <button
+        onclick="printCertificate()"
+        id="certificateBtn"
+        class="btn btn-normal"
 
-                    style="
-                        cursor:pointer;
-                        border:none;
-                        background:var(--green);
-                        color:white;
-                        padding:10px 25px;
-                        font-size:15px;
-                    "
-                >
+        style="
+            display:none;
+            cursor:pointer;
+            border:none;
+            background:#c9a227;
+            color:white;
+            padding:10px 25px;
+            font-size:15px;
+        "
+    >
+        🏆 พิมพ์เกียรติบัตร
+    </button>
+    -->
 
-                    ค้นหา
-
-                </button>
-
-
-            </div>
+</div>
 
 
             <div id="searchResult"
@@ -367,7 +406,7 @@
             <!-- 2.5 KM -->
 
             <div class="card"
-                 onclick="showMap('images/map-2.5km.jpg')"
+                 onclick="showMap('images/map-2.5km.png')"
                  style="cursor:pointer;">
 
                 <div class="card-icon">
@@ -390,7 +429,7 @@
             <!-- 5 KM -->
 
             <div class="card"
-                 onclick="showMap('images/map-5km.jpg')"
+                 onclick="showMap('images/map-5km.png')"
                  style="cursor:pointer;">
 
                 <div class="card-icon">
@@ -413,7 +452,7 @@
             <!-- 10 KM -->
 
             <div class="card"
-                 onclick="showMap('images/map-10km.jpg')"
+                 onclick="showMap('images/map-10km.png')"
                  style="cursor:pointer;">
 
                 <div class="card-icon">
@@ -1952,6 +1991,28 @@ function checkStatus() {
 
 
     /* ==========================================
+       ปุ่มพิมพ์เกียรติบัตรถูกซ่อนไว้ก่อน (comment ใน HTML)
+       เช็คว่ามีอยู่ใน DOM จริงไหมก่อนสั่งซ่อน/แสดง
+       เพื่อไม่ให้ error ตอนเรียก .style ของ element ที่ไม่มีอยู่
+    ========================================== */
+
+    var certificateBtn =
+        document.getElementById("certificateBtn");
+
+
+    /* ==========================================
+       ซ่อนปุ่มเกียรติบัตรก่อนค้นหาทุกครั้ง
+    ========================================== */
+
+    if (certificateBtn) {
+
+        certificateBtn.style.display =
+            "none";
+
+    }
+
+
+    /* ==========================================
        ไม่ได้กรอกเลขบัตร
     ========================================== */
 
@@ -2038,16 +2099,17 @@ function checkStatus() {
         "";
 
 
-    var webAppUrl = "https://script.google.com/macros/s/AKfycbxsjJpnPtU4ECGJs8KYk3ItHsDTHf62TtzLuLUW5T24SmSjA29frsXeGy2fSynvy0yv/exec";
+    var webAppUrl =
+        "https://script.google.com/macros/s/AKfycbxsjJpnPtU4ECGJs8KYk3ItHsDTHf62TtzLuLUW5T24SmSjA29frsXeGy2fSynvy0yv/exec";
 
 
     fetch(
-    webAppUrl +
-    "?id=" +
-    encodeURIComponent(searchId) +
-    "&t=" +
-    Date.now()
-)
+        webAppUrl +
+        "?id=" +
+        encodeURIComponent(searchId) +
+        "&t=" +
+        Date.now()
+    )
 
 
     .then(function(response) {
@@ -2080,6 +2142,49 @@ function checkStatus() {
         ========================================== */
 
         if (data.status === "success") {
+
+
+            /* ==========================================
+               ⭐ จำข้อมูลผู้สมัครที่ค้นพบ
+               สำหรับใช้พิมพ์เกียรติบัตร
+               (เก็บไว้ใช้ในอนาคต แม้ปุ่มจะถูกซ่อนอยู่)
+            ========================================== */
+
+            window.currentApplicant = {
+
+                regId:
+                    data.regId || "-",
+
+                name:
+                    data.name || "-",
+
+                distance:
+                    data.distance || "-",
+
+                phone:
+                    data.phone || "-",
+
+                gender:
+                    data.gender || "-",
+
+                shirtSize:
+                    data.shirtSize || "-"
+
+            };
+
+
+            /* ==========================================
+               🏆 แสดงปุ่มพิมพ์เกียรติบัตร
+               (ปุ่มถูกซ่อนอยู่ใน HTML แล้ว
+               ถ้าไม่มีปุ่มในหน้า จะไม่ error)
+            ========================================== */
+
+            if (certificateBtn) {
+
+                certificateBtn.style.display =
+                    "inline-block";
+
+            }
 
 
             /* ==========================================
@@ -2471,6 +2576,22 @@ function checkStatus() {
 
         else if (data.status === "not_found") {
 
+            /* ซ่อนปุ่มเกียรติบัตร */
+
+            if (certificateBtn) {
+
+                certificateBtn.style.display =
+                    "none";
+
+            }
+
+
+            /* ล้างข้อมูลผู้สมัครเดิม */
+
+            window.currentApplicant =
+                null;
+
+
             resultDiv.innerHTML =
                 "<p style='color:red;'>❌ ไม่พบข้อมูลการสมัครจากเลขบัตรประชาชนนี้</p>";
 
@@ -2509,6 +2630,18 @@ function checkStatus() {
         ========================================== */
 
         else {
+
+            if (certificateBtn) {
+
+                certificateBtn.style.display =
+                    "none";
+
+            }
+
+
+            window.currentApplicant =
+                null;
+
 
             resultDiv.innerHTML =
                 "<p style='color:red;'>⚠️ เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง</p>";
@@ -2560,6 +2693,18 @@ function checkStatus() {
             false;
 
 
+        if (certificateBtn) {
+
+            certificateBtn.style.display =
+                "none";
+
+        }
+
+
+        window.currentApplicant =
+            null;
+
+
         resultDiv.innerHTML =
             "<p style='color:red;'>⚠️ ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้</p>";
 
@@ -2586,7 +2731,9 @@ function checkStatus() {
             backdrop: "rgba(0,0,0,0.45)",
 
             customClass: {
+
                 popup: "swal2-rounded"
+
             }
 
         });
@@ -2595,6 +2742,79 @@ function checkStatus() {
 
 }
 
+/* ===================================================== 
+   🏆 PRINT CERTIFICATE 
+   (ฟังก์ชันนี้ยังอยู่ครบ พร้อมใช้งานทันที
+   เมื่อเปิด comment ปุ่มด้านบนกลับมา)
+===================================================== */ 
+ 
+function printCertificate() { 
+ 
+    /* =========================================
+       ตรวจสอบว่าค้นหาผู้สมัครแล้วหรือยัง
+    ========================================= */
+ 
+    if ( 
+        !window.currentApplicant || 
+        !window.currentApplicant.name 
+    ) { 
+ 
+        Swal.fire({ 
+ 
+            icon: "warning", 
+ 
+            title: "ยังไม่มีข้อมูลผู้สมัคร", 
+ 
+            text: "กรุณาค้นหาผู้สมัครให้พบก่อน", 
+ 
+            confirmButtonText: "ตกลง", 
+ 
+            confirmButtonColor: "#198754" 
+ 
+        }); 
+ 
+        return; 
+ 
+    } 
+ 
+ 
+    /* =========================================
+       ดึงข้อมูลผู้สมัครที่ค้นพบ
+    ========================================= */
+ 
+    var applicant = 
+        window.currentApplicant; 
+ 
+ 
+    console.log( 
+        "ข้อมูลสำหรับพิมพ์เกียรติบัตร:", 
+        applicant 
+    ); 
+ 
+ 
+    /* =========================================
+       ส่งข้อมูลไปยัง certificate.html
+       ผ่าน sessionStorage
+    ========================================= */
+ 
+    sessionStorage.setItem(
+        "certificateApplicant",
+        JSON.stringify(
+            applicant
+        )
+    );
+ 
+ 
+    /* =========================================
+       เปิดหน้าเกียรติบัตร
+    ========================================= */
+ 
+    window.open(
+        "certificate.html",
+        "_blank"
+    );
+ 
+}
 
 
 /* =====================================================
@@ -2737,8 +2957,61 @@ function closeShirtGallery() {
 
 }
 
+function openSchedule() {
+    document.getElementById("scheduleModal").classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeSchedule() {
+    document.getElementById("scheduleModal").classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+/* กดพื้นที่ด้านนอกเพื่อปิด */
+document.addEventListener("DOMContentLoaded", function() {
+
+    var scheduleModal =
+        document.getElementById("scheduleModal");
+
+    if (scheduleModal) {
+
+        scheduleModal.addEventListener("click", function(e) {
+
+            if (e.target === this) {
+
+                closeSchedule();
+
+            }
+
+        });
+
+    }
+
+});
+
 
 </script>
+
+<!-- =========================
+     POPUP กำหนดการ
+========================= -->
+
+<div id="scheduleModal" class="schedule-modal">
+
+    <div class="schedule-modal-content">
+
+        <button class="schedule-close" onclick="closeSchedule()">
+            ×
+        </button>
+
+        <img
+            src="images/กำหนดการ.png"
+            alt="กำหนดการ UBONWIT RUN 2026"
+        >
+
+    </div>
+
+</div>
 
 
 </body>

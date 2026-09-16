@@ -1,0 +1,725 @@
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+
+body {
+
+    background: #eeeeee;
+
+    font-family:
+        'IBM Plex Sans Thai',
+        sans-serif;
+
+    padding: 25px;
+
+}
+
+
+/* ==================================================
+   CERTIFICATE WRAPPER
+================================================== */
+
+.certificate-wrapper {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+/* ==================================================
+   CERTIFICATE
+
+   A4 LANDSCAPE
+   1123 × 794 PX
+================================================== */
+
+.certificate {
+
+    position: relative;
+
+    width: 1123px;
+
+    height: 794px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background-image:
+        url("./certificate-bg.png");
+
+    background-size:
+        100% 100%;
+
+    background-position:
+        center;
+
+    background-repeat:
+        no-repeat;
+
+    flex-shrink: 0;
+
+}
+
+
+/* ==================================================
+   TEXT BASE
+================================================== */
+
+.cert-text {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    line-height: 1.3;
+
+    color: #222;
+
+}
+
+
+/* ==================================================
+   TITLE
+================================================== */
+
+#certTitle {
+
+    top: 10%;
+
+    font-family:
+        'IBM Plex Sans Thai',
+        sans-serif;
+
+    font-size: 56px;
+
+    font-weight: 700;
+
+    color: #126b3a;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        1px 1px 2px
+        rgba(0,0,0,0.08);
+
+}
+
+
+/* ==================================================
+   CERTIFICATE (คำว่า CERTIFICATE)
+================================================== */
+
+#certSubTitle {
+
+    top: 18%;
+
+    font-family:
+        'IBM Plex Sans Thai',
+        sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    color: #b18a19;
+
+    letter-spacing: 8px;
+
+}
+
+
+/* ==================================================
+   CONGRATULATIONS
+================================================== */
+
+#certCongratulations {
+
+    top: 26%;
+
+    font-family:
+        'IBM Plex Sans Thai',
+        sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+}
+
+
+/* ==================================================
+   NAME
+================================================== */
+
+#certName {
+
+    top: 34%;
+
+    font-family:
+        'IBM Plex Sans Thai',
+        sans-serif;
+
+    font-size: 52px;
+
+    font-weight: 700;
+
+    color: #126b3a;
+
+    max-width: 90%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+/* ==================================================
+   PARTICIPANT
+================================================== */
+
+#certParticipant {
+
+    top: 43%;
+
+    font-family:
+        'IBM Plex Sans Thai',
+        sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+
+}
+
+
+/* ==================================================
+   DISTANCE
+================================================== */
+
+#certDistance {
+
+    top: 50%;
+
+    font-family:
+        'IBM Plex Sans Thai',
+        sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    color: #126b3a;
+
+}
+
+
+/* ==================================================
+   SCHOOL
+================================================== */
+
+#certSchool {
+
+    top: 57%;
+
+    font-family:
+        'IBM Plex Sans Thai',
+        sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+}
+
+
+/* ==================================================
+   DATE
+================================================== */
+
+#certDate {
+
+    top: 64%;
+
+    font-family:
+        'IBM Plex Sans Thai',
+        sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+}
+
+
+/* ==================================================
+   CONTROL BUTTONS
+================================================== */
+
+.control-panel {
+
+    width: 100%;
+
+    max-width: 1123px;
+
+    margin: 20px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.control-panel button {
+
+    border: none;
+
+    border-radius: 30px;
+
+    padding: 11px 22px;
+
+    font-family:
+        'IBM Plex Sans Thai',
+        sans-serif;
+
+    font-size: 15px;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        all 0.2s ease;
+
+}
+
+
+.control-panel button:hover {
+
+    opacity: 0.88;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* ==================================================
+   PRINT
+================================================== */
+
+.print-btn {
+
+    background:
+        #126b3a;
+
+}
+
+
+/* ==================================================
+   PDF
+================================================== */
+
+.pdf-btn {
+
+    background:
+        #b18a19;
+
+}
+
+
+/* ==================================================
+   JPG
+================================================== */
+
+.jpg-btn {
+
+    background:
+        #0d6efd;
+
+}
+
+
+/* ==================================================
+   CLOSE
+================================================== */
+
+.close-btn {
+
+    background:
+        #dc3545;
+
+}
+
+
+.close-btn:hover {
+
+    background:
+        #b02a37;
+
+}
+
+
+/* ==================================================
+   LOADING
+================================================== */
+
+#loading {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        rgba(0, 0, 0, 0.45);
+
+}
+
+
+.loading-box {
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding:
+        25px 35px;
+
+    text-align: center;
+
+    font-family:
+        'IBM Plex Sans Thai',
+        sans-serif;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.2);
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media screen and (max-width: 1200px) {
+
+    body {
+
+        padding: 10px;
+
+    }
+
+
+    .certificate-wrapper {
+
+        width: 100%;
+
+        overflow: hidden;
+
+    }
+
+
+    .certificate {
+
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio:
+            1123 / 794;
+
+    }
+
+
+    #certTitle {
+
+        font-size:
+            clamp(
+                22px,
+                5vw,
+                56px
+            );
+
+    }
+
+
+    #certSubTitle {
+
+        font-size:
+            clamp(
+                11px,
+                2.5vw,
+                24px
+            );
+
+        letter-spacing:
+            clamp(
+                3px,
+                0.8vw,
+                8px
+            );
+
+    }
+
+
+    #certCongratulations {
+
+        font-size:
+            clamp(
+                11px,
+                2.2vw,
+                22px
+            );
+
+    }
+
+
+    #certName {
+
+        font-size:
+            clamp(
+                22px,
+                5vw,
+                52px
+            );
+
+    }
+
+
+    #certParticipant {
+
+        font-size:
+            clamp(
+                10px,
+                2vw,
+                20px
+            );
+
+    }
+
+
+    #certDistance {
+
+        font-size:
+            clamp(
+                12px,
+                2.5vw,
+                24px
+            );
+
+    }
+
+
+    #certSchool {
+
+        font-size:
+            clamp(
+                10px,
+                2vw,
+                20px
+            );
+
+    }
+
+
+    #certDate {
+
+        font-size:
+            clamp(
+                9px,
+                1.8vw,
+                18px
+            );
+
+    }
+
+
+    .control-panel {
+
+        margin-top:
+            15px;
+
+        gap:
+            7px;
+
+    }
+
+
+    .control-panel button {
+
+        padding:
+            9px 15px;
+
+        font-size:
+            13px;
+
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media screen and (max-width: 500px) {
+
+    body {
+
+        padding: 5px;
+
+    }
+
+
+    .control-panel {
+
+        gap:
+            6px;
+
+    }
+
+
+    .control-panel button {
+
+        padding:
+            8px 12px;
+
+        font-size:
+            12px;
+
+    }
+
+}
+
+
+/* ==================================================
+   PRINT
+================================================== */
+
+@media print {
+
+    @page {
+
+        size:
+            A4 landscape;
+
+        margin:
+            0;
+
+    }
+
+
+    html,
+    body {
+
+        width:
+            297mm;
+
+        height:
+            210mm;
+
+        margin:
+            0;
+
+        padding:
+            0;
+
+        background:
+            white;
+
+    }
+
+
+    .certificate-wrapper {
+
+        width:
+            297mm;
+
+        height:
+            210mm;
+
+    }
+
+
+    .certificate {
+
+        width:
+            297mm;
+
+        height:
+            210mm;
+
+        margin:
+            0;
+
+    }
+
+
+    .control-panel {
+
+        display:
+            none !important;
+
+    }
+
+
+    #loading {
+
+        display:
+            none !important;
+
+    }
+
+}

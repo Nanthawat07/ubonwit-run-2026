@@ -1,0 +1,926 @@
+/* ==================================================
+   UBONWIT RUN 2026
+   APPLICANTS PAGE
+================================================== */
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Kanit', sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f8f5 0%,
+            #ffffff 50%,
+            #f3f8f4 100%
+        );
+
+    color: #173f2a;
+
+    min-height: 100vh;
+}
+
+
+/* ==================================================
+   COLOR
+================================================== */
+
+:root {
+
+    --green-dark: #075c36;
+
+    --green: #0b7a45;
+
+    --green-light: #e8f5ed;
+
+    --gold: #d4a62a;
+
+    --gold-light: #fff7d9;
+
+    --white: #ffffff;
+
+    --text: #173f2a;
+
+    --gray: #6d7b73;
+
+    --border: #dfe9e3;
+
+}
+
+
+/* ==================================================
+   NAVBAR
+================================================== */
+
+.app-navbar {
+
+    width: 100%;
+
+    background:
+        rgba(4, 67, 38, 0.97);
+
+    border-bottom:
+        2px solid var(--gold);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.12);
+
+}
+
+
+.app-navbar-inner {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    min-height: 76px;
+
+    padding:
+        0 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.app-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+}
+
+
+.app-logo img {
+
+    width: 48px;
+
+    height: 48px;
+
+    object-fit: contain;
+
+}
+
+
+/* ==================================================
+   BACK HOME
+================================================== */
+
+.back-home {
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border:
+        1px solid rgba(255,255,255,0.35);
+
+    padding:
+        8px 18px;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    transition:
+        0.25s ease;
+
+}
+
+
+.back-home:hover {
+
+    background: var(--gold);
+
+    color: #173f2a;
+
+    border-color: var(--gold);
+
+}
+
+
+/* ==================================================
+   MAIN
+================================================== */
+
+.app-main {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding:
+        55px 35px 70px;
+
+}
+
+
+/* ==================================================
+   PAGE TITLE
+================================================== */
+
+.page-title {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+.title-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.page-title h1 {
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    color: var(--green-dark);
+
+}
+
+
+.page-title p {
+
+    margin-top: 2px;
+
+    color: var(--gray);
+
+    font-size: 17px;
+
+}
+
+
+/* ==================================================
+   APPLICANT GRID
+================================================== */
+
+.applicant-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 30px;
+
+    width: 100%;
+
+    align-items: start;
+
+}
+
+
+/* ==================================================
+   APPLICANT CARD
+================================================== */
+
+.applicant-card {
+
+    background: var(--white);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 8px 30px rgba(0, 60, 35, 0.08);
+
+    min-width: 0;
+
+}
+
+
+/* ==================================================
+   CARD HEADER
+================================================== */
+
+.card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        24px 26px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+/* GENERAL HEADER */
+
+.general .card-header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9f8ee,
+            #ffffff
+        );
+
+    border-top:
+        5px solid var(--green);
+
+}
+
+
+/* VIP HEADER */
+
+.vip .card-header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8dc,
+            #ffffff
+        );
+
+    border-top:
+        5px solid var(--gold);
+
+}
+
+
+/* ==================================================
+   CARD TITLE
+================================================== */
+
+.card-icon {
+
+    font-size: 24px;
+
+    vertical-align: middle;
+
+    margin-right: 5px;
+
+}
+
+
+.card-header h2 {
+
+    display: inline;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+}
+
+
+.general .card-header h2 {
+
+    color: var(--green-dark);
+
+}
+
+
+.vip .card-header h2 {
+
+    color: #9a7410;
+
+}
+
+
+.card-header p {
+
+    margin-top: 3px;
+
+    padding-left: 34px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+}
+
+
+/* ==================================================
+   COUNT
+================================================== */
+
+.count-box {
+
+    min-width: 72px;
+
+    text-align: center;
+
+    padding:
+        7px 12px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.8);
+
+}
+
+
+.general .count-box {
+
+    color: var(--green);
+
+    border:
+        1px solid #cce5d5;
+
+}
+
+
+.vip .count-box {
+
+    color: #a77d0d;
+
+    border:
+        1px solid #ead99a;
+
+}
+
+
+.count-box span {
+
+    display: block;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+}
+
+
+.count-box small {
+
+    font-size: 12px;
+
+}
+
+
+/* ==================================================
+   APPLICANT LIST
+================================================== */
+
+.applicant-list {
+
+    padding:
+        10px 18px 18px;
+
+    max-height: 600px;
+
+    overflow-y: auto;
+
+}
+
+
+/* ==================================================
+   APPLICANT ROW
+================================================== */
+
+.applicant-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding:
+        13px 10px;
+
+    border-bottom:
+        1px solid #edf2ee;
+
+    transition:
+        background 0.2s ease;
+
+}
+
+
+.applicant-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.applicant-row:hover {
+
+    background:
+        #f7faf8;
+
+    border-radius: 10px;
+
+}
+
+
+/* ==================================================
+   NUMBER
+================================================== */
+
+.number {
+
+    flex-shrink: 0;
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.general .number {
+
+    background: var(--green-light);
+
+    color: var(--green);
+
+}
+
+
+.vip .number {
+
+    background: var(--gold-light);
+
+    color: #a77d0d;
+
+}
+
+
+/* ==================================================
+   NAME
+================================================== */
+
+.name {
+
+    font-size: 17px;
+
+    color: var(--text);
+
+    font-weight: 400;
+
+    word-break: break-word;
+
+}
+
+
+/* ==================================================
+   LOADING
+================================================== */
+
+.loading {
+
+    text-align: center;
+
+    padding:
+        45px 20px;
+
+    color: var(--gray);
+
+    font-size: 16px;
+
+}
+
+
+/* ==================================================
+   EMPTY
+================================================== */
+
+.empty {
+
+    text-align: center;
+
+    padding:
+        45px 20px;
+
+    color: #8a9991;
+
+}
+
+
+/* ==================================================
+   UPDATE INFO
+================================================== */
+
+.update-info {
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+}
+
+
+.update-info span {
+
+    margin-right: 5px;
+
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.app-footer {
+
+    text-align: center;
+
+    padding:
+        25px 20px;
+
+    background:
+        #064d2e;
+
+    color: rgba(255,255,255,0.8);
+
+    font-size: 13px;
+
+    border-top:
+        2px solid var(--gold);
+
+}
+
+
+.app-footer p:first-child {
+
+    color: #ffffff;
+
+    font-weight: 500;
+
+    margin-bottom: 3px;
+
+}
+
+
+/* ==================================================
+   SCROLLBAR
+================================================== */
+
+.applicant-list::-webkit-scrollbar {
+
+    width: 7px;
+
+}
+
+
+.applicant-list::-webkit-scrollbar-track {
+
+    background: #f1f5f2;
+
+    border-radius: 10px;
+
+}
+
+
+.applicant-list::-webkit-scrollbar-thumb {
+
+    background: #b8cfc1;
+
+    border-radius: 10px;
+
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .app-main {
+
+        padding:
+            45px 20px 60px;
+
+    }
+
+
+    .app-navbar-inner {
+
+        padding:
+            0 20px;
+
+    }
+
+
+    .applicant-grid {
+
+        gap: 20px;
+
+    }
+
+
+    .card-header {
+
+        padding:
+            20px;
+
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .app-navbar-inner {
+
+        min-height: 68px;
+
+        padding:
+            0 15px;
+
+    }
+
+
+    .app-logo {
+
+        font-size: 17px;
+
+        gap: 8px;
+
+    }
+
+
+    .app-logo img {
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+
+    .back-home {
+
+        padding:
+            7px 13px;
+
+        font-size: 13px;
+
+    }
+
+
+    .app-main {
+
+        padding:
+            35px 15px 50px;
+
+    }
+
+
+    .page-title {
+
+        margin-bottom: 28px;
+
+    }
+
+
+    .title-icon {
+
+        font-size: 38px;
+
+    }
+
+
+    .page-title h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .page-title p {
+
+        font-size: 15px;
+
+    }
+
+
+    /* เปลี่ยนเป็น 1 คอลัมน์ */
+
+    .applicant-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 20px;
+
+    }
+
+
+    .card-header h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    .applicant-list {
+
+        max-height: 500px;
+
+    }
+
+
+    .name {
+
+        font-size: 16px;
+
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media (max-width: 480px) {
+
+    .app-logo span {
+
+        font-size: 15px;
+
+    }
+
+
+    .back-home {
+
+        font-size: 12px;
+
+        padding:
+            6px 11px;
+
+    }
+
+
+    .page-title h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .card-header {
+
+        padding:
+            18px 15px;
+
+    }
+
+
+    .applicant-list {
+
+        padding:
+            8px 12px 15px;
+
+    }
+
+
+    .applicant-row {
+
+        gap: 10px;
+
+        padding:
+            11px 6px;
+
+    }
+
+
+    .number {
+
+        width: 34px;
+
+        height: 34px;
+
+    }
+
+
+    .name {
+
+        font-size: 15px;
+
+    }
+
+}

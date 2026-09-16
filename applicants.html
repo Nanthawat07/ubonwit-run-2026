@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ข้อมูลผู้สมัคร | UBONWIT RUN 2026</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="applicants.css">
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVBAR
+    ================================================== -->
+
+    <header class="app-navbar">
+
+        <div class="app-navbar-inner">
+
+
+            <!-- LOGO -->
+
+            <a href="index.html"
+               class="app-logo">
+
+                <span>
+                    UBONWIT RUN 2026
+                </span>
+
+            </a>
+
+
+            <!-- BACK BUTTON -->
+
+            <a href="index.html"
+               class="back-home">
+
+                ← หน้าหลัก
+
+            </a>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- TITLE -->
+
+        <section class="page-title">
+
+            <div class="title-icon">
+                👥
+            </div>
+
+            <h1>
+                ข้อมูลผู้สมัคร
+            </h1>
+
+            <p>
+                UBONWIT RUN 2026
+            </p>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             APPLICANT GRID
+        ================================================== -->
+
+        <section class="applicant-grid">
+
+
+            <!-- ==================================================
+                 บุคคลทั่วไป
+            ================================================== -->
+
+            <div class="applicant-card general">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-icon">
+                            🟢
+                        </span>
+
+                        <h2>
+                            บุคคลทั่วไป
+                        </h2>
+
+                        <p>
+                            ผู้สมัครทั่วไป
+                        </p>
+
+                    </div>
+
+
+                    <div class="count-box">
+
+                        <span id="generalCount">
+                            0
+                        </span>
+
+                        <small>
+                            คน
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="applicant-list"
+                     id="generalList">
+
+                    <div class="loading">
+                        กำลังโหลดข้อมูล...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 VIP
+            ================================================== -->
+
+            <div class="applicant-card vip">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-icon">
+                            ⭐
+                        </span>
+
+                        <h2>
+                            VIP
+                        </h2>
+
+                        <p>
+                            ผู้สมัคร VIP
+                        </p>
+
+                    </div>
+
+
+                    <div class="count-box">
+
+                        <span id="vipCount">
+                            0
+                        </span>
+
+                        <small>
+                            คน
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="applicant-list"
+                     id="vipList">
+
+                    <div class="loading">
+                        กำลังโหลดข้อมูล...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             UPDATE INFO
+        ================================================== -->
+
+        <div class="update-info">
+
+            <span>
+                🔄
+            </span>
+
+            ข้อมูลผู้สมัครจากระบบลงทะเบียน
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="app-footer">
+
+        <p>
+            © 2026 UBONWIT RUN
+        </p>
+
+        <p>
+            โรงเรียนอุบลวิทยาคม
+        </p>
+
+    </footer>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+         เชื่อม Google Sheets
+    ================================================== -->
+
+    <script>
+
+
+        // ==================================================
+        // URL ของ Google Apps Script Web App
+        // ==================================================
+
+        const webAppUrl =
+            "https://script.google.com/macros/s/AKfycbxsjJpnPtU4ECGJs8KYk3ItHsDTHf62TtzLuLUW5T24SmSjA29frsXeGy2fSynvy0yv/exec";
+
+
+
+        // ==================================================
+        // แสดงรายชื่อ
+        // ==================================================
+
+        function renderApplicants(
+            listId,
+            countId,
+            applicants
+        ) {
+
+
+            const list =
+                document.getElementById(listId);
+
+
+            const count =
+                document.getElementById(countId);
+
+
+
+            // ==================================================
+            // จำนวนผู้สมัคร
+            // ==================================================
+
+            count.textContent =
+                applicants.length;
+
+
+
+            // ==================================================
+            // ไม่มีข้อมูล
+            // ==================================================
+
+            if (
+                !applicants ||
+                applicants.length === 0
+            ) {
+
+                list.innerHTML = `
+                    <div class="empty">
+                        ยังไม่มีข้อมูลผู้สมัคร
+                    </div>
+                `;
+
+                return;
+
+            }
+
+
+
+            // ==================================================
+            // แสดงรายชื่อ
+            // ==================================================
+
+            list.innerHTML =
+                applicants.map(
+                    function(applicant, index) {
+
+                        return `
+
+                            <div class="applicant-row">
+
+                                <span class="number">
+                                    ${String(index + 1).padStart(2, "0")}
+                                </span>
+
+                                <span class="name">
+                                    ${escapeHtml(applicant.name)}
+                                </span>
+
+                            </div>
+
+                        `;
+
+                    }
+                ).join("");
+
+
+        }
+
+
+
+        // ==================================================
+        // ป้องกัน HTML Injection
+        // ==================================================
+
+        function escapeHtml(text) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent =
+                text;
+
+            return div.innerHTML;
+
+        }
+
+
+
+        // ==================================================
+        // โหลดข้อมูลจาก Google Sheets
+        // ==================================================
+
+        async function loadApplicants() {
+
+
+            const generalList =
+                document.getElementById("generalList");
+
+
+            const vipList =
+                document.getElementById("vipList");
+
+
+
+            // ==================================================
+            // แสดงสถานะกำลังโหลด
+            // ==================================================
+
+            generalList.innerHTML = `
+                <div class="loading">
+                    กำลังโหลดข้อมูล...
+                </div>
+            `;
+
+
+            vipList.innerHTML = `
+                <div class="loading">
+                    กำลังโหลดข้อมูล...
+                </div>
+            `;
+
+
+
+            try {
+
+
+                // ==================================================
+                // เรียก Google Apps Script
+                // ==================================================
+
+                const response =
+                    await fetch(
+                        webAppUrl +
+                        "?action=applicants&t=" +
+                        Date.now()
+                    );
+
+
+
+                // ==================================================
+                // ตรวจสอบ HTTP
+                // ==================================================
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "HTTP Error " +
+                        response.status
+                    );
+
+                }
+
+
+
+                // ==================================================
+                // แปลงข้อมูล JSON
+                // ==================================================
+
+                const data =
+                    await response.json();
+
+
+
+                // ==================================================
+                // ตรวจสอบ success
+                // ==================================================
+
+                if (!data.success) {
+
+                    throw new Error(
+                        data.message ||
+                        "ไม่สามารถโหลดข้อมูลผู้สมัครได้"
+                    );
+
+                }
+
+
+
+                // ==================================================
+                // แสดงบุคคลทั่วไป
+                // ==================================================
+
+                renderApplicants(
+                    "generalList",
+                    "generalCount",
+                    data.general || []
+                );
+
+
+
+                // ==================================================
+                // แสดง VIP
+                // ==================================================
+
+                renderApplicants(
+                    "vipList",
+                    "vipCount",
+                    data.vip || []
+                );
+
+
+            }
+            catch (error) {
+
+
+                console.error(
+                    "โหลดข้อมูลผู้สมัครไม่สำเร็จ:",
+                    error
+                );
+
+
+
+                // ==================================================
+                // แสดงข้อความผิดพลาด
+                // ==================================================
+
+                generalList.innerHTML = `
+                    <div class="empty">
+                        ⚠️ ไม่สามารถโหลดข้อมูลได้
+                    </div>
+                `;
+
+
+                vipList.innerHTML = `
+                    <div class="empty">
+                        ⚠️ ไม่สามารถโหลดข้อมูลได้
+                    </div>
+                `;
+
+
+            }
+
+
+        }
+
+
+
+        // ==================================================
+        // เริ่มโหลดข้อมูลเมื่อเปิดหน้า
+        // ==================================================
+
+        loadApplicants();
+
+
+    </script>
+
+
+</body>
+</html>
+

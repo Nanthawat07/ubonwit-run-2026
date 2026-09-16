@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>UBONWIT RUN 2026 - Certificate</title>
+
+
+    <!-- =========================================
+         GOOGLE FONT (สไตล์ Cloud - humanist sans สะอาด ทันสมัย)
+
+         IBM Plex Sans Thai -> ฟอนต์ humanist sans ใกล้เคียงสไตล์ Cloud
+    ========================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================
+         CSS (แยกไฟล์ต่างหาก)
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="./certificate.css"
+    >
+
+
+    <!-- =========================================
+         HTML2CANVAS
+    ========================================== -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
+    </script>
+
+
+    <!-- =========================================
+         JSPDF
+    ========================================== -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         CERTIFICATE
+    ================================================== -->
+
+    <div class="certificate-wrapper">
+
+        <div
+            class="certificate"
+            id="certificate"
+        >
+
+
+            <!-- TITLE -->
+
+            <div
+                id="certTitle"
+                class="cert-text"
+            >
+                UBONWIT RUN 2026
+            </div>
+
+
+            <!-- CERTIFICATE -->
+
+            <div
+                id="certSubTitle"
+                class="cert-text"
+            >
+                CERTIFICATE
+            </div>
+
+
+            <!-- CONGRATULATIONS -->
+
+            <div
+                id="certCongratulations"
+                class="cert-text"
+            >
+                เกียรติบัตรนี้ให้ไว้เพื่อแสดงว่า
+            </div>
+
+
+            <!-- NAME -->
+
+            <div
+                id="certName"
+                class="cert-text"
+            >
+                -
+            </div>
+
+
+            <!-- PARTICIPANT -->
+
+            <div
+                id="certParticipant"
+                class="cert-text"
+            >
+                ได้เข้าร่วมกิจกรรมการแข่งขันวิ่ง UBONWIT RUN 2026
+            </div>
+
+
+            <!-- DISTANCE -->
+
+            <div
+                id="certDistance"
+                class="cert-text"
+            >
+                -
+            </div>
+
+
+            <!-- SCHOOL -->
+
+            <div
+                id="certSchool"
+                class="cert-text"
+            >
+                โรงเรียนอุบลวิทยาคม
+            </div>
+
+
+            <!-- DATE -->
+
+            <div
+                id="certDate"
+                class="cert-text"
+            >
+                เมื่อวันที่ 27 ธันวาคม 2569
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         BUTTONS
+    ================================================== -->
+
+    <div class="control-panel">
+
+
+        <button
+            class="pdf-btn"
+            onclick="downloadPDF()"
+        >
+            📄 PDF
+        </button>
+
+
+        <button
+            class="jpg-btn"
+            onclick="downloadJPG()"
+        >
+            🖼️ JPG
+        </button>
+
+
+        <button
+            class="close-btn"
+            onclick="closeCertificate()"
+        >
+            ✕ ปิด
+        </button>
+
+
+    </div>
+
+
+    <!-- ==================================================
+         LOADING
+    ================================================== -->
+
+    <div id="loading">
+
+        <div class="loading-box">
+
+            ⏳ กำลังสร้างไฟล์...
+
+            <br>
+
+            กรุณารอสักครู่
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+
+        /* ==================================================
+           โหลดข้อมูลผู้สมัคร
+        ================================================== */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            async function () {
+
+                try {
+
+                    /*
+                       รอ Font
+                    */
+
+                    if (document.fonts) {
+
+                        await document.fonts.ready;
+
+                    }
+
+
+                    /*
+                       ดึงข้อมูลจาก
+                       sessionStorage
+                    */
+
+                    var savedData =
+                        sessionStorage.getItem(
+                            "certificateApplicant"
+                        );
+
+
+                    /*
+                       ถ้าไม่มีข้อมูล
+                    */
+
+                    if (!savedData) {
+
+                        alert(
+                            "ไม่พบข้อมูลผู้สมัคร กรุณากลับไปค้นหาผู้สมัครก่อน"
+                        );
+
+                        return;
+
+                    }
+
+
+                    /*
+                       แปลงข้อมูล
+                    */
+
+                    var applicant =
+                        JSON.parse(
+                            savedData
+                        );
+
+
+                    /*
+                       ชื่อ
+                    */
+
+                    document.getElementById(
+                        "certName"
+                    ).textContent =
+                        applicant.name || "-";
+
+
+                    /*
+                       ระยะทาง
+                    */
+
+                    document.getElementById(
+                        "certDistance"
+                    ).textContent =
+                        "ระยะทาง " +
+                        (
+                            applicant.distance ||
+                            "-"
+                        );
+
+
+                    console.log(
+                        "ข้อมูลผู้สมัคร:",
+                        applicant
+                    );
+
+                }
+
+                catch (error) {
+
+                    console.error(
+                        "Certificate Error:",
+                        error
+                    );
+
+                    alert(
+                        "ไม่สามารถโหลดข้อมูลผู้สมัครได้"
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* ==================================================
+           LOADING
+        ================================================== */
+
+        function showLoading() {
+
+            document.getElementById(
+                "loading"
+            ).style.display =
+                "flex";
+
+        }
+
+
+        function hideLoading() {
+
+            document.getElementById(
+                "loading"
+            ).style.display =
+                "none";
+
+        }
+
+
+
+        /* ==================================================
+           ตรวจสอบ Library
+        ================================================== */
+
+        function checkLibraries() {
+
+            if (
+                typeof html2canvas ===
+                "undefined"
+            ) {
+
+                throw new Error(
+                    "html2canvas โหลดไม่สำเร็จ"
+                );
+
+            }
+
+
+            if (
+                !window.jspdf ||
+                !window.jspdf.jsPDF
+            ) {
+
+                throw new Error(
+                    "jsPDF โหลดไม่สำเร็จ"
+                );
+
+            }
+
+        }
+
+
+
+        /* ==================================================
+           ตรวจสอบพื้นหลัง
+        ================================================== */
+
+        function checkBackgroundImage() {
+
+            return new Promise(
+                function (
+                    resolve,
+                    reject
+                ) {
+
+
+                    var img =
+                        new Image();
+
+
+                    img.onload =
+                        function () {
+
+                            console.log(
+                                "โหลด certificate-bg.png สำเร็จ"
+                            );
+
+                            resolve();
+
+                        };
+
+
+                    img.onerror =
+                        function () {
+
+                            reject(
+                                new Error(
+                                    "ไม่พบไฟล์ certificate-bg.png"
+                                )
+                            );
+
+                        };
+
+
+                    /*
+                       ใช้ path เดียวกัน
+                       กับ certificate.html
+                    */
+
+                    img.src =
+                        "./certificate-bg.png";
+
+                }
+            );
+
+        }
+
+
+
+        /* ==================================================
+           สร้าง Canvas จากเกียรติบัตร
+           
+           สำคัญ:
+           ไม่มีการวาด PNG เข้า Canvas เอง
+           
+           html2canvas จะจับทั้งพื้นหลัง
+           และข้อความพร้อมกัน
+        ================================================== */
+
+        async function createCertificateCanvas() {
+
+
+            checkLibraries();
+
+
+            /*
+               ตรวจสอบ PNG
+            */
+
+            await checkBackgroundImage();
+
+
+            /*
+               รอ Font
+            */
+
+            if (document.fonts) {
+
+                await document.fonts.ready;
+
+            }
+
+
+            /*
+               พื้นที่เกียรติบัตร
+            */
+
+            var certificate =
+                document.getElementById(
+                    "certificate"
+                );
+
+
+            if (!certificate) {
+
+                throw new Error(
+                    "ไม่พบพื้นที่เกียรติบัตร"
+                );
+
+            }
+
+
+            /*
+               สร้าง Clone
+               
+               เพื่อไม่ให้กระทบหน้าจอจริง
+            */
+
+            var clone =
+                certificate.cloneNode(
+                    true
+                );
+
+
+            /*
+               กำหนด ID ใหม่
+            */
+
+            clone.id =
+                "certificate-export";
+
+
+            /*
+               บังคับขนาด
+               1123 × 794
+            */
+
+            clone.style.position =
+                "fixed";
+
+            clone.style.left =
+                "-10000px";
+
+            clone.style.top =
+                "0";
+
+            clone.style.width =
+                "1123px";
+
+            clone.style.height =
+                "794px";
+
+            clone.style.margin =
+                "0";
+
+            clone.style.transform =
+                "none";
+
+            clone.style.aspectRatio =
+                "auto";
+
+
+            /*
+               ป้องกัน CSS มือถือ
+               ไม่ให้ลดขนาดตัวอักษร
+            */
+
+            var title =
+                clone.querySelector(
+                    "#certTitle"
+                );
+
+            if (title) {
+
+                title.style.fontSize =
+                    "56px";
+
+            }
+
+
+            var subtitle =
+                clone.querySelector(
+                    "#certSubTitle"
+                );
+
+            if (subtitle) {
+
+                subtitle.style.fontSize =
+                    "24px";
+
+                subtitle.style.letterSpacing =
+                    "8px";
+
+            }
+
+
+            var congratulations =
+                clone.querySelector(
+                    "#certCongratulations"
+                );
+
+            if (congratulations) {
+
+                congratulations.style.fontSize =
+                    "22px";
+
+            }
+
+
+            var name =
+                clone.querySelector(
+                    "#certName"
+                );
+
+            if (name) {
+
+                name.style.fontSize =
+                    "52px";
+
+            }
+
+
+            var participant =
+                clone.querySelector(
+                    "#certParticipant"
+                );
+
+            if (participant) {
+
+                participant.style.fontSize =
+                    "20px";
+
+            }
+
+
+            var distance =
+                clone.querySelector(
+                    "#certDistance"
+                );
+
+            if (distance) {
+
+                distance.style.fontSize =
+                    "24px";
+
+            }
+
+
+            var school =
+                clone.querySelector(
+                    "#certSchool"
+                );
+
+            if (school) {
+
+                school.style.fontSize =
+                    "20px";
+
+            }
+
+
+            var date =
+                clone.querySelector(
+                    "#certDate"
+                );
+
+            if (date) {
+
+                date.style.fontSize =
+                    "18px";
+
+            }
+
+
+            /*
+               เพิ่ม Clone เข้า DOM
+            */
+
+            document.body.appendChild(
+                clone
+            );
+
+
+            /*
+               รอ Browser Render
+            */
+
+            await new Promise(
+                function (resolve) {
+
+                    setTimeout(
+                        resolve,
+                        300
+                    );
+
+                }
+            );
+
+
+            try {
+
+
+                /*
+                   สร้าง Canvas
+                   
+                   scale 3
+                   = ความละเอียดสูง
+                */
+
+                var canvas =
+                    await html2canvas(
+                        clone,
+                        {
+
+                            width:
+                                1123,
+
+                            height:
+                                794,
+
+                            scale:
+                                3,
+
+                            useCORS:
+                                false,
+
+                            allowTaint:
+                                false,
+
+                            backgroundColor:
+                                null,
+
+                            logging:
+                                false,
+
+                            imageTimeout:
+                                15000,
+
+                            removeContainer:
+                                true
+
+                        }
+                    );
+
+
+                /*
+                   ตรวจสอบ Canvas
+                */
+
+                if (!canvas) {
+
+                    throw new Error(
+                        "ไม่สามารถสร้าง Canvas ได้"
+                    );
+
+                }
+
+
+                return canvas;
+
+            }
+
+            finally {
+
+
+                /*
+                   ลบ Clone
+                */
+
+                if (
+                    clone &&
+                    clone.parentNode
+                ) {
+
+                    clone.parentNode
+                        .removeChild(
+                            clone
+                        );
+
+                }
+
+            }
+
+        }
+
+
+
+        /* ==================================================
+           PRINT
+        ================================================== */
+
+        function printCertificate() {
+
+            window.print();
+
+        }
+
+
+
+        /* ==================================================
+           CLOSE
+        ================================================== */
+
+        function closeCertificate() {
+
+
+            /*
+               ถ้าเปิดจากหน้าต่างใหม่
+            */
+
+            if (
+                window.opener &&
+                !window.opener.closed
+            ) {
+
+                window.close();
+
+                return;
+
+            }
+
+
+            /*
+               ถ้าปิดไม่ได้
+               ให้กลับหน้าแรก
+            */
+
+            window.location.href =
+                "index.html";
+
+        }
+
+
+
+        /* ==================================================
+           DOWNLOAD JPG
+        ================================================== */
+
+        async function downloadJPG() {
+
+
+            showLoading();
+
+
+            try {
+
+
+                /*
+                   สร้าง Canvas
+                */
+
+                var canvas =
+                    await createCertificateCanvas();
+
+
+                /*
+                   ดึงข้อมูล
+                */
+
+                var savedData =
+                    sessionStorage.getItem(
+                        "certificateApplicant"
+                    );
+
+
+                var applicant =
+                    savedData
+                        ? JSON.parse(
+                            savedData
+                        )
+                        : {};
+
+
+                /*
+                   ชื่อไฟล์
+                */
+
+                var fileName =
+                    "UBONWIT-RUN-2026-" +
+                    (
+                        applicant.regId ||
+                        "certificate"
+                    ) +
+                    ".jpg";
+
+
+                /*
+                   สร้าง JPG
+                */
+
+                var imageData =
+                    canvas.toDataURL(
+                        "image/jpeg",
+                        0.95
+                    );
+
+
+                /*
+                   สร้าง Link
+                */
+
+                var link =
+                    document.createElement(
+                        "a"
+                    );
+
+
+                link.href =
+                    imageData;
+
+                link.download =
+                    fileName;
+
+
+                document.body.appendChild(
+                    link
+                );
+
+
+                link.click();
+
+
+                document.body.removeChild(
+                    link
+                );
+
+
+                console.log(
+                    "ดาวน์โหลด JPG สำเร็จ"
+                );
+
+
+            }
+
+            catch (error) {
+
+
+                console.error(
+                    "JPG ERROR:",
+                    error
+                );
+
+
+                alert(
+
+                    "ไม่สามารถสร้างไฟล์ JPG ได้\n\n" +
+
+                    error.message
+
+                );
+
+            }
+
+            finally {
+
+                hideLoading();
+
+            }
+
+        }
+
+
+
+        /* ==================================================
+           DOWNLOAD PDF
+        ================================================== */
+
+        async function downloadPDF() {
+
+
+            showLoading();
+
+
+            try {
+
+
+                /*
+                   ตรวจสอบ Library
+                */
+
+                checkLibraries();
+
+
+                /*
+                   สร้าง Canvas
+                */
+
+                var canvas =
+                    await createCertificateCanvas();
+
+
+                /*
+                   ดึงข้อมูล
+                */
+
+                var savedData =
+                    sessionStorage.getItem(
+                        "certificateApplicant"
+                    );
+
+
+                var applicant =
+                    savedData
+                        ? JSON.parse(
+                            savedData
+                        )
+                        : {};
+
+
+                /*
+                   ดึง jsPDF
+                */
+
+                var jsPDF =
+                    window.jspdf.jsPDF;
+
+
+                /*
+                   สร้าง PDF
+                   
+                   A4 แนวนอน
+                */
+
+                var pdf =
+                    new jsPDF({
+
+                        orientation:
+                            "landscape",
+
+                        unit:
+                            "mm",
+
+                        format:
+                            "a4",
+
+                        compress:
+                            true
+
+                    });
+
+
+                /*
+                   Canvas → JPG
+                */
+
+                var imageData =
+                    canvas.toDataURL(
+                        "image/jpeg",
+                        0.95
+                    );
+
+
+                /*
+                   ใส่ภาพเต็ม A4
+                   
+                   297 × 210 mm
+                */
+
+                pdf.addImage(
+
+                    imageData,
+
+                    "JPEG",
+
+                    0,
+
+                    0,
+
+                    297,
+
+                    210,
+
+                    undefined,
+
+                    "FAST"
+
+                );
+
+
+                /*
+                   ชื่อไฟล์
+                */
+
+                var fileName =
+                    "UBONWIT-RUN-2026-" +
+                    (
+                        applicant.regId ||
+                        "certificate"
+                    ) +
+                    ".pdf";
+
+
+                /*
+                   ดาวน์โหลด
+                */
+
+                pdf.save(
+                    fileName
+                );
+
+
+                console.log(
+                    "ดาวน์โหลด PDF สำเร็จ"
+                );
+
+
+            }
+
+            catch (error) {
+
+
+                console.error(
+                    "PDF ERROR:",
+                    error
+                );
+
+
+                alert(
+
+                    "ไม่สามารถสร้างไฟล์ PDF ได้\n\n" +
+
+                    error.message
+
+                );
+
+            }
+
+            finally {
+
+                hideLoading();
+
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

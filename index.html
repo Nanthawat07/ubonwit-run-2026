@@ -121,111 +121,104 @@
 
 
 
+
 <!-- ==================================================
      02. HERO
 ================================================== -->
 
-<section class="hero"
-         id="home">
+
+<!-- ==================================================
+     02. HERO
+================================================== -->
+
+<section class="hero" id="home">
 
     <div class="container">
 
         <div class="hero-content">
 
-
             <div class="hero-badge">
-
                 🏃 RUN FOR HEALTH • RUN FOR FUN
-
             </div>
 
-
             <h1 class="hero-title">
-
                 UBONWIT<br>
-
                 <span>RUN 2026</span>
-
             </h1>
 
-
             <p class="hero-subtitle">
-
                 วิ่งเพื่อสุขภาพ ก้าวไปด้วยกัน
-
             </p>
-
 
             <p class="hero-description">
-
                 ร่วมเป็นส่วนหนึ่งของกิจกรรม UBONWIT RUN 2026
                 สนุก สุขภาพดี และสร้างความทรงจำไปด้วยกัน
-
             </p>
 
-
+            <!-- ข้อมูลกิจกรรม -->
             <div class="hero-info">
 
+                <!-- ขยายเวลารับสมัคร -->
+                <div class="info-card registration-notice">
 
+                    <div class="notice-icon">📢</div>
+
+                    <strong class="notice-title">
+                        ขยายเวลารับสมัคร!
+                    </strong>
+
+                    <span class="notice-description">
+                        เปิดรับสมัครเพิ่มเติมถึงวันที่
+                    </span>
+
+                    <strong class="notice-date">
+                        26 พฤศจิกายน 2569
+                    </strong>
+
+                </div>
+
+                <!-- วันแข่งขัน -->
                 <div class="info-card">
-
                     📅
                     <strong>วันแข่งขัน</strong>
                     27 ธันวาคม 2569
-
                 </div>
 
+                <!-- วันรับเสื้อ -->
                 <div class="info-card">
-
-                    ⛔
-                    <strong>ปิดรับสมัคร</strong>
-                    16 พฤศจิกายน 2569
-
-                </div>
-
-                
-
-                <div class="info-card">
-
                     👔
                     <strong>รับเสื้อได้ในวันที่</strong>
                     17-21 ธันวาคม 69
-
                 </div>
 
-
+                <!-- ระยะทาง -->
                 <div class="info-card">
-
                     🏃
                     <strong>ระยะทาง</strong>
                     2.5 / 5 / 10 KM
-
                 </div>
 
-                 <div class="info-card">
-
+                <!-- สถานที่ -->
+                <div class="info-card">
                     📍
                     <strong>START - FINISH</strong>
-                      โรงเรียนอุบลวิทยาคม
-
+                    โรงเรียนอุบลวิทยาคม
                 </div>
 
-                <div class="info-card schedule-card" onclick="openSchedule()">
+                <!-- กำหนดการ -->
+                <div class="info-card schedule-card"
+                     onclick="openSchedule()">
 
-                📅
-                <strong>กำหนดการ</strong>
+                    📅
+                    <strong>กำหนดการ</strong>
                     ( คลิกเพื่อดู )
 
                 </div>
 
-                
-
-
             </div>
 
-
+            <!-- ปุ่มสมัคร -->
             <div class="buttons">
-
 
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeHzjCSlxnIWXgIciVNkxaQxHpOqXxdXn1Vmi4gfgINv1df9A/viewform?usp=dialog"
                    class="btn btn-vip">
@@ -241,6 +234,178 @@
     </div>
 
 </section>
+
+
+<!-- ==================================================
+     HERO CSS : RESPONSIVE DESIGN
+================================================== -->
+
+<style>
+
+/* จัดวางกล่องข้อมูล */
+.hero-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    align-items: stretch;
+}
+
+/* กล่องข้อมูลทั่วไป */
+.hero-info .info-card {
+    min-width: 0;
+    min-height: 110px;
+    padding: 18px 12px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+/* กล่องแจ้งเตือนขยายเวลารับสมัคร */
+.hero-info .registration-notice {
+    grid-column: 1 / -1;
+
+    min-height: 0;
+    padding: 20px 15px;
+
+    background: linear-gradient(135deg, #fff1ed, #ffe0d6);
+    border: 2px solid #e53935;
+    border-radius: 16px;
+
+    color: #b71c1c;
+    box-shadow: 0 6px 20px rgba(229,57,53,0.18);
+
+    animation: pulseNotice 2s infinite;
+}
+
+/* ไอคอน */
+.registration-notice .notice-icon {
+    font-size: 32px;
+    margin-bottom: 4px;
+}
+
+/* หัวข้อ */
+.registration-notice .notice-title {
+    display: block;
+    font-size: 24px;
+    font-weight: 800;
+    color: #c62828;
+    margin-bottom: 5px;
+}
+
+/* รายละเอียด */
+.registration-notice .notice-description {
+    font-size: 16px;
+    color: #7f1d1d;
+    margin-bottom: 8px;
+}
+
+/* วันที่ */
+.registration-notice .notice-date {
+    display: inline-block;
+    background: #d32f2f;
+    color: white;
+    font-size: 22px;
+    padding: 7px 22px;
+    border-radius: 50px;
+    line-height: 1.5;
+}
+
+/* เอฟเฟกต์กล่องแจ้งเตือน */
+@keyframes pulseNotice {
+    0%, 100% {
+        box-shadow: 0 6px 20px rgba(229,57,53,0.18);
+    }
+
+    50% {
+        box-shadow: 0 6px 28px rgba(229,57,53,0.35);
+    }
+}
+
+/* โทรศัพท์ */
+@media screen and (max-width: 480px) {
+
+    .hero-info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .hero-info .info-card {
+        min-height: 100px;
+        padding: 15px 10px;
+    }
+
+    .hero-info .registration-notice {
+        padding: 18px 10px;
+    }
+
+    .registration-notice .notice-title {
+        font-size: 21px;
+    }
+
+    .registration-notice .notice-description {
+        font-size: 14px;
+    }
+
+    .registration-notice .notice-date {
+        font-size: 19px;
+        padding: 7px 16px;
+    }
+
+    .hero-info .info-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
+
+/* โทรศัพท์และแท็บเล็ตแนวนอน */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    .hero-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+.hero-info .registration-notice {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    max-width: 420px;
+    justify-self: center;
+
+    min-height: 0;
+    padding: 20px 15px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: linear-gradient(135deg, #fff1ed, #ffe0d6);
+    border: 2px solid #e53935;
+    border-radius: 16px;
+
+    color: #b71c1c;
+    box-shadow: 0 6px 20px rgba(229,57,53,0.18);
+
+    animation: pulseNotice 2s infinite;
+}
+
+
+</style>
+
 
 
 <!-- ==================================================
